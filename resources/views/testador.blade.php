@@ -5,16 +5,16 @@
     <title>PHP-HELP - Testador</title>
     <link media="all" rel="stylesheet" type="text/css" href="{{asset('php-doc/styles/03e73060321a0a848018724a6c83de7f-theme-base.css')}}" />
     <link media="all" rel="stylesheet" type="text/css" href="{{asset('php-doc/styles/03e73060321a0a848018724a6c83de7f-theme-medium.css')}}" />
-    <script src="http://www.phptester.net/codemirror/lib/codemirror.js"></script>
-    <script src="http://www.phptester.net/codemirror/addon/edit/matchbrackets.js"></script>
-    <script src="http://www.phptester.net/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-    <script src="http://www.phptester.net/codemirror/mode/xml/xml.js"></script>
-    <script src="http://www.phptester.net/codemirror/mode/javascript/javascript.js"></script>
-    <script src="http://www.phptester.net/codemirror/mode/css/css.js"></script>
-    <script src="http://www.phptester.net/codemirror/mode/clike/clike.js"></script>
-    <script src="http://www.phptester.net/codemirror/mode/php/php.js"></script>
-    <script language="Javascript" type="text/javascript" src="http://www.phptester.net/js/jquery-1.9.1.min.js"></script>
-    <link rel="stylesheet" href="http://www.phptester.net/codemirror/lib/codemirror.css">
+    <script src="{{asset('codemirror.js')}}"></script>
+    <script src="{{asset('matchbrackets.js')}}"></script>
+    <script src="{{asset('htmlmixed.js')}}"></script>
+    <script src="{{asset('xml.js')}}"></script>
+    <script src="{{asset('javascript.js')}}"></script>
+    <script src="{{asset('css.js')}}"></script>
+    <script src="{{asset('clike.js')}}"></script>
+    <script src="{{asset('php.js')}}"></script>
+    <script language="Javascript" type="text/javascript" src="{{asset('jquery-1.9.1.min.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('codemirror.css')}}">
     <style type="text/css">.CodeMirror {border-top: 1px solid black; border-bottom: 1px solid black; height: 500px;}</style>
 </head>
 <body class="docs"><div class="navbar navbar-fixed-top">

@@ -27,7 +27,7 @@
             <h1 class="title">PHP-HELP</h1>
         </div>
         <div class="info">
-            Este software tem o objetivo de ajudar crianças e adolescentes a aprenderem PHP de uma maneira fácil, divertida e objetiva. Foi desenvolvido por MARCELL COUTINHO RIBEIRO como TCC do curso de Engenharia de Software pela UNICESUMAR. A documentação oficial do PHP8 foi usada, juntamente com o PHP Sandbox (http://github.com/webmasterlv/php-sandbox).
+            Este software tem o objetivo de ajudar crianças e adolescentes a aprenderem PHP de uma maneira fácil, divertida e objetiva. Foi desenvolvido por MARCELL COUTINHO RIBEIRO como TCC do curso de Engenharia de Software pela UNICESUMAR. A documentação oficial do PHP8 foi usada, juntamente com o plugin Codemirror (https://codemirror.net).
             <br>Os videos e canais foram extraídos do youtube utilizando a própria ferramenta de compartilhamento do YT.
             <br><br>
             <br>Escolha abaixo como podemos te ajudar a aprender e treinar PHP:
