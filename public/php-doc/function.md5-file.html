@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Calcula hash md5 de um dado arquivo</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.ltrim.html">« ltrim</a></li>
+      <li style="float: right;"><a href="function.md5.html">md5 »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.strings.html">Fun&ccedil;&otilde;es de String</a></li>
+    <li>Calcula hash md5 de um dado arquivo</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.md5-file" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">md5_file</h1>
+  <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">md5_file</span> &mdash; <span class="dc-title">Calcula hash md5 de um dado arquivo</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.md5-file-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>md5_file</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$raw_output</code><span class="initializer"> = ?</span></span>): <span class="type">string</span></div>
+
+  <p class="para rdfs-comment">
+   Calcula o hash MD5 do arquivo especificado pelo parâmetro
+   <code class="parameter">filename</code> usando o
+   <a href="http://www.faqs.org/rfcs/rfc1321" class="link external">&raquo;&nbsp;RSA Data Security, Inc.
+   MD5 Message-Digest Algorithm</a>, e retorna esse hash.
+   A hash é um número hexadecimal de 32 caracteres.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.md5-file-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O nome do arquivo
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">raw_output</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Quando <strong><code>true</code></strong>, retorna no formato binário com o tamanho de
+       16. O padrão é <strong><code>false</code></strong>.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.md5-file-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna uma string em sucesso, <strong><code>false</code></strong> caso contrário.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.md5-file-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versão</th>
+       <th>Descrição</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.0.0</td>
+       <td>
+        Adicionado o parâmetro <code class="parameter">raw_output</code>
+       </td>
+      </tr>
+
+      <tr>
+       <td>5.1.0</td>
+       <td>
+        Modificada função para usar a API de API. Significa que você pode usá-la
+        com wrappers, como <code class="literal">md5_file(&#039;http://example.com/..&#039;)</code>
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.md5-file-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.md5.html" class="function" rel="rdfs-seeAlso">md5()</a> - Calcula o &quot;hash MD5&quot; de uma string</span></li>
+    <li class="member"><span class="function"><a href="function.sha1-file.html" class="function" rel="rdfs-seeAlso">sha1_file()</a> - Calcula a hash sha1 de um arquivo</span></li>
+    <li class="member"><span class="function"><a href="function.crc32.html" class="function" rel="rdfs-seeAlso">crc32()</a> - Calcula polin&ocirc;mio crc32 de uma string</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div></div></div></body></html>

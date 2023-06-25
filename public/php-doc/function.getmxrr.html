@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Obt&eacute;m registros MX correspondendo ao nome do host de Internet fornecido.</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.gethostname.html">« gethostname</a></li>
+      <li style="float: right;"><a href="function.getprotobyname.html">getprotobyname »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.network.html">Fun&ccedil;&otilde;es da Network</a></li>
+    <li>Obt&eacute;m registros MX correspondendo ao nome do host de Internet fornecido.</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.getmxrr" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">getmxrr</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">getmxrr</span> &mdash; <span class="dc-title">Obtém registros MX correspondendo ao nome do host de Internet fornecido.</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.getmxrr-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>getmxrr</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$hostname</code></span>, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$mxhosts</code></span>, <span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$weight</code><span class="initializer"> = ?</span></span>): <span class="type">bool</span></div>
+
+  <p class="para rdfs-comment">
+   Pesquisa DNS para registros MX correspondendo a
+   <code class="parameter">hostname</code>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.getmxrr-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">hostname</code></dt>
+
+     <dd>
+
+      <p class="para">
+       The Internet host name.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">mxhosts</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Uma lista dos registros MX encontrados é colocada dentro de um array
+       <code class="parameter">mxhosts</code>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">weight</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Se o array <code class="parameter">weight</code> é dado, ele será preenchido com
+       a informação de weight colhida.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.getmxrr-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna <strong><code>true</code></strong> se algum registro foi encontrado; retorna <strong><code>false</code></strong> se nenhum registro
+   foi encontrado ou se um erro ocorreu.
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.getmxrr-notes">
+  <h3 class="title">Notas</h3>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    Esta função não seria usada para propósitos de verificação de endereços. Apenas
+    os mailexchangers encontrados no DNS são retornados,
+    entretanto, de acordo com <a href="http://www.faqs.org/rfcs/rfc2821" class="link external">&raquo;&nbsp;RFC 2821</a>
+    quando nenhum mail exchangers está listado, <code class="parameter">hostname</code>
+    seria usado como apenas mail exchanger com uma prioridade
+    <code class="literal">0</code>.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    Esta função não é implementada em plataformas Windows. Tente a classe
+    <a href="https://pear.php.net/" class="link external">&raquo;&nbsp;PEAR</a>
+    <a href="https://pear.php.net/package/Net_DNS" class="link external">&raquo;&nbsp;Net_DNS</a>.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.getmxrr-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.checkdnsrr.html" class="function" rel="rdfs-seeAlso">checkdnsrr()</a> - Checa os registros DNS correspondentes para o nome do host ou endere&ccedil;o IP informado</span></li>
+    <li class="member"><span class="function"><a href="function.dns-get-record.html" class="function" rel="rdfs-seeAlso">dns_get_record()</a> - Fetch DNS Resource Records associated with a hostname</span></li>
+    <li class="member"><span class="function"><a href="function.gethostbyname.html" class="function" rel="rdfs-seeAlso">gethostbyname()</a> - Obtenha o endere&ccedil;o IPv4 correspondente a um determinado nome de host da Internet</span></li>
+    <li class="member"><span class="function"><a href="function.gethostbynamel.html" class="function" rel="rdfs-seeAlso">gethostbynamel()</a> - Obtenha uma lista de endere&ccedil;os IPv4 correspondentes a um determinado nome de host da Internet</span></li>
+    <li class="member"><span class="function"><a href="function.gethostbyaddr.html" class="function" rel="rdfs-seeAlso">gethostbyaddr()</a> - Obt&eacute;m nome do host de Internet correspondendo ao endere&ccedil;&otilde; de IP fornecido.</span></li>
+    <li class="member">the <code class="literal">named(8)</code> manual page</li>
+   </ul>
+  </p>
+ </div>
+
+
+</div></div></div></body></html>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>L&ecirc; um comprimento m&aacute;ximo de bytes de um socket</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.socket-listen.html">« socket_listen</a></li>
+      <li style="float: right;"><a href="function.socket-recv.html">socket_recv »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.sockets.html">Fun&ccedil;&otilde;es para Socket</a></li>
+    <li>L&ecirc; um comprimento m&aacute;ximo de bytes de um socket</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.socket-read" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">socket_read</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">socket_read</span> &mdash; <span class="dc-title">Lê um comprimento máximo de bytes de um socket</span></p>
+
+   </div>
+   <div class="refsect1 unknown-unknown-unknown-seealsr" id="refsect1-function.socket-read-unknown-unknown-unknown-seealsr">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>socket_read</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$socket</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$type</code><span class="initializer"> = ?</span></span>): <span class="type">string</span></div>
+
+    <div class="warning"><strong class="warning">Aviso</strong><p class="simpara">Esta função é
+<em class="emphasis">EXPERIMENTAL</em>. O comportamento desta função, seu nome e
+documentação poderão mudar sem aviso prévio em futuras versões do PHP.
+Use por sua conta e risco.
+</p></div>
+    <p class="para">
+     A função <span class="function"><strong>socket_read()</strong></span> lê o socket
+     resource <code class="parameter">socket</code> criado pelas funções
+     <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span> ou
+     <span class="function"><a href="function.socket-accept.html" class="function">socket_accept()</a></span>. O número máximo de bytes lidos
+      é especificado pelo parâmetro <code class="parameter">length</code>. Caso contrário
+      você pode usar \r, \n, uo \0 para finalizar a leitura
+      (dependendo do parâmetro <code class="parameter">type</code>, veja abaixo).
+    </p>
+    <p class="para">
+     <span class="function"><strong>socket_read()</strong></span> retorna dados como uma string em caso de sucesso, ou 
+     <strong><code>false</code></strong> em caso de erro. O código de erro pode ser retornado com <span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span>. 
+     Esse código deve ser passado para <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span> para pegar uma explicação textual do erro.
+    </p>
+    <blockquote class="note"><p><strong class="note">Nota</strong>: 
+     <p class="para">
+      <span class="function"><strong>socket_read()</strong></span> deve retornar uma string de comprimento zero (&quot;&quot;)
+      indicando o fim da comunicação (ex. o ponto final remoto encerra a conexão).
+     </p>
+    </p></blockquote>
+    <p class="para">
+     O parâmetro opcional <code class="parameter">type</code> é usado com constantes:
+     <ul class="itemizedlist">
+      <li class="listitem">
+       <span class="simpara">
+        PHP_BINARY_READ - usa a função do sistema <code class="literal">read()</code>.
+        Seguro para leitura de dados binários.  (Padrão no PHP
+        &gt;= 4.1.0)
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        PHP_NORMAL_READ - lê até o final em \n ou \r. (Padrão no PHP &lt;= 4.0.6)
+       </span>
+      </li>
+     </ul>
+    </p>
+    <p class="para">
+     Veja também
+     <span class="function"><a href="function.socket-accept.html" class="function">socket_accept()</a></span>,
+     <span class="function"><a href="function.socket-bind.html" class="function">socket_bind()</a></span>,
+     <span class="function"><a href="function.socket-connect.html" class="function">socket_connect()</a></span>,
+     <span class="function"><a href="function.socket-listen.html" class="function">socket_listen()</a></span>,
+     <span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span>,
+     <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span> e
+     <span class="function"><a href="function.socket-write.html" class="function">socket_write()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Retorna informa&ccedil;&otilde;es sobre um caminho de arquivo</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.parse-ini-string.html">« parse_ini_string</a></li>
+      <li style="float: right;"><a href="function.pclose.html">pclose »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.filesystem.html">Fun&ccedil;&otilde;es para Sistema de arquivo</a></li>
+    <li>Retorna informa&ccedil;&otilde;es sobre um caminho de arquivo</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.pathinfo" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">pathinfo</h1>
+  <p class="verinfo">(PHP 4 &gt;= 4.0.3, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">pathinfo</span> &mdash; <span class="dc-title">Retorna informações sobre um caminho de arquivo</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.pathinfo-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>pathinfo</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$path</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = ?</span></span>): <span class="type"><a href="language.types.declarations.html#language.types.declarations.mixed" class="type mixed">mixed</a></span></div>
+
+  <p class="para rdfs-comment">
+   <span class="function"><strong>pathinfo()</strong></span> retorna um array associativo
+   contendo inforamações sobre o caminho em <code class="parameter">path</code>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.pathinfo-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">path</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O caminho sendo verificado.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">options</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Você pode especificar quais elementos são retornados com o parâmetro
+       opcional <code class="parameter">options</code>. Ele é composto de
+       <strong><code>PATHINFO_DIRNAME</code></strong>,
+       <strong><code>PATHINFO_BASENAME</code></strong>,
+       <strong><code>PATHINFO_EXTENSION</code></strong> e
+       <strong><code>PATHINFO_FILENAME</code></strong>. O padrão é retornar todos
+       os elementos.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.pathinfo-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Os seguintes elementos do <span class="type">array</span> associativo são retornados:
+   <code class="literal">dirname</code>, <code class="literal">basename</code>,
+   <code class="literal">extension</code> (se alguma) e <code class="literal">filename</code>.
+  </p>
+  <p class="para">
+   Se <code class="parameter">options</code> for utilizada, esta função retornará uma
+   <span class="type">string</span> se todos os elementos não forem solicitados.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.pathinfo-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versão</th>
+       <th>Descrição</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.2.0</td>
+       <td>
+        A constante <strong><code>PATHINFO_FILENAME</code></strong> foi adicionada.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.pathinfo-examples">
+  <h3 class="title">Exemplos</h3>
+  <p class="para">
+   <div class="example" id="example-2154">
+    <p><strong>Exemplo #1 Exemplo de <span class="function"><strong>pathinfo()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$path_parts </span><span style="color: #007700">= </span><span style="color: #0000BB">pathinfo</span><span style="color: #007700">(</span><span style="color: #DD0000">'/www/htdocs/index.html'</span><span style="color: #007700">);<br /><br />echo </span><span style="color: #0000BB">$path_parts</span><span style="color: #007700">[</span><span style="color: #DD0000">'dirname'</span><span style="color: #007700">], </span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo </span><span style="color: #0000BB">$path_parts</span><span style="color: #007700">[</span><span style="color: #DD0000">'basename'</span><span style="color: #007700">], </span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo </span><span style="color: #0000BB">$path_parts</span><span style="color: #007700">[</span><span style="color: #DD0000">'extension'</span><span style="color: #007700">], </span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />echo </span><span style="color: #0000BB">$path_parts</span><span style="color: #007700">[</span><span style="color: #DD0000">'filename'</span><span style="color: #007700">], </span><span style="color: #DD0000">"\n"</span><span style="color: #007700">; </span><span style="color: #FF8000">// desde o PHP 5.2.0<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>O exemplo acima produzirá:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+/www/htdocs
+index.html
+html
+index
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.pathinfo-notes">
+  <h3 class="title">Notas</h3>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    Para informações de como resgatar informações do caminho atual,
+    leia a seção de varíaveis <a href="language.variables.predefined.html" class="link">reservadas 
+    pré-definidas.</a>
+   </p>
+  </p></blockquote>
+ </div>
+
+ 
+ <div class="refsect1 seealso" id="refsect1-function.pathinfo-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.dirname.html" class="function" rel="rdfs-seeAlso">dirname()</a> - Retorna o caminho/path do diret&oacute;rio pai</span></li>
+    <li class="member"><span class="function"><a href="function.basename.html" class="function" rel="rdfs-seeAlso">basename()</a> - Retorna apenas a parte que corresponde ao nome do arquivo de um caminho/path</span></li>
+    <li class="member"><span class="function"><a href="function.parse-url.html" class="function" rel="rdfs-seeAlso">parse_url()</a> - Interpreta uma URL e retorna os seus componentes</span></li>
+    <li class="member"><span class="function"><a href="function.realpath.html" class="function" rel="rdfs-seeAlso">realpath()</a> - Retorna o path absoluto canonicalizado</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div></div></div></body></html>

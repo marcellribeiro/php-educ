@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Mostra um arquivo-gz</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.inflate-init.html">« inflate_init</a></li>
+      <li style="float: right;"><a href="function.zlib-decode.html">zlib_decode »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.zlib.html">Fun&ccedil;&otilde;es da Zlib</a></li>
+    <li>Mostra um arquivo-gz</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.readgzfile" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">readgzfile</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">readgzfile</span> &mdash; <span class="dc-title">Mostra um arquivo-gz</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.readgzfile-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>readgzfile</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$use_include_path</code><span class="initializer"> = ?</span></span>): <span class="type">int</span></div>
+
+  <p class="para rdfs-comment"> 
+   Lê um arquivo, descomprime ele e escreve-o para a saída padrão.
+  </p>
+  <p class="para">
+   <span class="function"><strong>readgzfile()</strong></span> pode ser usada para ler um arquivo 
+   o qual não esteja no formato gzip, neste caso <span class="function"><strong>readgzfile()</strong></span> 
+   irá ler diretamente do arquivo sem descompressão.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.readgzfile-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O nome do arquivo. Este arquivo será aberto do sistema de arquivo e
+       seu conteúdo escrito para saída padrão.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">use_include_path</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Você pode definir este parâmetro opcional para <code class="literal">1</code>, se você
+       quer procurar pelo arquivo no <a href="ini.core.html#ini.include-path" class="link">include_path</a> também.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.readgzfile-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para"> 
+   Retorna o número de (descomprimidos) bytes lidos a partir do arquivo.
+   Se acontecer um erro, é retornado <strong><code>false</code></strong> e a menos que a função
+   seja chamada como <code class="literal">@readgzfile</code>, uma mensagem
+   de erro é mostrada.
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.readgzfile-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para"> 
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.gzpassthru.html" class="function" rel="rdfs-seeAlso">gzpassthru()</a> - Envia todos os dados restantes em um ponteiro para arquivo-gz</span></li>
+    <li class="member"><span class="function"><a href="function.gzfile.html" class="function" rel="rdfs-seeAlso">gzfile()</a> - L&ecirc; todo o arquivo-gz para uma matriz</span></li>
+    <li class="member"><span class="function"><a href="function.gzopen.html" class="function" rel="rdfs-seeAlso">gzopen()</a> - Abre um arquivo-gz</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div></div></div></body></html>

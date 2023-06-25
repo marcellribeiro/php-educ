@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Calcula a dist&acirc;ncia Levenshtein entre duas strings</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.lcfirst.html">« lcfirst</a></li>
+      <li style="float: right;"><a href="function.localeconv.html">localeconv »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.strings.html">Fun&ccedil;&otilde;es de String</a></li>
+    <li>Calcula a dist&acirc;ncia Levenshtein entre duas strings</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.levenshtein" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">levenshtein</h1> 
+    <p class="verinfo">(PHP 4 &gt;= 4.0.1, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">levenshtein</span> &mdash; <span class="dc-title">
+     Calcula a distância Levenshtein entre duas strings
+    </span></p>
+
+   </div>
+   <div class="refsect1 unknown-seealsp" id="refsect1-function.levenshtein-unknown-seealsp">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>levenshtein</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$str1</code></span>, <span class="methodparam"><span class="type">string</span> <code class="parameter">$str2</code></span>): <span class="type">int</span></div>
+
+     <div class="methodsynopsis dc-description"><span class="methodname"><strong>levenshtein</strong></span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$str1</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$str2</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$cost_ins</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$cost_rep</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$cost_del</code></span><br>): <span class="type">int</span></div>
+
+     <div class="methodsynopsis dc-description"><span class="methodname"><strong>levenshtein</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$str1</code></span>, <span class="methodparam"><span class="type">string</span> <code class="parameter">$str2</code></span>, <span class="methodparam"><span class="type"><span class="type function">function</span></span> <code class="parameter">$cost</code></span>): <span class="type">int</span></div>
+
+    <p class="para rdfs-comment">
+     Retorna a Levenshtein-Distance entre duas strings argumentos
+     ou -1, se nenhuma das strings argumentos é mais longa que o
+     o limite de 255 caracteres (255 seria mais do que o bastante
+     para o nome ou comparação de dicionário, e 
+     ninguém sério estaria fazendo análises genéticas com PHP).
+    </p>
+    <p class="para">
+     A distância Levenshtein é definida como o número mínimo de 
+     caracteres que você tem para substituir, inserir ou apagar
+     para transformar
+     <code class="parameter">str1</code> dentro de <code class="parameter">str2</code>.
+     A complexidade do algoritmo é <code class="literal">O(m*n)</code>,
+     onde <code class="literal">n</code> e <code class="literal">m</code> são o comprimento
+     da <code class="parameter">str1</code> e
+     <code class="parameter">str2</code> (rather good when compared to
+     <span class="function"><a href="function.similar-text.html" class="function">similar_text()</a></span>, which is O(max(n,m)**3),
+     but still expensive).
+    </p>
+    <p class="para">
+     Na sua forma mais simples a função pegará apenas as duas 
+     strings como parâmetros e calculará apenas o número de operações de
+     inserção, substituição e deletação necessárias para transformar
+     <code class="parameter">str1</code> em <code class="parameter">str2</code>.
+    </p>
+    <p class="para"> 
+     Uma segunda variante pegará três parâmetros adicionais que 
+     definem o custo das operações de inserção, substituição e
+     deletação. Esta é a mais geral e adapatável do que a 
+     variante um, mas não tão eficiente.
+    </p>
+    <p class="para"> 
+     A terceira variante (que ainda não é implementada) será a mais 
+     geral e adaptável, mas também a alternativa mais lenta. Ela
+     chamará uma função de usuário fornecida que determinará o custo 
+     para cada possível operação.
+    </p>
+    <p class="para">
+     A função de usuário fornecida(The user-supplied function) será chamada com os seguintes argumentos:
+     <ul class="itemizedlist">
+      <li class="listitem">
+       <span class="simpara">
+        operation to apply: &#039;I&#039;, &#039;R&#039; ou &#039;D&#039;
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        actual character in string 1
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        actual character in string 2
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        position in string 1
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        position in string 2
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        remaining characters in string 1
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        remaining characters in string 2
+       </span>
+      </li>
+     </ul>
+     The user-supplied function has to return a positive integer
+     describing the cost for this particular operation, but it may
+     decide to use only some of the supplied arguments.
+    </p>
+    <p class="para"> 
+     The user-supplied function approach offers the possibility to
+     take into account the relevance of and/or difference between
+     certain symbols (characters) or even the context those symbols
+     appear in to determine the cost of insert, replace and delete
+     operations, but at the cost of losing all optimizations done
+     regarding cpu register utilization and cache misses that have
+     been worked into the other two variants.
+    </p>
+    <p class="para">
+     Veja também <span class="function"><a href="function.soundex.html" class="function">soundex()</a></span>,
+     <span class="function"><a href="function.similar-text.html" class="function">similar_text()</a></span>, e
+     <span class="function"><a href="function.metaphone.html" class="function">metaphone()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

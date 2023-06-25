@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Compilando extens&otilde;es compartilhadas PECL com o comando pecl</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="install.pecl.windows.html">« Instalando uma extens&atilde;o PHP no Windows</a></li>
+      <li style="float: right;"><a href="install.pecl.phpize.html">Compilando extens&otilde;es compartilhadas PECL com phpize »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="install.pecl.html">Instala&ccedil;&atilde;o das extens&otilde;es PECL</a></li>
+    <li>Compilando extens&otilde;es compartilhadas PECL com o comando pecl</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="install.pecl.pear" class="sect1">
+  <h2 class="title">Compilando extensões compartilhadas PECL com o comando pecl</h2>
+  <p class="simpara">
+   PECL torna fácil criar extensões compartilhadas do PHP. Usando o
+   <a href="https://pear.php.net/manual/en/guide.users.commandline.cli.php" class="link external">&raquo;&nbsp;comando pecl</a>, faça o seguinte:
+  </p>
+  <p class="para">
+   <div class="example-contents screen"><br />
+$ pecl install extname<br />
+   </div>
+  </p>
+  <p class="simpara">
+   Isso baixará o código-fonte de <em class="emphasis">extname</em>,
+   compilará e instalará <var class="filename">extname.so</var> no seu  <a href="ini.core.html#ini.extension-dir" class="link">extension_dir</a>.
+   <var class="filename">extname.so</var> pode, então, ser carregado no arquivo <var class="filename">php.ini</var>
+  </p>
+  <p class="simpara">
+   Por padrão, o comando <code class="literal">pecl</code> não instalará
+   pacotes que estão marcados como <code class="literal">alpha</code> ou
+   <code class="literal">beta</code>. Se nenhum pacote <code class="literal">estável</code>
+   estiver disponível, você pode instalar um pacote <code class="literal">beta</code> usando o
+   seguinte comando:
+  </p>
+  <p class="para">
+   <div class="example-contents screen"><br />
+$ pecl install extname-beta<br />
+   </div>
+  </p>
+  <p class="para">
+   Você também pode instalar uma versão específica, usando essa forma:
+  </p>
+  <p class="para">
+   <div class="example-contents screen"><br />
+$ pecl install extname-0.1<br />
+   </div>
+  </p>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    Depois de habilitada a extensão no <var class="filename">php.ini</var>, reiniciar o servidor web é
+    requerido para as modificações funcionarem.
+   </p>
+  </p></blockquote>
+ </div></div></div></body></html>

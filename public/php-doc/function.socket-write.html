@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Escreve em um socket</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.socket-strerror.html">« socket_strerror</a></li>
+      <li style="float: right;"><a href="function.socket-wsaprotocol-info-export.html">socket_wsaprotocol_info_export »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.sockets.html">Fun&ccedil;&otilde;es para Socket</a></li>
+    <li>Escreve em um socket</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.socket-write" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">socket_write</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">socket_write</span> &mdash; <span class="dc-title">Escreve em um socket</span></p>
+
+   </div>
+   <div class="refsect1 unknown-unknown-unknown-descriptioq" id="refsect1-function.socket-write-unknown-unknown-unknown-descriptioq">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>socket_write</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$socket</code></span>, <span class="methodparam"><span class="type">string</span> <code class="parameter">$buffer</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code><span class="initializer"> = ?</span></span>): <span class="type">int</span></div>
+
+    <div class="warning"><strong class="warning">Aviso</strong><p class="simpara">Esta função é
+<em class="emphasis">EXPERIMENTAL</em>. O comportamento desta função, seu nome e
+documentação poderão mudar sem aviso prévio em futuras versões do PHP.
+Use por sua conta e risco.
+</p></div>
+    <p class="para">
+     A função <span class="function"><strong>socket_write()</strong></span> escreve em um socket 
+     <code class="parameter">socket</code> de
+     <code class="parameter">buffer</code>.
+    </p>
+    <p class="para">
+     O parâmetro opcional <code class="parameter">length</code> pode especificar um
+     comprimento alternativo de bytes escritos para o socket. Se esse comprimento é
+     maior do que o comprimento do buffer, isso será silenciosamente truncado para o comprimento do buffer.
+    </p>
+    <p class="para">
+     Retorna o número de bytes escritos com sucesso para o socket ou <strong><code>false</code></strong>
+     em um erro. O código de erro pode ser retornado com
+     <span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span>. Esse código deve ser passado para
+     <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span> para pegar uma explicação textual do erro.
+    </p>
+    <blockquote class="note"><p><strong class="note">Nota</strong>: 
+     <p class="para">
+      <span class="function"><strong>socket_write()</strong></span> não necessariamente escreve todos os bytes
+      dados do buffer. Isso é valido, dependendo da rede, buffers etc., 
+      somente uma quantidade segura de dados, sempre um byte, é escrito embora
+      seu buffer seja maior. Você deve prestar atenção para involuntariamente
+      esquecer de transmitir o restante dos seus dados.
+     </p>
+    </p></blockquote>
+    <blockquote class="note"><p><strong class="note">Nota</strong>: 
+     <p class="para">
+      Isso é perfeitamente válido para <span class="function"><strong>socket_write()</strong></span> retornar
+      zero que significa que não tem bytes para escrever. Tenha certeza de usar o operador
+      <code class="literal">===</code> para checar por <strong><code>false</code></strong> em caso de um
+      erro.
+     </p>
+    </p></blockquote>
+    <p class="para">
+     Veja também 
+     <span class="function"><a href="function.socket-accept.html" class="function">socket_accept()</a></span>,
+     <span class="function"><a href="function.socket-bind.html" class="function">socket_bind()</a></span>,
+     <span class="function"><a href="function.socket-connect.html" class="function">socket_connect()</a></span>,
+     <span class="function"><a href="function.socket-listen.html" class="function">socket_listen()</a></span>,
+     <span class="function"><a href="function.socket-read.html" class="function">socket_read()</a></span> e
+     <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

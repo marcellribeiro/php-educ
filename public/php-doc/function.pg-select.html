@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Seleciona registros.</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.pg-result-status.html">« pg_result_status</a></li>
+      <li style="float: right;"><a href="function.pg-send-execute.html">pg_send_execute »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.pgsql.html">PostgreSQL Fun&ccedil;&otilde;es</a></li>
+    <li>Seleciona registros.</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.pg-select" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">pg_select</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">pg_select</span> &mdash; <span class="dc-title">
+     Seleciona registros.
+    </span></p>
+
+   </div>
+   <div class="refsect1 unknown-unknown-unknown-unknown-seealss" id="refsect1-function.pg-select-unknown-unknown-unknown-unknown-seealss">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>pg_select</strong></span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$table_name</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">array</span> <code class="parameter">$assoc_array</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = ?</span></span><br>): <span class="type">array</span></div>
+
+    <p class="para rdfs-comment">
+     <span class="function"><strong>pg_select()</strong></span> seleciona registros especificados por
+     <code class="literal">assoc_array</code>, que contém pares do tipo 
+     <code class="literal">campo=&gt;valor</code>. Para uma consulta (query) válida, retorna um
+     array que contém todos os registros e campos que combinam com a condição
+     especificada por <code class="literal">assoc_array</code>. Se
+     <code class="literal">options</code> for especificado,
+     <span class="function"><a href="function.pg-convert.html" class="function">pg_convert()</a></span> será aplicada à
+     <code class="literal">assoc_array</code> com as opções especificadas.
+    </p>
+    <p class="para">
+     <div class="example" id="example-1927">
+      <p><strong>Exemplo #1 pg_select</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />    $db </span><span style="color: #007700">= </span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'nomebd=meubanco'</span><span style="color: #007700">);<br />    </span><span style="color: #FF8000">// Isto é seguro já que $_POST é convertida automaticamente<br />    </span><span style="color: #0000BB">$rec </span><span style="color: #007700">= </span><span style="color: #0000BB">pg_select</span><span style="color: #007700">(</span><span style="color: #0000BB">$bd</span><span style="color: #007700">, </span><span style="color: #DD0000">'post_log'</span><span style="color: #007700">, </span><span style="color: #0000BB">$_POST</span><span style="color: #007700">);<br />    if (</span><span style="color: #0000BB">$rec</span><span style="color: #007700">) {<br />        echo </span><span style="color: #DD0000">"Registros selecionados\n"</span><span style="color: #007700">;<br />        </span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$rec</span><span style="color: #007700">);<br />    }<br />    else {<br />    echo </span><span style="color: #DD0000">"O usuário deve ter inserido dados errados\n"</span><span style="color: #007700">;<br />    }<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+     <div class="warning"><strong class="warning">Aviso</strong><p class="simpara">Esta função é
+<em class="emphasis">EXPERIMENTAL</em>. O comportamento desta função, seu nome e
+documentação poderão mudar sem aviso prévio em futuras versões do PHP.
+Use por sua conta e risco.
+</p></div>
+    <p class="para">
+     Veja também <span class="function"><a href="function.pg-convert.html" class="function">pg_convert()</a></span>
+    </p>    
+   </div>
+
+  </div></div></div></body></html>

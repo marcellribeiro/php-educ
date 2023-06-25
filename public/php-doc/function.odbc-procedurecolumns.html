@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Obt&eacute;m informa&ccedil;&otilde;es sobre par&acirc;metros para procedures</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.odbc-primarykeys.html">« odbc_primarykeys</a></li>
+      <li style="float: right;"><a href="function.odbc-procedures.html">odbc_procedures »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.uodbc.html">ODBC Unificado</a></li>
+    <li>Obt&eacute;m informa&ccedil;&otilde;es sobre par&acirc;metros para procedures</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.odbc-procedurecolumns" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">odbc_procedurecolumns</h1>
+    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">odbc_procedurecolumns</span> &mdash; <span class="dc-title">Obtém informações sobre parâmetros para procedures</span></p>
+
+   </div>
+   <div class="refsect1 unknown-returnvaluet" id="refsect1-function.odbc-procedurecolumns-unknown-returnvaluet">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>odbc_procedurecolumns</strong></span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection_id</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$qualifier</code><span class="initializer"> = ?</span></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$owner</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$proc</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$column</code></span><br>): <span class="type">resource</span></div>
+
+    <p class="para rdfs-comment">
+     Retorna uma lista de parâmetros de entrada e saída, assim como
+     as colunas que fazem parte do conjunto de resultados para os procedures especificados.
+     Retorna um idenficador de resultado ODBC ou <strong><code>false</code></strong> em caso de falha.
+    </p>
+    <p class="para">
+     O conjunto de resultados tem as seguintes colunas:
+     <ul class="itemizedlist">
+      <li class="listitem"><span class="simpara">PROCEDURE_QUALIFIER</span></li>
+      <li class="listitem"><span class="simpara">PROCEDURE_OWNER</span></li>
+      <li class="listitem"><span class="simpara">PROCEDURE_NAME</span></li>
+      <li class="listitem"><span class="simpara">COLUMN_NAME</span></li>
+      <li class="listitem"><span class="simpara">COLUMN_TYPE</span></li>
+      <li class="listitem"><span class="simpara">DATA_TYPE</span></li>
+      <li class="listitem"><span class="simpara">TYPE_NAME</span></li>
+      <li class="listitem"><span class="simpara">PRECISION</span></li>
+      <li class="listitem"><span class="simpara">LENGTH</span></li>
+      <li class="listitem"><span class="simpara">SCALE</span></li>
+      <li class="listitem"><span class="simpara">RADIX</span></li>
+      <li class="listitem"><span class="simpara">NULLABLE</span></li>
+      <li class="listitem"><span class="simpara">REMARKS</span></li>
+     </ul>
+    </p>
+    <p class="simpara">O conjunto de resultados é ordenado por PROCEDURE_QUALIFIER, PROCEDURE_OWNER,
+     PROCEDURE_NAME e COLUMN_TYPE.
+    </p>
+    <p class="para">
+     Os argumentos <code class="parameter">owner</code>, <code class="parameter">proc</code> and
+     <code class="parameter">column</code> aceitam modelos de busca
+     (&#039;%&#039; para buscar zero ou mais caracteres e &#039;_&#039; para buscar um único caractere).
+    </p>
+   </div>
+
+  </div></div></div></body></html>

@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Envia uma consulta MySQL</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.mysql-db-name.html">« mysql_db_name</a></li>
+      <li style="float: right;"><a href="function.mysql-drop-db.html">mysql_drop_db »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.mysql.html">Fun&ccedil;&otilde;es da MySQL</a></li>
+    <li>Envia uma consulta MySQL</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.mysql-db-query" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">mysql_db_query</h1>
+  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_db_query</span> &mdash; <span class="dc-title">Envia uma consulta MySQL</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.mysql-db-query-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>mysql_db_query</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$database</code></span>, <span class="methodparam"><span class="type">string</span> <code class="parameter">$query</code></span>, <span class="methodparam"><span class="type">resource</span> <code class="parameter">$link_identifier</code><span class="initializer"> = ?</span></span>): <span class="type">resource</span></div>
+
+  <p class="para rdfs-comment">
+   <span class="function"><strong>mysql_db_query()</strong></span> seleciona um banco de dados, e executa
+   uma consulta nele.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.mysql-db-query-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">database</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O nome do banco de dados que será selecionado.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">query</code></dt>
+
+     <dd>
+
+      <p class="para">
+       A consulta MySQL.
+      </p>
+     </dd>
+
+    
+    <dt>
+
+<code class="parameter">link_identifier</code></dt>
+<dd>
+<p class="para">A conexão MySQL. Se o
+identificador da conexão não for especificado, a última conexão aberta por
+<span class="function"><a href="function.mysql-connect.html" class="function">mysql_connect()</a></span> será usada. Se não houver uma conexão anterior,
+haverá uma tentativa de criar uma como se <span class="function"><a href="function.mysql-connect.html" class="function">mysql_connect()</a></span> tivesse sido chamada
+sem argumentos. Se nenhuma conexão for encontrada ou estabelecida, um erro de nível
+<strong><code>E_WARNING</code></strong> será gerado.</p></dd>
+
+
+   </dl>
+
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 returnvalues" id="refsect1-function.mysql-db-query-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna um recurso de resultado MySQL com o resultado da consulta,
+   ou <strong><code>false</code></strong> em caso de erro. A função também retorna <strong><code>true</code></strong>/<strong><code>false</code></strong> para consultas
+   <code class="literal">INSERT</code>/<code class="literal">UPDATE</code>/<code class="literal">DELETE</code>
+   para indicar sucesso/falha.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.mysql-db-query-examples">
+  <h3 class="title">Exemplos</h3>
+  <p class="para">
+   <div class="example" id="example-1751">
+    <p><strong>Exemplo #1 Exemplo alternativo <span class="function"><strong>mysql_db_query()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">if (!</span><span style="color: #0000BB">$link </span><span style="color: #007700">= </span><span style="color: #0000BB">mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">'mysql_host'</span><span style="color: #007700">, </span><span style="color: #DD0000">'mysql_user'</span><span style="color: #007700">, </span><span style="color: #DD0000">'mysql_password'</span><span style="color: #007700">)) {<br />    echo </span><span style="color: #DD0000">'Não foi possível conectar ao mysql'</span><span style="color: #007700">;<br />    exit;<br />}<br /><br />if (!</span><span style="color: #0000BB">mysql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">'mysql_dbname'</span><span style="color: #007700">, </span><span style="color: #0000BB">$link</span><span style="color: #007700">)) {<br />    echo </span><span style="color: #DD0000">'Não foi possível selecionar o banco de dados'</span><span style="color: #007700">;<br />    exit;<br />}<br /><br /></span><span style="color: #0000BB">$sql    </span><span style="color: #007700">= </span><span style="color: #DD0000">'SELECT foo FROM bar WHERE id = 42'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$result </span><span style="color: #007700">= </span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$sql</span><span style="color: #007700">, </span><span style="color: #0000BB">$link</span><span style="color: #007700">);<br /><br />if (!</span><span style="color: #0000BB">$result</span><span style="color: #007700">) {<br />    echo </span><span style="color: #DD0000">"Erro do banco de dados, não foi possível consultar o banco de dados\n"</span><span style="color: #007700">;<br />    echo </span><span style="color: #DD0000">'Erro MySQL: ' </span><span style="color: #007700">. </span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">();<br />    exit;<br />}<br /><br />while (</span><span style="color: #0000BB">$row </span><span style="color: #007700">= </span><span style="color: #0000BB">mysql_fetch_assoc</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">)) {<br />    echo </span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">];<br />}<br /><br /></span><span style="color: #0000BB">mysql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.mysql-db-query-notes">
+  <h3 class="title">Notas</h3>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    Tenha cuidado que esta função <em class="emphasis">NÃO</em>
+    muda de volta para o banco de dados que você estava conectado antes. Em outras palavras,
+    você não pode usar esta função para <em class="emphasis">temporariamente</em> executar
+    uma consulta sql em outro banco de dados, você deverá manualmente retornar ao banco de dados anterior.
+    Aos usuários é fortemente recomendado usar a sintaxe
+    <code class="literal">bancodedados.tabela</code> nas suas consultas ou
+    <span class="function"><a href="function.mysql-select-db.html" class="function">mysql_select_db()</a></span> ao invés desta função.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.mysql-db-query-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.mysql-query.html" class="function" rel="rdfs-seeAlso">mysql_query()</a> - Envia uma consulta MySQL</span></li>
+    <li class="member"><span class="function"><a href="function.mysql-select-db.html" class="function" rel="rdfs-seeAlso">mysql_select_db()</a> - Seleciona um banco de dados MySQL</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div></div></div></body></html>

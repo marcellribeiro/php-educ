@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Sincroniza com o backend PostgreSQL</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.pg-delete.html">« pg_delete</a></li>
+      <li style="float: right;"><a href="function.pg-escape-bytea.html">pg_escape_bytea »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.pgsql.html">PostgreSQL Fun&ccedil;&otilde;es</a></li>
+    <li>Sincroniza com o backend PostgreSQL</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.pg-end-copy" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">pg_end_copy</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.0.3, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">pg_end_copy</span> &mdash; <span class="dc-title">Sincroniza com o backend PostgreSQL</span></p>
+
+   </div>
+   <div class="refsect1 unknown-unknown-unknown-unknown-unknown-unknown-changelom" id="refsect1-function.pg-end-copy-unknown-unknown-unknown-unknown-unknown-unknown-changelom">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>pg_end_copy</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code><span class="initializer"> = ?</span></span>): <span class="type">bool</span></div>
+
+    <p class="para rdfs-comment">
+     <span class="function"><strong>pg_end_copy()</strong></span> sincroniza o frontend PostgreSQL
+     (geralmente um processo de servidor HTTP) com o servidor PostgreSQL depois
+     de fazer uma operação de cópia usando 
+     <span class="function"><a href="function.pg-put-line.html" class="function">pg_put_line()</a></span>. <span class="function"><strong>pg_end_copy()</strong></span>
+     deve ser chamada, caso contrário o servidor PostgreSQL pode perder a
+     sincronia com o frontend fazendo com que o servidor gere um erro. Retorna <strong><code>true</code></strong> em caso de sucesso ou <strong><code>false</code></strong> em caso de falha.
+    </p>
+    <p class="para">
+     Para maiores detalhes e um exemplo, veja também
+     <span class="function"><a href="function.pg-put-line.html" class="function">pg_put_line()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

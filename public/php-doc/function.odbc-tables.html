@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Obt&eacute;m uma lista dos nomes das tabelas guardadas em uma fonte de dados especificado</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.odbc-tableprivileges.html">« odbc_tableprivileges</a></li>
+      <li style="float: right;"><a href="book.pdo.html">PDO »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.uodbc.html">ODBC Unificado</a></li>
+    <li>Obt&eacute;m uma lista dos nomes das tabelas guardadas em uma fonte de dados especificado</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.odbc-tables" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">odbc_tables</h1>
+    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">odbc_tables</span> &mdash; <span class="dc-title">Obtém uma lista dos nomes das tabelas guardadas em uma fonte de dados especificado</span></p>
+
+   </div>
+   <div class="refsect1 unknown-unknown-unknown-unknown-unknown-returnvaluex" id="refsect1-function.odbc-tables-unknown-unknown-unknown-unknown-unknown-returnvaluex">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>odbc_tables</strong></span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection_id</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$qualifier</code><span class="initializer"> = ?</span></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$owner</code><span class="initializer"> = ?</span></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$name</code><span class="initializer"> = ?</span></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$types</code><span class="initializer"> = ?</span></span><br>): <span class="type">resource</span></div>
+
+    <p class="para rdfs-comment">
+     Lista todas as tabelas no intervalo solicitado. Retorna um identificador de resultado
+     contendo a informação ou <strong><code>false</code></strong> em caso de falha.
+    </p>
+    <p class="para">
+     O conjunto de resultados tem as seguintes colunas:
+     <ul class="itemizedlist">
+      <li class="listitem"><span class="simpara">TABLE_QUALIFIER</span></li>
+      <li class="listitem"><span class="simpara">TABLE_OWNER</span></li>
+      <li class="listitem"><span class="simpara">TABLE_NAME</span></li>
+      <li class="listitem"><span class="simpara">TABLE_TYPE</span></li>
+      <li class="listitem"><span class="simpara">REMARKS</span></li>
+     </ul>
+    </p>
+    <p class="simpara">
+     O conjunto de resultados é ordenado por TABLE_TYPE, TABLE_QUALIFIER,
+     TABLE_OWNER e TABLE_NAME.
+    </p>
+    <p class="para">
+     Os argumentos <code class="parameter">owner</code> e <code class="parameter">name</code>
+     aceitam caracteres de busca (&#039;%&#039; para buscar zero ou mais caracteres
+     e &#039;_&#039; para buscar um único caractere).
+    </p>
+    <p class="para">
+     Para suportar a enumeração de qualifiers, owners, e table types,
+     a seguinte semantica especial para
+     <code class="parameter">qualifier</code>, <code class="parameter">owner</code>,
+     <code class="parameter">name</code>, e
+     <code class="parameter">table_type</code> esta disponível:
+     <ul class="itemizedlist">
+      <li class="listitem">
+       <span class="simpara">
+        Se <code class="parameter">qualifier</code> é um único caractere
+        de porcentagem (%) e <code class="parameter">owner</code> e
+        <code class="parameter">name</code> são strings vazias, então o conjunto de resultados
+        contém uma lista dos qualifiers válidos para a fonte de dados.
+        (Todas as colunas exceto a coluna TABLE_QUALIFIER contém NULLs.)
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Se <code class="parameter">owner</code> é um único caractere de 
+        porcentagem (%) e <code class="parameter">qualifier</code> e
+        <code class="parameter">name</code> são strings vazias, então o conjunto de resultados
+        contém uma lista dos owners válidos para a fonte de dados.
+        (Todas as colunas exceto a coluna TABLE_OWNER contém NULLs.)
+       </span>
+      </li>
+      <li class="listitem">
+       <span class="simpara">
+        Se <code class="parameter">table_type</code> é um único caractere de
+        porcentagem (%) e <code class="parameter">qualifier</code>,
+        <code class="parameter">owner</code> e <code class="parameter">name</code>
+        são strings vazias, então o conjunto de resultados contém uma lista
+        de table types válido para a fonte de dados.
+        (Todas as colunas exceto a coluna TABLE_TYPE contém NULLs.)
+       </span>
+      </li>
+     </ul>
+    </p>
+    <p class="para">
+     Se <code class="parameter">table_type</code> não for uma string vazia,
+     deve conter uma lista de valores separados por vírgula para os
+     tipos que interessem, cada valor pode estar entre aspas simples (&#039;)
+     ou sem aspas. Poe exemplo, &quot;&#039;TABLE&#039;,&#039;VIEW&#039;&quot; ou &quot;TABLE, VIEW&quot;. Se a 
+     fonte de dados não suportar o tipo de tabela especificado,
+     <span class="function"><strong>odbc_tables()</strong></span> não retorna nenhum resultado para este tipo.
+    </p>
+    <p class="simpara">
+     Veja também <span class="function"><a href="function.odbc-tableprivileges.html" class="function">odbc_tableprivileges()</a></span> para obter
+     os privilégios associados.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

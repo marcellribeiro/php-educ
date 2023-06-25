@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Envia dados para um socket conectado</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.socket-select.html">« socket_select</a></li>
+      <li style="float: right;"><a href="function.socket-sendmsg.html">socket_sendmsg »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.sockets.html">Fun&ccedil;&otilde;es para Socket</a></li>
+    <li>Envia dados para um socket conectado</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.socket-send" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">socket_send</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">socket_send</span> &mdash; <span class="dc-title">Envia dados para um socket conectado</span></p>
+
+   </div>
+   <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.socket-send-unknown-unknown-seealsq">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>socket_send</strong></span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">resource</span> <code class="parameter">$socket</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$buf</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$len</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$flags</code></span><br>): <span class="type">int</span></div>
+
+     <div class="warning"><strong class="warning">Aviso</strong><p class="simpara">Esta função é
+<em class="emphasis">EXPERIMENTAL</em>. O comportamento desta função, seu nome e
+documentação poderão mudar sem aviso prévio em futuras versões do PHP.
+Use por sua conta e risco.
+</p></div>
+    <p class="para">
+     A função <span class="function"><strong>socket_send()</strong></span> envia
+     <code class="parameter">len</code> bytes para o socket 
+     <code class="parameter">socket</code> de <code class="parameter">buf</code>
+    </p>
+    <p class="para">
+     O valor de <code class="parameter">flags</code> pode ser alguma combinação
+     <code class="literal">ORed</code> das seguintes:
+     <table class="doctable table">
+      <caption><strong>Possíveis valores para <code class="parameter">flags</code></strong></caption>
+      
+       <tbody class="tbody">
+        <tr>
+         <td><code class="literal">0x1</code></td>
+         <td>
+          Processo OOB (out-of-band) de dados
+         </td>
+        </tr>
+
+        <tr>
+         <td><code class="literal">0x2</code></td>
+         <td>
+          Ver mensagens de entrada.
+         </td>
+        </tr>
+
+        <tr>
+         <td><code class="literal">0x4</code></td>
+         <td>
+          Bypass routing, usa interface direta.
+         </td>
+        </tr>
+
+        <tr>
+         <td><code class="literal">0x8</code></td>
+         <td>
+          Fluxo completo de dados.
+         </td>
+        </tr>
+
+        <tr>
+         <td><code class="literal">0x100</code></td>
+         <td>
+          Transação completa de dados.
+         </td>
+        </tr>
+
+       </tbody>
+      
+     </table>
+
+    </p>
+    <p class="para">
+     Veja também 
+     <span class="function"><a href="function.socket-sendmsg.html" class="function">socket_sendmsg()</a></span> e
+     <span class="function"><a href="function.socket-sendto.html" class="function">socket_sendto()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

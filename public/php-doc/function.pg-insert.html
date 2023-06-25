@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Insere um array na tabela</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.pg-host.html">« pg_host</a></li>
+      <li style="float: right;"><a href="function.pg-last-error.html">pg_last_error »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.pgsql.html">PostgreSQL Fun&ccedil;&otilde;es</a></li>
+    <li>Insere um array na tabela</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.pg-insert" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">pg_insert</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.3.0, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">pg_insert</span> &mdash; <span class="dc-title">
+     Insere um array na tabela
+    </span></p>
+
+   </div>
+   <div class="refsect1 unknown-unknown-unknown-seealsr" id="refsect1-function.pg-insert-unknown-unknown-unknown-seealsr">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>pg_insert</strong></span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$table_name</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">array</span> <code class="parameter">$assoc_array</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$options</code><span class="initializer"> = ?</span></span><br>): <span class="type">bool</span></div>
+
+    <p class="para rdfs-comment">
+     <span class="function"><strong>pg_insert()</strong></span> insere os valores de  <code class="parameter">assoc_array</code>
+     na tabela especificada por <code class="parameter">table_name</code>.
+     <code class="parameter">table_name</code> deve ter no mínimo tantas colunas quanto forem os elementos em
+     <code class="parameter">assoc_array</code>. Os nomes dos campos assim como os
+     valores em <code class="parameter">table_name</code>
+     devem ser iguais aos índices e valores de <code class="parameter">assoc_array</code>.
+     Retorna <strong><code>true</code></strong> em caso de sucesso ou <strong><code>false</code></strong> em caso de falha.
+     Se o parâmetro <code class="parameter">options</code> for especificado, <span class="function"><strong>pg_insert()</strong></span>
+     é aplicado em <code class="parameter">assoc_array</code> com a opção especificada.
+    </p>
+    <p class="para">
+     <div class="example" id="example-1918">
+      <p><strong>Exemplo #1 pg_insert</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />    $db </span><span style="color: #007700">= </span><span style="color: #0000BB">pg_connect </span><span style="color: #007700">(</span><span style="color: #DD0000">'dbname=meubanco'</span><span style="color: #007700">);<br />    </span><span style="color: #FF8000">// Isto é seguro uma vez que $_POST é convertido automaticamente<br />    </span><span style="color: #0000BB">$res </span><span style="color: #007700">= </span><span style="color: #0000BB">pg_insert</span><span style="color: #007700">(</span><span style="color: #0000BB">$db</span><span style="color: #007700">, </span><span style="color: #DD0000">'post_log'</span><span style="color: #007700">, </span><span style="color: #0000BB">$_POST</span><span style="color: #007700">);<br />    if (</span><span style="color: #0000BB">$res</span><span style="color: #007700">) {<br />        echo </span><span style="color: #DD0000">"Dados POST arquivados com sucesso\n"</span><span style="color: #007700">;<br />    }<br />    else {<br />        echo </span><span style="color: #DD0000">"O usuário deve ter inserido entradas inválidas\n"</span><span style="color: #007700">;<br />    }<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+     <div class="warning"><strong class="warning">Aviso</strong><p class="simpara">Esta função é
+<em class="emphasis">EXPERIMENTAL</em>. O comportamento desta função, seu nome e
+documentação poderão mudar sem aviso prévio em futuras versões do PHP.
+Use por sua conta e risco.
+</p></div>
+    <p class="para">
+     Veja também <span class="function"><a href="function.pg-convert.html" class="function">pg_convert()</a></span>.
+    </p>    
+   </div>
+
+  </div></div></div></body></html>

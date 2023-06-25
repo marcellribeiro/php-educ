@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Passa um nome para o socket</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.socket-addrinfo-lookup.html">« socket_addrinfo_lookup</a></li>
+      <li style="float: right;"><a href="function.socket-clear-error.html">socket_clear_error »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.sockets.html">Fun&ccedil;&otilde;es para Socket</a></li>
+    <li>Passa um nome para o socket</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.socket-bind" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">socket_bind</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.1.0, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">socket_bind</span> &mdash; <span class="dc-title">Passa um nome para o socket</span></p>
+
+   </div>
+   <div class="refsect1 unknown-seealsp" id="refsect1-function.socket-bind-unknown-seealsp">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>socket_bind</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$socket</code></span>, <span class="methodparam"><span class="type">string</span> <code class="parameter">$address</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$port</code><span class="initializer"> = ?</span></span>): <span class="type">bool</span></div>
+
+    <div class="warning"><strong class="warning">Aviso</strong><p class="simpara">Esta função é
+<em class="emphasis">EXPERIMENTAL</em>. O comportamento desta função, seu nome e
+documentação poderão mudar sem aviso prévio em futuras versões do PHP.
+Use por sua conta e risco.
+</p></div>
+    <p class="para">
+     <span class="function"><strong>socket_bind()</strong></span> passa o nome dado em
+     <code class="parameter">address</code> para o socket descrito por
+     <code class="parameter">socket</code>, que deve ser um resource socket válido
+     criado com <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span>.
+    </p>
+    <p class="para">
+     O parâmetro <code class="parameter">address</code> é qualquer endereço IP
+     na notação &quot;dotted-quad&quot; (ex. <code class="literal">127.0.0.1</code>), se o socket é da família <strong><code>AF_INET</code></strong>; ou o pathname de um
+     Unix-domain socket, se o socket é da família
+     <strong><code>AF_UNIX</code></strong>.
+    </p>
+    <p class="para">
+     O parâmetro <code class="parameter">port</code> é somente usado quando
+     estiver conectando com um socket <strong><code>AF_INET</code></strong>, e
+     determina a porta no host remoto para o qual a conexão deve ser feita.
+    </p>
+    <p class="para">
+     Retorna <strong><code>true</code></strong> em caso de sucesso ou <strong><code>false</code></strong> em caso de falha. O código de erro pode ser retornado com
+     <span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span>. Esse código deve ser passado para
+     <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span> para pegar uma explicação textual do 
+     erro. Note que <span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span> é reportado para
+     retornar um código de erro inválido no caso de você estar tentando passar um socket
+     para um endereço errado que não pertence à sua máquina Windows 9x/ME.
+    </p>
+    <p class="para">
+     Veja também
+     <span class="function"><a href="function.socket-connect.html" class="function">socket_connect()</a></span>,
+     <span class="function"><a href="function.socket-listen.html" class="function">socket_listen()</a></span>,
+     <span class="function"><a href="function.socket-create.html" class="function">socket_create()</a></span>,
+     <span class="function"><a href="function.socket-last-error.html" class="function">socket_last_error()</a></span> e
+     <span class="function"><a href="function.socket-strerror.html" class="function">socket_strerror()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

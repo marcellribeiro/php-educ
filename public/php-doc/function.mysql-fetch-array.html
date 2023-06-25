@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Obt&eacute;m uma linha como uma matriz associativa, uma matriz num&eacute;rica, ou ambas</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.mysql-escape-string.html">« mysql_escape_string</a></li>
+      <li style="float: right;"><a href="function.mysql-fetch-assoc.html">mysql_fetch_assoc »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.mysql.html">Fun&ccedil;&otilde;es da MySQL</a></li>
+    <li>Obt&eacute;m uma linha como uma matriz associativa, uma matriz num&eacute;rica, ou ambas</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.mysql-fetch-array" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">mysql_fetch_array</h1>
+  <p class="verinfo">(PHP 4, PHP 5)</p><p class="refpurpose"><span class="refname">mysql_fetch_array</span> &mdash; <span class="dc-title">Obtém uma linha como uma matriz associativa, uma matriz numérica, ou ambas</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.mysql-fetch-array-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>mysql_fetch_array</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$result_type</code><span class="initializer"> = ?</span></span>): <span class="type">array</span></div>
+
+  <p class="para rdfs-comment">
+   Retorna uma matriz que corresponde a linha obtida
+   e move o ponteiro interno dos dados adiante.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.mysql-fetch-array-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    <dt>
+
+<code class="parameter">result</code></dt>
+<dd>
+<p class="para">O <span class="type">resource</span> do resultado que
+está sendo avaliado. Este resultado vem de uma chamada a
+<span class="function"><a href="function.mysql-query.html" class="function">mysql_query()</a></span>.</p></dd>
+
+    
+     <dt>
+<code class="parameter">result_type</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O tipo de array que deve ser obtida. é uma constante e pode
+       ter os seguintes valores: <strong><code>MYSQL_ASSOC</code></strong>, 
+       <strong><code>MYSQL_NUM</code></strong>, e o valor padrão de  
+       <strong><code>MYSQL_BOTH</code></strong>.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 returnvalues" id="refsect1-function.mysql-fetch-array-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna uma array que corresponde a linha obtida, ou <strong><code>false</code></strong>
+   se não houver mais linhas. O tipo da array retornada depende de
+   como <code class="parameter">result_type</code> esta definido. Usando 
+   <strong><code>MYSQL_BOTH</code></strong> (padrão), você terá um array com ambos os
+   índices, numérico e associativo. Usando <strong><code>MYSQL_ASSOC</code></strong>, você
+   tem apenas os índices associativos (como <span class="function"><a href="function.mysql-fetch-assoc.html" class="function">mysql_fetch_assoc()</a></span> 
+   funciona), usando <strong><code>MYSQL_NUM</code></strong>, você tem apenas os índices numéricos 
+   (como <span class="function"><a href="function.mysql-fetch-row.html" class="function">mysql_fetch_row()</a></span> funciona).
+  </p>
+  <p class="para">
+   Se duas ou mais colunas do resultado tiverem os mesmos nomes de campos,
+   a ultima coluna terá precedencia. Para acessar a(s) outra(s) coluna(s)
+   com o mesmo nome, você deverá usar o índice numérico da coluna ou fazer
+   um alias para a coluna. Para colunas com alias, você não pode acessar
+   os conteúdos com o nome original da coluna.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.mysql-fetch-array-examples">
+  <h3 class="title">Exemplos</h3>
+  <p class="para">
+   <div class="example" id="example-1756">
+    <p><strong>Exemplo #1 Consulta com nomes de campos duplicados usando alias</strong></p>
+    <div class="example-contents">
+<div class="sqlcode"><pre class="sqlcode">SELECT table1.field AS foo, table2.field AS bar FROM table1, table2</pre>
+</div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-1757">
+    <p><strong>Exemplo #2 <span class="function"><strong>mysql_fetch_array()</strong></span> com <strong><code>MYSQL_NUM</code></strong></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">, </span><span style="color: #DD0000">"mysql_user"</span><span style="color: #007700">, </span><span style="color: #DD0000">"mysql_password"</span><span style="color: #007700">) or<br />    die(</span><span style="color: #DD0000">"Não foi possível conectar: " </span><span style="color: #007700">. </span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">mysql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">"mydb"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$result </span><span style="color: #007700">= </span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT id, name FROM mytable"</span><span style="color: #007700">);<br /><br />while (</span><span style="color: #0000BB">$row </span><span style="color: #007700">= </span><span style="color: #0000BB">mysql_fetch_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">, </span><span style="color: #0000BB">MYSQL_NUM</span><span style="color: #007700">)) {<br />    </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"ID: %s  Name: %s"</span><span style="color: #007700">, </span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">], </span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #0000BB">1</span><span style="color: #007700">]);  <br />}<br /><br /></span><span style="color: #0000BB">mysql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-1758">
+    <p><strong>Exemplo #3 <span class="function"><strong>mysql_fetch_array()</strong></span> com <strong><code>MYSQL_ASSOC</code></strong></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">, </span><span style="color: #DD0000">"mysql_user"</span><span style="color: #007700">, </span><span style="color: #DD0000">"mysql_password"</span><span style="color: #007700">) or<br />    die(</span><span style="color: #DD0000">"Não foi possível conectar: " </span><span style="color: #007700">. </span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">mysql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">"mydb"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$result </span><span style="color: #007700">= </span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT id, name FROM mytable"</span><span style="color: #007700">);<br /><br />while (</span><span style="color: #0000BB">$row </span><span style="color: #007700">= </span><span style="color: #0000BB">mysql_fetch_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">, </span><span style="color: #0000BB">MYSQL_ASSOC</span><span style="color: #007700">)) {<br />    </span><span style="color: #0000BB">printf</span><span style="color: #007700">(</span><span style="color: #DD0000">"ID: %s  Name: %s"</span><span style="color: #007700">, </span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">"id"</span><span style="color: #007700">], </span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">"name"</span><span style="color: #007700">]);<br />}<br /><br /></span><span style="color: #0000BB">mysql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <div class="example" id="example-1759">
+    <p><strong>Exemplo #4 <span class="function"><strong>mysql_fetch_array()</strong></span> com <strong><code>MYSQL_BOTH</code></strong></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />mysql_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"localhost"</span><span style="color: #007700">, </span><span style="color: #DD0000">"mysql_user"</span><span style="color: #007700">, </span><span style="color: #DD0000">"mysql_password"</span><span style="color: #007700">) or<br />    die(</span><span style="color: #DD0000">"Não foi possível conectar: " </span><span style="color: #007700">. </span><span style="color: #0000BB">mysql_error</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">mysql_select_db</span><span style="color: #007700">(</span><span style="color: #DD0000">"mydb"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$result </span><span style="color: #007700">= </span><span style="color: #0000BB">mysql_query</span><span style="color: #007700">(</span><span style="color: #DD0000">"SELECT id, name FROM mytable"</span><span style="color: #007700">);<br /><br />while (</span><span style="color: #0000BB">$row </span><span style="color: #007700">= </span><span style="color: #0000BB">mysql_fetch_array</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">, </span><span style="color: #0000BB">MYSQL_BOTH</span><span style="color: #007700">)) {<br />    </span><span style="color: #0000BB">printf </span><span style="color: #007700">(</span><span style="color: #DD0000">"ID: %s  Name: %s"</span><span style="color: #007700">, </span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #0000BB">0</span><span style="color: #007700">], </span><span style="color: #0000BB">$row</span><span style="color: #007700">[</span><span style="color: #DD0000">"name"</span><span style="color: #007700">]);<br />}<br /><br /></span><span style="color: #0000BB">mysql_free_result</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.mysql-fetch-array-notes">
+  <h3 class="title">Notas</h3>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <strong>Performance</strong><br />
+   <p class="para">
+    Uma coisa importante para notar que usar 
+    <span class="function"><strong>mysql_fetch_array()</strong></span> <em class="emphasis">não 
+    é significativamente</em> mais lento do que usar
+    <span class="function"><a href="function.mysql-fetch-row.html" class="function">mysql_fetch_row()</a></span>, enquanto provê
+    um valor agregado significante.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: <span class="simpara">Os nomes de campos retornados por esta função
+<em class="emphasis">diferenciam maiúsculas e minúsculas</em>.</span></p></blockquote>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: <span class="simpara">Esta função define campos NULL como o
+valor <strong><code>null</code></strong> do PHP.</span></p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.mysql-fetch-array-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.mysql-fetch-row.html" class="function" rel="rdfs-seeAlso">mysql_fetch_row()</a> - Obt&eacute;m uma linha como um array num&eacute;rico</span></li>
+    <li class="member"><span class="function"><a href="function.mysql-fetch-assoc.html" class="function" rel="rdfs-seeAlso">mysql_fetch_assoc()</a> - Obt&eacute;m uma linha do resultado como um array associativo</span></li>
+    <li class="member"><span class="function"><a href="function.mysql-data-seek.html" class="function" rel="rdfs-seeAlso">mysql_data_seek()</a> - Move o ponteiro interno do resultado</span></li>
+    <li class="member"><span class="function"><a href="function.mysql-query.html" class="function" rel="rdfs-seeAlso">mysql_query()</a> - Envia uma consulta MySQL</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div></div></div></body></html>

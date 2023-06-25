@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Desenha um elipse</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.imagedestroy.html">« imagedestroy</a></li>
+      <li style="float: right;"><a href="function.imagefill.html">imagefill »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.image.html">Fun&ccedil;&otilde;es da GD</a></li>
+    <li>Desenha um elipse</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.imageellipse" class="refentry">
+  <div class="refnamediv">
+   <h1 class="refname">imageellipse</h1>
+   <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">imageellipse</span> &mdash; <span class="dc-title">Desenha um elipse</span></p>
+
+  </div>
+  <div class="refsect1 unknown-returnvaluet" id="refsect1-function.imageellipse-unknown-returnvaluet">
+   <h3 class="title">Descrição</h3>
+    <div class="methodsynopsis dc-description">
+     <span class="methodname"><strong>imageellipse</strong></span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$cx</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$cy</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$w</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$h</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$color</code></span><br>): <span class="type">int</span></div>
+
+   <p class="para rdfs-comment">
+    <span class="function"><strong>imageellipse()</strong></span> desenha um elipse centrado na posição
+    <code class="parameter">cx</code>, <code class="parameter">cy</code> (em cima a esquerda é
+    0, 0) na imagem representada por <code class="parameter">image</code>.
+    <code class="parameter">W</code> e <code class="parameter">h</code> especifica a
+    largura e altura do elipse, respectivamente. A cor do elipse é
+    especificada por <code class="parameter">color</code>.
+   </p>
+   <blockquote class="note"><p><strong class="note">Nota</strong>: <p class="para">
+    Esta função foi adicionada no PHP 4.0.6 e requer GD 2.0.2 ou posterior
+    que pode ser obtida em <a href="http://www.libgd.org/" class="link external">&raquo;&nbsp;http://www.libgd.org/</a>
+   </p></p></blockquote>
+   <p class="para">
+    <div class="example" id="example-2578">
+     <p><strong>Exemplo #1 Exemplo <span class="function"><strong>imageellipse()</strong></span></strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">// cria uma imagem em branco<br /></span><span style="color: #0000BB">$image </span><span style="color: #007700">= </span><span style="color: #0000BB">imagecreate</span><span style="color: #007700">(</span><span style="color: #0000BB">400</span><span style="color: #007700">, </span><span style="color: #0000BB">300</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">// prenche a cor do fundo<br /></span><span style="color: #0000BB">$bg </span><span style="color: #007700">= </span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$image</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">// escolhe uma cor para o elipse<br /></span><span style="color: #0000BB">$col_ellipse </span><span style="color: #007700">= </span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$image</span><span style="color: #007700">, </span><span style="color: #0000BB">255</span><span style="color: #007700">, </span><span style="color: #0000BB">255</span><span style="color: #007700">, </span><span style="color: #0000BB">255</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">// desenha o elipse<br /></span><span style="color: #0000BB">imageellipse</span><span style="color: #007700">(</span><span style="color: #0000BB">$image</span><span style="color: #007700">, </span><span style="color: #0000BB">200</span><span style="color: #007700">, </span><span style="color: #0000BB">150</span><span style="color: #007700">, </span><span style="color: #0000BB">300</span><span style="color: #007700">, </span><span style="color: #0000BB">200</span><span style="color: #007700">, </span><span style="color: #0000BB">$col_ellipse</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">// mostra a imagem<br /></span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-type: image/png"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">imagepng</span><span style="color: #007700">(</span><span style="color: #0000BB">$image</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Veja também <span class="function"><a href="function.imagefilledellipse.html" class="function">imagefilledellipse()</a></span> e
+    <span class="function"><a href="function.imagearc.html" class="function">imagearc()</a></span>.
+   </p>
+  </div>
+
+ </div></div></div></body></html>

@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Ler uma linha de um ponteiro de arquivo e retira as tags HTML</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.fgets.html">« fgets</a></li>
+      <li style="float: right;"><a href="function.file-exists.html">file_exists »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.filesystem.html">Fun&ccedil;&otilde;es para Sistema de arquivo</a></li>
+    <li>Ler uma linha de um ponteiro de arquivo e retira as tags HTML</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.fgetss" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">fgetss</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p><p class="refpurpose"><span class="refname">fgetss</span> &mdash; <span class="dc-title">Ler uma linha de um ponteiro de arquivo e retira as tags HTML</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.fgetss-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>fgetss</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code><span class="initializer"> = ?</span></span>, <span class="methodparam"><span class="type">string</span> <code class="parameter">$allowable_tags</code><span class="initializer"> = ?</span></span>): <span class="type">string</span></div>
+
+  <p class="para rdfs-comment">
+   Idêntico a <span class="function"><a href="function.fgets.html" class="function">fgets()</a></span>, exceto que <span class="function"><strong>fgetss()</strong></span>
+   tenta retirar qualquer tag HTML ou PHP do texto que ele lê.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.fgetss-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">handle</code></dt>
+
+     <dd>
+
+      <p class="para">O ponteiro de arquivo deve ser válido e deve apontar para
+um arquivo aberto com sucesso por <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> ou
+<span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> (e ainda não fechado por
+<span class="function"><a href="function.fclose.html" class="function">fclose()</a></span>).</p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">length</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Tamanho da informação a ser recebida.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">allowable_tags</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Você pode usar o terceiro parâmetro opcional para especificar as tags
+       que não devem ser removidas.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.fgetss-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna uma stirng de até <code class="parameter">length</code> - 1 bytes lidos do
+   ponteiro do arquivo por <code class="parameter">handle</code>, com todo HTML e código PHP
+   removidos.
+  </p>
+  <p class="para">
+   Se um erro ocorrer, retorna <strong><code>false</code></strong>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.fgetss-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versão</th>
+       <th>Descrição</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.0.0</td>
+       <td>
+        O parâmetro <code class="parameter">length</code> é opcional.
+       </td>
+      </tr>
+
+      <tr>
+       <td>3.0.13 e 4.0.0</td>
+       <td>
+        O parâmetro <code class="parameter">allowable_tags</code> foi adicionado.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.fgetss-notes">
+  <h3 class="title">Notas</h3>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: <span class="simpara">Se o PHP não estiver reconhecendo apropriadamente
+os finais de linha ao ler arquivos em um computador Macintosh ou que foram criados
+em um, habilitar a opção de configuração de tempo de execução
+<a href="filesystem.configuration.html#ini.auto-detect-line-endings" class="link">auto_detect_line_endings</a>
+pode ajudar a resolver o problema.</span></p></blockquote>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.fgetss-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.fgets.html" class="function" rel="rdfs-seeAlso">fgets()</a> - L&ecirc; uma linha de um ponteiro de arquivo</span></li>
+    <li class="member"><span class="function"><a href="function.fopen.html" class="function" rel="rdfs-seeAlso">fopen()</a> - Abre um arquivo ou URL</span></li>
+    <li class="member"><span class="function"><a href="function.popen.html" class="function" rel="rdfs-seeAlso">popen()</a> - Abre um processo como ponteiro de arquivo</span></li>
+    <li class="member"><span class="function"><a href="function.fsockopen.html" class="function" rel="rdfs-seeAlso">fsockopen()</a> - Abre um socket de conex&atilde;o Internet ou de dom&iacute;nio Unix</span></li>
+    <li class="member"><span class="function"><a href="function.strip-tags.html" class="function" rel="rdfs-seeAlso">strip_tags()</a> - Retira as tags HTML e PHP de uma string</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div></div></div></body></html>

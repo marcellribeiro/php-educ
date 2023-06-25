@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Converte uma imagem true color para uma imagem de paleta</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.imagesy.html">« imagesy</a></li>
+      <li style="float: right;"><a href="function.imagettfbbox.html">imagettfbbox »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.image.html">Fun&ccedil;&otilde;es da GD</a></li>
+    <li>Converte uma imagem true color para uma imagem de paleta</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.imagetruecolortopalette" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">imagetruecolortopalette</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.0.6, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">imagetruecolortopalette</span> &mdash; <span class="dc-title">Converte uma imagem true color para uma imagem de paleta</span></p>
+
+   </div>
+ <div class="refsect1 description" id="refsect1-function.imagetruecolortopalette-description">
+  <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>imagetruecolortopalette</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$dither</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$ncolors</code></span>): <span class="type">bool</span></div>
+
+    <p class="para rdfs-comment">
+     <span class="function"><strong>imagetruecolortopalette()</strong></span> converte uma imagem truecolor
+     para uma imagem de paleta. O código para esta função foi escrito originalmente
+     pelo Independent JPEG Group library code, o qual é excelente. O código foi
+     modificado para preservar tanta informação do alpha channel 
+     quanto possível na paleta de resultado, em adição a preservar as cores tão
+     bem quanto possível. Isto não funciona tão bem quanto podia ser esperado.
+     Normalmente é melhor simplesmente produzir e enviar uma imagem truecolor,
+     a qual tem garantidamente uma qualidade de saída melhor.
+    </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.imagetruecolortopalette-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    <dt>
+
+<code class="parameter">image</code></dt>
+<dd>
+<p class="para">Um objeto <span class="classname"><strong class="classname">GdImage</strong></span>, retornado por uma das funções de criação de imagens,
+como <span class="function"><a href="function.imagecreatetruecolor.html" class="function">imagecreatetruecolor()</a></span>.</p></dd>
+
+    
+     <dt>
+<code class="parameter">dither</code></dt>
+
+     <dd>
+
+    <p class="para">
+     <code class="parameter">dither</code> indica se a imagem deve ser estremecida
+     - se ele é <strong><code>true</code></strong> então o estremecimento será usado, o que resulta em
+     uma imagem mais manchada mas com melhor aproximação da cor.
+    </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">ncolors</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Define o número máximo de cores que devem ser retidos na paleta.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.imagetruecolortopalette-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna <strong><code>true</code></strong> em caso de sucesso ou <strong><code>false</code></strong> em caso de falha.
+  </p>
+  </div>
+
+  <div class="refsect1 notes" id="refsect1-function.imagetruecolortopalette-notes">
+    <h3 class="title">Notas</h3>
+  </div>
+
+ </div></div></div></body></html>

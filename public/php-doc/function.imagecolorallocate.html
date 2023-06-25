@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Aloca uma cor para uma imagem</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.imagecharup.html">« imagecharup</a></li>
+      <li style="float: right;"><a href="function.imagecolorallocatealpha.html">imagecolorallocatealpha »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.image.html">Fun&ccedil;&otilde;es da GD</a></li>
+    <li>Aloca uma cor para uma imagem</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.imagecolorallocate" class="refentry">
+  <div class="refnamediv">
+   <h1 class="refname">imagecolorallocate</h1>
+   <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">imagecolorallocate</span> &mdash; <span class="dc-title">Aloca uma cor para uma imagem</span></p>
+
+  </div>
+  <div class="refsect1 unknown-unknown-unknown-examplev" id="refsect1-function.imagecolorallocate-unknown-unknown-unknown-examplev">
+   <h3 class="title">Descrição</h3>
+    <div class="methodsynopsis dc-description">
+     <span class="methodname"><strong>imagecolorallocate</strong></span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$red</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$green</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$blue</code></span><br>): <span class="type">int</span></div>
+
+   <p class="para rdfs-comment">
+    <span class="function"><strong>imagecolorallocate()</strong></span> retorna um identificador 
+    de cor representando a cor composta pelos componentes
+    <abbr title="Red-Green-Blue">RGB</abbr>. Os argumentos <code class="parameter">image</code>
+    é o retorno da função <span class="function"><a href="function.imagecreate.html" class="function">imagecreate()</a></span>. <code class="parameter">red</code>, <code class="parameter">green</code> and
+    <code class="parameter">blue</code> são os valores de vermelho, azul e verde,
+    respectivamente da cor solicitada. Estes parâmetros são
+    inteiros entre 0 e 255 ou hexadecimais entre 0x00 e 0xFF.
+    <span class="function"><strong>imagecolorallocate()</strong></span> deve ser utilizada para
+    cada cor que será usada na imagem representada
+    por <code class="parameter">image</code>.
+   </p>
+   <blockquote class="note"><p><strong class="note">Nota</strong>: 
+    <p class="para">
+     A primeira utilização da função <span class="function"><strong>imagecolorallocate()</strong></span> 
+     prenche a cor do fundo.
+    </p>
+   </p></blockquote>
+   <p class="para">
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">// define o fundo como vermelho<br /></span><span style="color: #0000BB">$background </span><span style="color: #007700">= </span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">, </span><span style="color: #0000BB">255</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">// define algumas cores<br /></span><span style="color: #0000BB">$white </span><span style="color: #007700">= </span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">, </span><span style="color: #0000BB">255</span><span style="color: #007700">, </span><span style="color: #0000BB">255</span><span style="color: #007700">, </span><span style="color: #0000BB">255</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$black </span><span style="color: #007700">= </span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">// do jeito hexadecimal<br /></span><span style="color: #0000BB">$white </span><span style="color: #007700">= </span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">, </span><span style="color: #0000BB">0xFF</span><span style="color: #007700">, </span><span style="color: #0000BB">0xFF</span><span style="color: #007700">, </span><span style="color: #0000BB">0xFF</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$black </span><span style="color: #007700">= </span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">, </span><span style="color: #0000BB">0x00</span><span style="color: #007700">, </span><span style="color: #0000BB">0x00</span><span style="color: #007700">, </span><span style="color: #0000BB">0x00</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Retorna -1 se falhar.
+   </p>
+   <p class="para">
+    Veja também <span class="function"><a href="function.imagecolorallocatealpha.html" class="function">imagecolorallocatealpha()</a></span> e
+    <span class="function"><a href="function.imagecolordeallocate.html" class="function">imagecolordeallocate()</a></span>.
+   </p>
+  </div>
+
+ </div></div></div></body></html>

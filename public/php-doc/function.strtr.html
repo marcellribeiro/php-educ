@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Traduz certos caracteres</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.strtoupper.html">« strtoupper</a></li>
+      <li style="float: right;"><a href="function.substr-compare.html">substr_compare »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.strings.html">Fun&ccedil;&otilde;es de String</a></li>
+    <li>Traduz certos caracteres</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.strtr" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">strtr</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">strtr</span> &mdash; <span class="dc-title">Traduz certos caracteres</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.strtr-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>strtr</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>, <span class="methodparam"><span class="type">string</span> <code class="parameter">$from</code></span>, <span class="methodparam"><span class="type">string</span> <code class="parameter">$to</code></span>): <span class="type">string</span></div>
+
+  <div class="methodsynopsis dc-description"><span class="methodname"><strong>strtr</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$str</code></span>, <span class="methodparam"><span class="type">array</span> <code class="parameter">$replace_pairs</code></span>): <span class="type">string</span></div>
+
+  <p class="para rdfs-comment">
+   Esta função retorna uma cópia de <code class="parameter">str</code>,
+   traduzindo todas as ocorrências de cada caractere em
+   <code class="parameter">from</code> para o caractere correspondente em
+   <code class="parameter">to</code>.
+  </p>
+  <p class="para">
+   Se <code class="parameter">from</code> e <code class="parameter">to</code> são de
+   comprimentos diferentes, os caracteres extras no mais longo dos dois
+   são ignorados.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.strtr-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">str</code></dt>
+
+     <dd>
+
+      <p class="para">
+       A <span class="type">string</span> a ser traduzida.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">from</code></dt>
+
+     <dd>
+
+      <p class="para">
+       A <span class="type">string</span> a ser traduzida por <code class="parameter">to</code>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">to</code></dt>
+
+     <dd>
+
+      <p class="para">
+       A <span class="type">string</span> substituta de <code class="parameter">from</code>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">replace_pairs</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O parâmetro <code class="parameter">replace_pairs</code> pode ser usado como um
+       substituto para <code class="parameter">to</code> e <code class="parameter">from</code> no
+       caso dele ser um <span class="type">array</span> na forma
+       <code class="literal">array(&#039;from&#039; =&gt; &#039;to&#039;, ...)</code>. 
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ 
+ <div class="refsect1 returnvalues" id="refsect1-function.strtr-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Esta função retorna uma cópia de <code class="parameter">str</code>,
+   traduzindo todas ocorrências de cada caractere em
+   <code class="parameter">from</code> para correspondentes caracteres em
+   <code class="parameter">to</code>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.strtr-examples">
+  <h3 class="title">Exemplos</h3>
+  <p class="para">
+   <div class="example" id="example-4659">
+    <p><strong>Exemplo #1 Exemplo da <span class="function"><strong>strtr()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$addr </span><span style="color: #007700">= </span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #0000BB">$addr</span><span style="color: #007700">, </span><span style="color: #DD0000">"äåö"</span><span style="color: #007700">, </span><span style="color: #DD0000">"aao"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <p class="para">
+   <span class="function"><strong>strtr()</strong></span> pode ser chamada com apenas dois argumentas.
+   Se chamada com dois argumentos ele se comporta de uma maneira nova:
+   <code class="parameter">from</code> então tem que ser um array que contém
+   string -&gt; pares de string que serão substituídas na string original.
+   <span class="function"><strong>strtr()</strong></span> sempre procurará pela primeira maior compatibilidade
+   possível e *não* tentará substituir nada que ela já tenha trabalhado.
+  </p>
+  <div class="example" id="example-4660">
+   <p><strong>Exemplo #2 <span class="function"><strong>strtr()</strong></span> exemplo com dois argumentos</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$trans </span><span style="color: #007700">= array(</span><span style="color: #DD0000">"hello" </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">"hi"</span><span style="color: #007700">, </span><span style="color: #DD0000">"hi" </span><span style="color: #007700">=&gt; </span><span style="color: #DD0000">"hello"</span><span style="color: #007700">);<br />echo </span><span style="color: #0000BB">strtr</span><span style="color: #007700">(</span><span style="color: #DD0000">"hi all, I said hello"</span><span style="color: #007700">, </span><span style="color: #0000BB">$trans</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>O exemplo acima produzirá:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+hello all, I said hi
+</pre></div>
+    </div>
+  </div>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.strtr-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><strong>ereg_replace()</strong></span></li>
+   </ul>
+  </p>
+ </div>
+
+</div></div></div></body></html>

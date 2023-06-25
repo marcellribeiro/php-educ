@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Descomprime uma string usando DEFLATE</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.gzgetss.html">« gzgetss</a></li>
+      <li style="float: right;"><a href="function.gzopen.html">gzopen »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.zlib.html">Fun&ccedil;&otilde;es da Zlib</a></li>
+    <li>Descomprime uma string usando DEFLATE</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.gzinflate" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">gzinflate</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.0.4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">gzinflate</span> &mdash; <span class="dc-title">Descomprime uma string usando DEFLATE</span></p>
+
+   </div>
+   <div class="refsect1 description" id="refsect1-function.gzinflate-description">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>gzinflate</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code><span class="initializer"> = ?</span></span>): <span class="type">string</span></div>
+
+    <p class="para rdfs-comment">   
+     Esta função descomprime uma string.
+    </p>
+   </div>
+
+   <div class="refsect1 parameters" id="refsect1-function.gzinflate-parameters">
+    <h3 class="title">Parâmetros</h3>
+    <p class="para">
+     <dl>
+      
+       <dt>
+<code class="parameter">data</code></dt>
+
+       <dd>
+
+        <p class="para">
+         Os dados comprimidos por <span class="function"><a href="function.gzdeflate.html" class="function">gzdeflate()</a></span>.
+        </p>
+       </dd>
+
+      
+      
+       <dt>
+<code class="parameter">length</code></dt>
+
+        <dd>
+
+         <p class="para">
+          O limite de tamanho dos dados a descompactar.
+         </p>
+        </dd>
+
+       
+      </dl>
+
+     </p>
+    </div>
+
+    <div class="refsect1 returnvalues" id="refsect1-function.gzinflate-returnvalues">
+     <h3 class="title">Valor Retornado</h3>
+     <p class="para">
+      Os dados originais descomprimidos ou <strong><code>false</code></strong> em caso de erro.
+     </p>
+     <p class="para">
+      Esta função irá retornar um erro se os dados descomprimidos forem maiores do
+      32768 vezes o tamanho dos dados comprimidos de entrada <code class="parameter">data</code>
+      ou mais do que o parâmetro opcional <code class="parameter">length</code>.
+     </p>
+    </div>
+
+    <div class="refsect1 examples" id="refsect1-function.gzinflate-examples">
+     <h3 class="title">Exemplos</h3>
+     <p class="para">
+      <div class="example" id="example-870">
+      <p><strong>Exemplo #1 Exemplo <span class="function"><strong>gzinflate()</strong></span></strong></p>
+       <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$compressed   </span><span style="color: #007700">= </span><span style="color: #0000BB">gzdeflate</span><span style="color: #007700">(</span><span style="color: #DD0000">'Compress me'</span><span style="color: #007700">, </span><span style="color: #0000BB">9</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$uncompressed </span><span style="color: #007700">= </span><span style="color: #0000BB">gzinflate</span><span style="color: #007700">(</span><span style="color: #0000BB">$compressed</span><span style="color: #007700">);<br />echo </span><span style="color: #0000BB">$uncompressed</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+   </div>
+
+   <div class="refsect1 seealso" id="refsect1-function.gzinflate-seealso">
+    <h3 class="title">Veja Também</h3>
+    <p class="para">
+     Veja também <span class="function"><a href="function.gzcompress.html" class="function" rel="rdfs-seeAlso">gzcompress()</a> - Comprime uma string</span>.
+     <span class="function"><a href="function.gzuncompress.html" class="function" rel="rdfs-seeAlso">gzuncompress()</a> - Descomprime uma string com DEFLATED</span>,
+     <span class="function"><a href="function.gzdeflate.html" class="function" rel="rdfs-seeAlso">gzdeflate()</a> - Comprime uma string usando DEFLATE</span>, e
+     <span class="function"><a href="function.gzencode.html" class="function" rel="rdfs-seeAlso">gzencode()</a> - Cria uma string comprimida com gzip</span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

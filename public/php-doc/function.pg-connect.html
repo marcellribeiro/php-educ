@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Abre uma conex&atilde;o PostgreSQL</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.pg-connect-poll.html">« pg_connect_poll</a></li>
+      <li style="float: right;"><a href="function.pg-connection-busy.html">pg_connection_busy »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.pgsql.html">PostgreSQL Fun&ccedil;&otilde;es</a></li>
+    <li>Abre uma conex&atilde;o PostgreSQL</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.pg-connect" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">pg_connect</h1>
+    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">pg_connect</span> &mdash; <span class="dc-title">Abre uma conexão PostgreSQL</span></p>
+
+   </div>
+   <div class="refsect1 unknown-changeloh" id="refsect1-function.pg-connect-unknown-changeloh">
+    <h3 class="title">Descrição</h3>
+    <div class="methodsynopsis dc-description">
+     <span class="methodname"><strong>pg_connect</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$connection_string</code></span>): <span class="type">resource</span></div>
+
+    <p class="para rdfs-comment">
+     <span class="function"><strong>pg_connect()</strong></span> retorna um recurso (resource) de conexão
+     que é necessário para outras funções para PostgreSQL.
+    </p>
+    <p class="para">
+     <span class="function"><strong>pg_connect()</strong></span> abre uma conexão com um
+     servidor de banco de dados PostgreSQL especificado por
+     <code class="parameter">connection_string</code>. Retorna um recurso (resource) de
+     conexão em caso de sucesso. Retorna <strong><code>false</code></strong> se a conexão não pôde ser
+     estabelecida. <code class="parameter">connection_string</code> deve ser uma
+     string entre aspas duplas.
+     <div class="example" id="example-1897">
+      <p><strong>Exemplo #1 Usando <span class="function"><strong>pg_connect()</strong></span></strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$bdcon </span><span style="color: #007700">= </span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"dbname=flavia"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//conecta a um banco de dados chamado "flavia"<br /><br /></span><span style="color: #0000BB">$bdcon2 </span><span style="color: #007700">= </span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"host=localhost port=5432 dbname=flavia"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">// conecta a um banco de dados chamado "flavia" em "localhost" na porta "5432"<br /><br /></span><span style="color: #0000BB">$bdcon3 </span><span style="color: #007700">= </span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"host=ovelha port=5432 dbname=flavia user=ze password=buu"</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//conecta a um banco de dados chamado "flavia" na máquina "ovelha" com um usuário e senha<br /><br /></span><span style="color: #0000BB">$con_string </span><span style="color: #007700">= </span><span style="color: #DD0000">"host=ovelha port=5432 dbname=flavia user=ze password=buu"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$bdcon4 </span><span style="color: #007700">= </span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #0000BB">$con_string</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//coneta a um banco de dados chamado "flavia" na máquina "ovelha" com um usuário e senha<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+     Os argumentos disponíveis para
+     <code class="parameter">connection_string</code> incluem
+     <code class="parameter">host</code>, <code class="parameter">port</code>,
+     <code class="parameter">tty</code>, <code class="parameter">options</code>,
+     <code class="parameter">dbname</code>, <code class="parameter">user</code> e 
+     <code class="parameter">password</code>.
+    </p>
+    <p class="para">
+     Se uma segunda chamada é feita para <span class="function"><strong>pg_connect()</strong></span> com a
+     mesma <code class="parameter">connection_string</code>, nenhuma nova conexão será
+     estabelecida, ao invés disso, o recurso (resource) de conexão da conexão que já está
+     aberta será retornado. Você pode ter multiplas conexões para o mesmo
+     banco de dados se você usar diferentes strings de conexão.
+    </p>
+    <p class="para">
+     A sintaxe antiga com parâmetros múltiplos
+     <strong class="command">$con = pg_connect(&quot;host&quot;, &quot;port&quot;, &quot;options&quot;, &quot;tty&quot;, &quot;dbname&quot;)
+     </strong> se tornou obsoleta.
+    </p>
+    <p class="para">
+     Veja também <span class="function"><a href="function.pg-pconnect.html" class="function">pg_pconnect()</a></span>,
+     <span class="function"><a href="function.pg-close.html" class="function">pg_close()</a></span>, <span class="function"><a href="function.pg-host.html" class="function">pg_host()</a></span>,
+     <span class="function"><a href="function.pg-port.html" class="function">pg_port()</a></span>, <span class="function"><a href="function.pg-tty.html" class="function">pg_tty()</a></span>,
+     <span class="function"><a href="function.pg-options.html" class="function">pg_options()</a></span> e <span class="function"><a href="function.pg-dbname.html" class="function">pg_dbname()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

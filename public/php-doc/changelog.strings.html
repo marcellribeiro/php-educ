@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Changelog</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.wordwrap.html">« wordwrap</a></li>
+      <li style="float: right;"><a href="refs.basic.vartype.html">Vari&aacute;vel e Extens&otilde;es Relacionadas aos Tipos »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="book.strings.html">Strings</a></li>
+    <li>Changelog</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="changelog.strings" class="appendix">
+ <h1>Changelog</h1>
+
+ <p class="para">As alterações a seguir foram feitas em classes/funções/métodos desta extensão.</p>
+ <table class='doctable table' rules='groups'><thead><tr><th>Version</th><th>Function</th><th>Description</th></tr></thead><tbody class="gen-changelog v"><tr><td>8.2.0</td><td><a href='function.utf8-decode.html'>utf8_decode</a></td><td>This function has been deprecated.</td></tr><tr><td>&nbsp;</td><td><a href='function.utf8-encode.html'>utf8_encode</a></td><td>This function has been deprecated.</td></tr></tbody><tbody class="gen-changelog v8-2-0"><tr><td>7.4.0</td><td><a href='function.money-format.html'>money_format</a></td><td>Esta fun&ccedil;&atilde;o est&aacute; obsoleta. Utilize
+        NumberFormatter::formatCurrency.</td></tr><tr><td>&nbsp;</td><td><a href='function.str-getcsv.html'>str_getcsv</a></td><td>O par&acirc;metro escape agora interpreta uma string
+        vazia como um sinal para desabilitar o mecanismo de escape. Antes,
+        uma string vazia utilizava o valor padr&atilde;o do par&acirc;metro.</td></tr></tbody><tbody class="gen-changelog v7-4-0"><tr><td>7.2.18, 7.3.5</td><td><a href='function.substr-compare.html'>substr_compare</a></td><td>offset may now be equal to the length of main_str.</td></tr></tbody><tbody class="gen-changelog v7-2-18, 7-3-5"><tr><td>7.2.0</td><td><a href='function.utf8-decode.html'>utf8_decode</a></td><td>This function has been moved from the XML extension to the core of PHP.
+        In previous versions, it was only available if the XML extension was installed.</td></tr><tr><td>&nbsp;</td><td><a href='function.utf8-encode.html'>utf8_encode</a></td><td>This function has been moved from the XML extension to the core of PHP.
+        In previous versions, it was only available if the XML extension was installed.</td></tr></tbody><tbody class="gen-changelog v7-2-0"><tr><td>7.1.0</td><td><a href='function.substr-count.html'>substr_count</a></td><td>Support for negative offsets and lengths has been added.
+        length may also be 0 now.</td></tr></tbody><tbody class="gen-changelog v7-1-0"><tr><td>7.0.0</td><td><a href='function.substr.html'>substr</a></td><td>Se string tiver o comprimento de
+        start, uma string vazia ser&aacute;
+        retornada. Antes dessa vers&atilde;o, retornava false nesse caso.</td></tr></tbody><tbody class="gen-changelog v7-0-0"><tr><td>5.4.32, 5.5.16</td><td><a href='function.ucwords.html'>ucwords</a></td><td>O par&acirc;metro delimiters foi adicionado.</td></tr></tbody><tbody class="gen-changelog v5-4-32, 5-5-16"><tr><td>5.3.0</td><td><a href='function.stristr.html'>stristr</a></td><td>Adicionado o par&acirc;metro opcional before_needle.</td></tr><tr><td>&nbsp;</td><td><a href='function.strstr.html'>strstr</a></td><td>Adicionado o par&acirc;metro opcional before_needle.</td></tr></tbody><tbody class="gen-changelog v5-3-0"><tr><td>5.2.5</td><td><a href='function.addcslashes.html'>addcslashes</a></td><td>As seq&uuml;&ecirc;ncias de escape \v e \f foram adicionadas.</td></tr></tbody><tbody class="gen-changelog v5-2-5"><tr><td>5.2.3</td><td><a href='function.htmlentities.html'>htmlentities</a></td><td>O par&acirc;metro double_encode foi adicionado.</td></tr></tbody><tbody class="gen-changelog v5-2-3"><tr><td>5.2.2 - 5.2.6</td><td><a href='function.substr.html'>substr</a></td><td>Se start indicar a posi&ccedil;&atilde;o de truncagem
+        negativa ou al&eacute;m, retorna false. Outras vers&otilde;es
+        retornavam a string a partir do come&ccedil;o.</td></tr></tbody><tbody class="gen-changelog v5-2-2 - 5-2-6"><tr><td>5.1.0</td><td><a href='function.explode.html'>explode</a></td><td>Suporte a limit negativo foi adicionado</td></tr><tr><td>&nbsp;</td><td><a href='function.md5-file.html'>md5_file</a></td><td>Modificada fun&ccedil;&atilde;o para usar a API de API. Significa que voc&ecirc; pode us&aacute;-la
+        com wrappers, como md5_file('http://example.com/..')</td></tr></tbody><tbody class="gen-changelog v5-1-0"><tr><td>5.0.0</td><td><a href='function.html-entity-decode.html'>html_entity_decode</a></td><td>Suporte para conjunto de caracteres multi-byte foi adicionado.</td></tr><tr><td>&nbsp;</td><td><a href='function.md5.html'>md5</a></td><td>O par&acirc;metro raw_output foi adicionado.</td></tr><tr><td>&nbsp;</td><td><a href='function.md5-file.html'>md5_file</a></td><td>Adicionado o par&acirc;metro raw_output</td></tr><tr><td>&nbsp;</td><td><a href='function.str-replace.html'>str_replace</a></td><td>O par&acirc;metro count foi adicionado.</td></tr><tr><td>&nbsp;</td><td><a href='function.strip-tags.html'>strip_tags</a></td><td>strip_tags tornou-se binary safe</td></tr></tbody></table>
+</div>
+</div></div></body></html>

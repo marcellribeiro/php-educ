@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Retorna o nome da classe de um objeto</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.get-class-vars.html">« get_class_vars</a></li>
+      <li style="float: right;"><a href="function.get-declared-classes.html">get_declared_classes »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.classobj.html">Fun&ccedil;&otilde;es para Classes/Objetos</a></li>
+    <li>Retorna o nome da classe de um objeto</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.get-class" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">get_class</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">get_class</span> &mdash; <span class="dc-title">Retorna o nome da classe de um objeto</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.get-class-description">
+  <h3 class="title">Descrição</h3>
+   <div class="methodsynopsis dc-description">
+    <span class="methodname"><strong>get_class</strong></span>(<span class="methodparam"><span class="type">object</span> <code class="parameter">$object</code><span class="initializer"> = ?</span></span>): <span class="type">string</span></div>
+
+  <p class="para rdfs-comment">
+   Obtém o nome da classe do dado <code class="parameter">object</code>.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.get-class-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">object</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O objeto a ser testado
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.get-class-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna o nome da classe da qual <code class="parameter">object</code> é uma
+   instância. Retorna <strong><code>false</code></strong> se <code class="parameter">object</code> não é um
+   objeto.
+  </p>
+ </div>
+
+ <div class="refsect1 changelog" id="refsect1-function.get-class-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versão</th>
+       <th>Descrição</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>Desde o 5.0.0</td>
+       <td>
+        O nome da classe é retornado em sua notação original.
+       </td>
+      </tr>
+
+      <tr>
+       <td>Desde o 5.0.0</td>
+       <td>
+        O parâmetro <code class="parameter">object</code> é opcional se chamado
+        para um método do objeto.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.get-class-examples">
+  <h3 class="title">Exemplos</h3>
+  <p class="para">
+   <div class="example" id="example-4807">
+    <p><strong>Exemplo #1 Usando a <span class="function"><strong>get_class()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">class </span><span style="color: #0000BB">foo </span><span style="color: #007700">{<br />    function </span><span style="color: #0000BB">name</span><span style="color: #007700">()<br />    {<br />        echo </span><span style="color: #DD0000">"Meu nome é " </span><span style="color: #007700">, </span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">) , </span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br />    }<br />}<br /><br /></span><span style="color: #FF8000">// create an object<br /></span><span style="color: #0000BB">$bar </span><span style="color: #007700">= new </span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">// external call<br /></span><span style="color: #007700">echo </span><span style="color: #DD0000">"Its name is " </span><span style="color: #007700">, </span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$bar</span><span style="color: #007700">) , </span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">// internal call<br /></span><span style="color: #0000BB">$bar</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">name</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>O exemplo acima produzirá:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Its name is foo
+My name is foo
+</pre></div>
+    </div>
+   </div>
+   <div class="example" id="example-4808">
+    <p><strong>Exemplo #2 Usando <span class="function"><strong>get_class()</strong></span> na superclasse</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">abstract class </span><span style="color: #0000BB">bar </span><span style="color: #007700">{<br />    public function </span><span style="color: #0000BB">__construct</span><span style="color: #007700">()<br />    {<br />        </span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_class</span><span style="color: #007700">(</span><span style="color: #0000BB">$this</span><span style="color: #007700">));<br />        </span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">get_class</span><span style="color: #007700">());<br />    }<br />}<br /><br />class </span><span style="color: #0000BB">foo </span><span style="color: #007700">extends </span><span style="color: #0000BB">bar </span><span style="color: #007700">{<br />}<br /><br />new </span><span style="color: #0000BB">foo</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>O exemplo acima produzirá:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+string(3) &quot;foo&quot;
+string(3) &quot;bar&quot;
+</pre></div>
+    </div>
+   </div>
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.get-class-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.get-parent-class.html" class="function" rel="rdfs-seeAlso">get_parent_class()</a> - Recupera o nome da classe pai para o objeto ou classe</span></li>
+    <li class="member"><span class="function"><a href="function.gettype.html" class="function" rel="rdfs-seeAlso">gettype()</a> - Obt&eacute;m o tipo da vari&aacute;vel</span></li>
+    <li class="member"><span class="function"><a href="function.is-subclass-of.html" class="function" rel="rdfs-seeAlso">is_subclass_of()</a> - Verifica se o objeto tem esta classe como uma de suas classes pai</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div></div></div></body></html>

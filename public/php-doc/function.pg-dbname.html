@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Retorna o nome do banco de dados</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.pg-copy-to.html">« pg_copy_to</a></li>
+      <li style="float: right;"><a href="function.pg-delete.html">pg_delete »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.pgsql.html">PostgreSQL Fun&ccedil;&otilde;es</a></li>
+    <li>Retorna o nome do banco de dados</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.pg-dbname" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">pg_dbname</h1>
+    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">pg_dbname</span> &mdash; <span class="dc-title">Retorna o nome do banco de dados</span></p>
+
+   </div>
+   <div class="refsect1 unknown-unknown-unknown-unknown-changelok" id="refsect1-function.pg-dbname-unknown-unknown-unknown-unknown-changelok">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>pg_dbname</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$connection</code></span>): <span class="type">string</span></div>
+
+    <p class="para rdfs-comment">
+     <span class="function"><strong>pg_dbname()</strong></span> retorna o nome do banco de dados para um dado
+     recurso (resource) de conexão <code class="parameter">connection</code>. Retorna
+     <strong><code>false</code></strong>, se <code class="parameter">connection</code> não é um recurso de conexão
+     PostgreSQL válido.
+    </p>
+    <p class="para">
+     <div class="example" id="example-1901">
+      <p><strong>Exemplo #1 <span class="function"><strong>pg_dbname()</strong></span> example</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />    error_reporting</span><span style="color: #007700">(</span><span style="color: #0000BB">E_ALL</span><span style="color: #007700">);<br /><br />    </span><span style="color: #0000BB">pg_connect</span><span style="color: #007700">(</span><span style="color: #DD0000">"host=localhost port=5432 dbname=mary"</span><span style="color: #007700">);<br />    echo </span><span style="color: #0000BB">pg_dbname</span><span style="color: #007700">(); </span><span style="color: #FF8000">// mary<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+   </div>
+
+  </div></div></div></body></html>

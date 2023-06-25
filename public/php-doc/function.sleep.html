@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Atrasa a execu&ccedil;&atilde;o do script</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.show-source.html">« show_source</a></li>
+      <li style="float: right;"><a href="function.sys-getloadavg.html">sys_getloadavg »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.misc.html">Misc. Fun&ccedil;&otilde;es</a></li>
+    <li>Atrasa a execu&ccedil;&atilde;o do script</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.sleep" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">sleep</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">sleep</span> &mdash; <span class="dc-title">Atrasa a execução do script</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.sleep-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>sleep</strong></span>(<span class="methodparam"><span class="type">int</span> <code class="parameter">$seconds</code></span>): <span class="type">int</span></div>
+
+  <p class="simpara">
+   Atrasa a execução do programa por um dado número de
+   <code class="parameter">seconds</code>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.sleep-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">seconds</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Tempo de parada em segundos.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.sleep-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna zero em sucesso, ou <strong><code>false</code></strong> em erros.
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.sleep-errors">
+  <h3 class="title">Erros</h3>
+  <p class="para">
+   Se o número especificado de <code class="parameter">seconds</code> é negativo,
+   esta função irá gerar um <strong><code>E_WARNING</code></strong>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.sleep-examples">
+  <h3 class="title">Exemplos</h3>
+  <p class="para">
+   <div class="example" id="example-3360">
+    <p><strong>Exemplo #1 Exemplo da <span class="function"><strong>sleep()</strong></span></strong></p> 
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">// Hora atual<br /></span><span style="color: #007700">echo </span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">'h:i:s'</span><span style="color: #007700">) . </span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">// Dorme por 10 segundos<br /></span><span style="color: #0000BB">sleep</span><span style="color: #007700">(</span><span style="color: #0000BB">10</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">// Acorde!<br /></span><span style="color: #007700">echo </span><span style="color: #0000BB">date</span><span style="color: #007700">(</span><span style="color: #DD0000">'h:i:s'</span><span style="color: #007700">) . </span><span style="color: #DD0000">"\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>
+      Este exemplo irá mostrar(depois de 10 segundos)
+     </p></div>
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+05:31:23
+05:31:33
+</pre></div>
+     </div>
+    </div>
+   </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.sleep-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <span class="function"><a href="function.usleep.html" class="function" rel="rdfs-seeAlso">usleep()</a> - Atrasa a execu&ccedil;&atilde;o em milion&eacute;simos de segundo</span>,
+   <span class="function"><a href="function.set-time-limit.html" class="function" rel="rdfs-seeAlso">set_time_limit()</a> - Limita o tempo de execu&ccedil;&atilde;o do script</span>
+  </p>
+ </div>
+
+
+</div></div></div></body></html>

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Testa pelo fim-de-arquivo (eof) em um ponteiro de arquivo</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.fdatasync.html">« fdatasync</a></li>
+      <li style="float: right;"><a href="function.fflush.html">fflush »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.filesystem.html">Fun&ccedil;&otilde;es para Sistema de arquivo</a></li>
+    <li>Testa pelo fim-de-arquivo (eof) em um ponteiro de arquivo</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.feof" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">feof</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">feof</span> &mdash; <span class="dc-title">Testa pelo fim-de-arquivo (eof) em um ponteiro de arquivo</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.feof-description">
+  <h3 class="title">Descrição</h3>
+   <div class="methodsynopsis dc-description">
+    <span class="methodname"><strong>feof</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$handle</code></span>): <span class="type">bool</span></div>
+
+  <p class="para rdfs-comment">
+   Testa pelo fim-do-arquivo em um ponteiro de arquivo.
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.feof-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">handle</code></dt>
+
+     <dd>
+
+      <p class="para">O ponteiro de arquivo deve ser válido e deve apontar para
+um arquivo aberto com sucesso por <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> ou
+<span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> (e ainda não fechado por
+<span class="function"><a href="function.fclose.html" class="function">fclose()</a></span>).</p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.feof-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna <strong><code>true</code></strong> se o ponteiro estiver no fim do arquivo
+   (eof) ou um erro ocorrer (incluindo um limite de tempo de socket). Caso contrário retorna <strong><code>false</code></strong>.
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.feof-notes">
+  <h3 class="title">Notas</h3>
+   <div class="warning"><strong class="warning">Aviso</strong>
+    <p class="simpara">
+     Se uma conexão aberta por <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> não foi
+     fechada pelo servidor, <span class="function"><strong>feof()</strong></span> irá esperar até que seja atingido o limite
+     de tempo para retornar <strong><code>true</code></strong>. O limite de tempo padrão é 60 segundos.
+     Você pode usar <span class="function"><a href="function.stream-set-timeout.html" class="function">stream_set_timeout()</a></span> para mudar
+     este valor.
+    </p>
+   </div>
+   <div class="warning"><strong class="warning">Aviso</strong>
+    <p class="para">
+     Se o ponteiro de arquivo passado não for valido você pode ter um loop infinito, porque
+     EOF irá falhar em retornar TRUE.
+     <div class="example" id="example-2104">
+      <p><strong>Exemplo #1 Exemplo de <span class="function"><strong>feof()</strong></span> com um ponteiro de arquivo inválido</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">// se o arquivo não pode ser lido ou nao existe a função fopen retorna FALSE<br /></span><span style="color: #0000BB">$file </span><span style="color: #007700">= @</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"no_such_file"</span><span style="color: #007700">, </span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">// FALSE a partir do fopen irá causar um warning(aviso) e resultar em um loop infinito aqui<br /></span><span style="color: #007700">while (!</span><span style="color: #0000BB">feof</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">)) {<br />}<br /><br /></span><span style="color: #0000BB">fclose</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </div>
+ </div>
+
+ 
+</div></div></div></body></html>

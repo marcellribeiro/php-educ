@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Escreve texto na imagem usando fontes FreeType 2</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.imageftbbox.html">« imageftbbox</a></li>
+      <li style="float: right;"><a href="function.imagegammacorrect.html">imagegammacorrect »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.image.html">Fun&ccedil;&otilde;es da GD</a></li>
+    <li>Escreve texto na imagem usando fontes FreeType 2</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.imagefttext" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">imagefttext</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.0.7, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">imagefttext</span> &mdash; <span class="dc-title">Escreve texto na imagem usando fontes FreeType 2</span></p>
+
+   </div>
+ <div class="refsect1 description" id="refsect1-function.imagefttext-description">
+  <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>imagefttext</strong></span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">float</span> <code class="parameter">$size</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">float</span> <code class="parameter">$angle</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$x</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$y</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$col</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$font_file</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$text</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">array</span> <code class="parameter">$extrainfo</code><span class="initializer"> = ?</span></span><br>): <span class="type">array</span></div>
+
+     <div class="warning"><strong class="warning">Aviso</strong><p class="simpara">Esta função não
+está documentada; apenas a lista de argumentos está disponível.
+</p></div>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.imagefttext-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    <dt>
+
+<code class="parameter">image</code></dt>
+<dd>
+<p class="para">Um objeto <span class="classname"><strong class="classname">GdImage</strong></span>, retornado por uma das funções de criação de imagens,
+como <span class="function"><a href="function.imagecreatetruecolor.html" class="function">imagecreatetruecolor()</a></span>.</p></dd>
+
+    
+     <dt>
+<code class="parameter">size</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">angle</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">x</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">y</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">col</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">font_file</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">text</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">extrainfo</code></dt>
+
+     <dd>
+
+      <p class="para">
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.imagefttext-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Esta função retorna um array contendo os seguintes elementos:
+   <table class="doctable informaltable">
+    
+     <tbody class="tbody">
+      <tr>
+       <td>0</td>
+       <td>coordenada x inferior à esquerda</td>
+      </tr>
+
+      <tr>
+       <td>1</td>
+       <td>coordenada y inferior à esquerda</td>
+      </tr>
+
+      <tr>
+       <td>2</td>
+       <td>coordenada x inferior à direita</td>
+      </tr>
+
+      <tr>
+       <td>3</td>
+       <td>coordenada y inferior à direita</td>
+      </tr>
+
+      <tr>
+       <td>4</td>
+       <td>coordenada x superior à direita</td>
+      </tr>
+
+      <tr>
+       <td>5</td>
+       <td>coordenada y superior à direita</td>
+      </tr>
+
+      <tr>
+       <td>6</td>
+       <td>coordenada x superior à esquerda</td>
+      </tr>
+
+      <tr>
+       <td>7</td>
+       <td>coordenada y superior à esquerda</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+ <div class="refsect1 notes" id="refsect1-function.imagefttext-notes">
+  <h3 class="title">Notas</h3>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: <span class="simpara">Esta função só estará disponível se
+o PHP for compilado com suporte ao freetype (<strong class="option configure">--with-freetype-dir=DIR</strong>).
+</span></p></blockquote>
+ </div>
+
+
+  </div></div></div></body></html>

@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Envia a imagem para o borwser ou arquivo</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.imageistruecolor.html">« imageistruecolor</a></li>
+      <li style="float: right;"><a href="function.imagelayereffect.html">imagelayereffect »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.image.html">Fun&ccedil;&otilde;es da GD</a></li>
+    <li>Envia a imagem para o borwser ou arquivo</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.imagejpeg" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">imagejpeg</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">imagejpeg</span> &mdash; <span class="dc-title">Envia a imagem para o borwser ou arquivo</span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.imagejpeg-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>imagejpeg</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$image</code></span>, <span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code><span class="initializer"> = ?</span></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$quality</code><span class="initializer"> = ?</span></span>): <span class="type">bool</span></div>
+
+  <p class="para rdfs-comment">
+   <span class="function"><strong>imagejpeg()</strong></span> cria um arquivo <abbr title="Joint Photographic Experts Group">JPEG</abbr> em 
+   a partir da <code class="parameter">image</code>.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.imagejpeg-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    <dt>
+
+<code class="parameter">image</code></dt>
+<dd>
+<p class="para">Um objeto <span class="classname"><strong class="classname">GdImage</strong></span>, retornado por uma das funções de criação de imagens,
+como <span class="function"><a href="function.imagecreatetruecolor.html" class="function">imagecreatetruecolor()</a></span>.</p></dd>
+
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O caminho para salvar o arquivo. Se não definido ou <strong><code>null</code></strong>, o stream da imagem
+       será mostrado diretamente.
+      </p>
+      <p class="para">
+       Para pular este argumento para fornecer o parâmetro
+       <code class="parameter">quality</code>, use <strong><code>null</code></strong>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">quality</code></dt>
+
+     <dd>
+
+      <p class="para">
+       <code class="parameter">quality</code> é opcional, e vai de 
+       0 (pior qualidade, menor arquivo) a 100 (melhor qualidade, maior arquivo).
+       O padrão é a qualidade IJG (aproximadamente 75).
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.imagejpeg-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna <strong><code>true</code></strong> em caso de sucesso ou <strong><code>false</code></strong> em caso de falha.
+  </p>
+ </div>
+
+ <div class="refsect1 notes" id="refsect1-function.imagejpeg-notes">
+  <h3 class="title">Notas</h3>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    Se você quiser criar JPEGs progressivos, voce precisa definir o interlace
+    com a função <span class="function"><a href="function.imageinterlace.html" class="function">imageinterlace()</a></span>.
+   </p>
+  </p></blockquote>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.imagejpeg-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.imagepng.html" class="function" rel="rdfs-seeAlso">imagepng()</a> - Emite uma imagem PNG para o navegador ou arquivo</span></li>
+    <li class="member"><span class="function"><a href="function.imagegif.html" class="function" rel="rdfs-seeAlso">imagegif()</a> - Envia uma imagem para o browser ou arquivo</span></li>
+    <li class="member"><span class="function"><a href="function.imagewbmp.html" class="function" rel="rdfs-seeAlso">imagewbmp()</a> - Envia uma imagem para o browser ou arquivo</span></li>
+    <li class="member"><span class="function"><a href="function.imageinterlace.html" class="function" rel="rdfs-seeAlso">imageinterlace()</a> - Ativa ou desativa o entrela&ccedil;amento</span></li>
+    <li class="member"><span class="function"><a href="function.imagetypes.html" class="function" rel="rdfs-seeAlso">imagetypes()</a> - Retorna os tipos de imagens suportados por esta instala&ccedil;&atilde;o do PHP</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div></div></div></body></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Retorna o n&uacute;mero de registros afetados (linhas)</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="ref.pgsql.html">« PostgreSQL Fun&ccedil;&otilde;es</a></li>
+      <li style="float: right;"><a href="function.pg-cancel-query.html">pg_cancel_query »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.pgsql.html">PostgreSQL Fun&ccedil;&otilde;es</a></li>
+    <li>Retorna o n&uacute;mero de registros afetados (linhas)</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.pg-affected-rows" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">pg_affected_rows</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">pg_affected_rows</span> &mdash; <span class="dc-title">Retorna o número de registros afetados (linhas)</span></p>
+
+   </div>
+   <div class="refsect1 unknown-descriptioo" id="refsect1-function.pg-affected-rows-unknown-descriptioo">
+    <h3 class="title">Descrição</h3>
+    <div class="methodsynopsis dc-description">
+     <span class="methodname"><strong>pg_affected_rows</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>): <span class="type">int</span></div>
+
+    <p class="para rdfs-comment">
+     <span class="function"><strong>pg_affected_rows()</strong></span> retorna o número de linhas
+     (instâncias/registros/linhas) afetados por consultas (queries) INSERT, UPDATE
+     e DELETE executados por <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span>. Se nenhuma
+     linha foi afetada, ela retornará 0.
+    </p>
+    <p class="para">
+     <div class="example" id="example-1895">
+      <p><strong>Exemplo #1 <span class="function"><strong>pg_affected_rows()</strong></span></strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />     $result </span><span style="color: #007700">= </span><span style="color: #0000BB">pg_query</span><span style="color: #007700">(</span><span style="color: #0000BB">$conn</span><span style="color: #007700">, </span><span style="color: #DD0000">"INSERT INTO authors VALUES ('Orwell', 2002, 'Animal Farm')"</span><span style="color: #007700">);<br />     </span><span style="color: #0000BB">$cmdtuples </span><span style="color: #007700">= </span><span style="color: #0000BB">pg_affected_rows</span><span style="color: #007700">(</span><span style="color: #0000BB">$result</span><span style="color: #007700">);<br />     echo </span><span style="color: #0000BB">$cmdtuples </span><span style="color: #007700">. </span><span style="color: #DD0000">" tuples are affected.\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+    <blockquote class="note"><p><strong class="note">Nota</strong>: 
+     <p class="para">
+      Esta função costumava ser chamada de <code class="literal">pg_cmdtuples()</code>.
+     </p>
+    </p></blockquote>
+    <p class="para">
+     Veja também <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span> e
+     <span class="function"><a href="function.pg-num-rows.html" class="function">pg_num_rows()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

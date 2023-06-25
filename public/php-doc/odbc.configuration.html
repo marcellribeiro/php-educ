@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Configura&ccedil;&otilde;es em Execu&ccedil;&atilde;o</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="odbc.installation.html">« Instala&ccedil;&atilde;o</a></li>
+      <li style="float: right;"><a href="uodbc.resources.html">Tipos de Recurso »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="uodbc.setup.html">Instala&ccedil;&atilde;o/Configura&ccedil;&atilde;o</a></li>
+    <li>Configura&ccedil;&otilde;es em Execu&ccedil;&atilde;o</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="odbc.configuration" class="section">
+ <h2 class="title">Configurações em Execução</h2>
+ <p class="simpara">
+O comportamento dessas funções é afetado pelas configurações do <var class="filename">php.ini</var>.
+</p>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Opções de Configuração do ODBC Unificado</strong></caption>
+   
+    <thead>
+     <tr>
+      <th>Nome</th>
+      <th>Padrão</th>
+      <th>Modificável</th>
+      <th>Changelog</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>odbc.default_db *</td>
+      <td>NULL</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td>odbc.default_user *</td>
+      <td>NULL</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td>odbc.default_pw *</td>
+      <td>NULL</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td>odbc.allow_persistent</td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td>odbc.check_persistent</td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td>odbc.max_persistent</td>
+      <td>&quot;-1&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td>odbc.max_links</td>
+      <td>&quot;-1&quot;</td>
+      <td>PHP_INI_SYSTEM</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td>odbc.defaultlrl</td>
+      <td>&quot;4096&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+     <tr>
+      <td>odbc.defaultbinmode</td>
+      <td>&quot;1&quot;</td>
+      <td>PHP_INI_ALL</td>
+      <td class="empty">&nbsp;</td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <span class="simpara">
+    Entradas marcadas com * ainda não estão implementadas.
+   </span>
+  </p></blockquote>
+  Para mais detalhes e definições dos modos
+PHP_INI_*, veja os <a href="configuration.changes.modes.html" class="xref">Onde uma configura&ccedil;&atilde;o deve ser definida</a>.
+ </p>
+
+ <p class="para">Aqui está uma breve explicação das
+diretivas de configuração.</p>
+
+ <p class="para">
+ <dl>
+   
+   <dt id="ini.uodbc.default-db">
+    <code class="parameter">odbc.default_db</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Fonte de dados ODBC se nenhuma for especificada em
+     <span class="function"><a href="function.odbc-connect.html" class="function">odbc_connect()</a></span> ou
+     <span class="function"><a href="function.odbc-pconnect.html" class="function">odbc_pconnect()</a></span>.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.uodbc.default-user">
+    <code class="parameter">odbc.default_user</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Nome de usuário se nenhum for especificado em 
+     <span class="function"><a href="function.odbc-connect.html" class="function">odbc_connect()</a></span> ou
+     <span class="function"><a href="function.odbc-pconnect.html" class="function">odbc_pconnect()</a></span>.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.uodbc.default-pw">
+    <code class="parameter">odbc.default_pw</code>
+    <span class="type">string</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Senha para usar se nenhuma for especificada em
+     <span class="function"><a href="function.odbc-connect.html" class="function">odbc_connect()</a></span> ou
+     <span class="function"><a href="function.odbc-pconnect.html" class="function">odbc_pconnect()</a></span>.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.uodbc.allow-persistent">
+    <code class="parameter">odbc.allow_persistent</code>
+    <span class="type">boolean</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Quando permitir conexões ODBC persistentes.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.uodbc.check-persistent">
+    <code class="parameter">odbc.check_persistent</code>
+    <span class="type">boolean</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Conferir que a conexão ainda seja válida antes de reutilizar.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.uodbc.max-persistent">
+    <code class="parameter">odbc.max_persistent</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     O número máximo de conexões ODBC persistentes por processo.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.uodbc.max-links">
+    <code class="parameter">odbc.max_links</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     O número máximo de conexões ODBC por processo, incluindo as conexões persistentes.
+    </p>
+   </dd>
+
+  
+   
+   <dt id="ini.uodbc.defaultlrl">
+    <code class="parameter">odbc.defaultlrl</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Manipulação de campos LONG. Especifica o número de bytes
+     retornados para as variáveis.
+    </p>
+   </dd>
+
+  
+
+   
+   
+   
+  
+   <dt id="ini.uodbc.defaultbinmode">
+    <code class="parameter">odbc.defaultbinmode</code>
+    <span class="type">integer</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Manipulação de dados binários.
+    </p>
+   </dd>
+
+  
+
+  
+   <dt id="ini.uodbc.defaultcursortype">
+    <code class="parameter">odbc.default_cursortype</code>
+    <span class="type">int</span>
+   </dt>
+
+   <dd>
+
+    <p class="para">
+     Controla o modelo de cursor do ODBC.
+     Os valores possíveis são <strong><code>SQL_CURSOR_FORWARD_ONLY</code></strong>,
+     <strong><code>SQL_CURSOR_KEYSET_DRIVEN</code></strong>,
+     <strong><code>SQL_CURSOR_DYNAMIC</code></strong> e
+     <strong><code>SQL_CURSOR_STATIC</code></strong> (padrão).
+    </p>
+   </dd>
+
+  
+
+ </dl>
+
+ </p>
+</div></div></div></body></html>

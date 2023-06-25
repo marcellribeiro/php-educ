@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Descomprime uma string com DEFLATED</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.gztell.html">« gztell</a></li>
+      <li style="float: right;"><a href="function.gzwrite.html">gzwrite »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.zlib.html">Fun&ccedil;&otilde;es da Zlib</a></li>
+    <li>Descomprime uma string com DEFLATED</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.gzuncompress" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">gzuncompress</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.0.1, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">gzuncompress</span> &mdash; <span class="dc-title">Descomprime uma string com DEFLATED</span></p>
+
+   </div>
+   <div class="refsect1 unknown-seealsp" id="refsect1-function.gzuncompress-unknown-seealsp">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>gzuncompress</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$data</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code><span class="initializer"> = ?</span></span>): <span class="type">string</span></div>
+
+    <p class="para rdfs-comment">   
+     Esta função leva os dados <code class="parameter">data</code> comprimidos por
+     <span class="function"><a href="function.gzcompress.html" class="function">gzcompress()</a></span> e retorna os dados originais descomprimidos
+     ou <strong><code>false</code></strong> em caso de erro. A função irá retornar um erro
+     se os dados descompactados foram mais do que 32768 vezes o tamanho
+     dos dados compactados <code class="parameter">data</code> ou mais do que
+     o parâmetro opcional <code class="parameter">length</code>.
+    </p>
+    <p class="para">
+     Veja também <span class="function"><a href="function.gzdeflate.html" class="function">gzdeflate()</a></span>, 
+     <span class="function"><a href="function.gzinflate.html" class="function">gzinflate()</a></span>,
+     <span class="function"><a href="function.gzcompress.html" class="function">gzcompress()</a></span> e
+     <span class="function"><a href="function.gzencode.html" class="function">gzencode()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

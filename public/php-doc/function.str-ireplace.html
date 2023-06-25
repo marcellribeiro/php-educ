@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Vers&atilde;o que n&atilde;o diferencia mai&uacute;sculas e min&uacute;sculas de str_replace.</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.str-getcsv.html">« str_getcsv</a></li>
+      <li style="float: right;"><a href="function.str-pad.html">str_pad »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.strings.html">Fun&ccedil;&otilde;es de String</a></li>
+    <li>Vers&atilde;o que n&atilde;o diferencia mai&uacute;sculas e min&uacute;sculas de str_replace.</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.str-ireplace" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">str_ireplace</h1>
+    <p class="verinfo">(PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">str_ireplace</span> &mdash; <span class="dc-title">
+     Versão que não diferencia maiúsculas e minúsculas de <span class="function"><a href="function.str-replace.html" class="function">str_replace()</a></span>.
+    </span></p>
+
+   </div>
+   <div class="refsect1 unknown-seealsp" id="refsect1-function.str-ireplace-unknown-seealsp">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>str_ireplace</strong></span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type"><a href="language.types.declarations.html#language.types.declarations.mixed" class="type mixed">mixed</a></span> <code class="parameter">$search</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type"><a href="language.types.declarations.html#language.types.declarations.mixed" class="type mixed">mixed</a></span> <code class="parameter">$replace</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type"><a href="language.types.declarations.html#language.types.declarations.mixed" class="type mixed">mixed</a></span> <code class="parameter">$subject</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">int</span> <code class="parameter">$&amp;count</code><span class="initializer"> = ?</span></span><br>): <span class="type"><a href="language.types.declarations.html#language.types.declarations.mixed" class="type mixed">mixed</a></span></div>
+
+    <p class="para rdfs-comment">
+     Esta função retorna uma string ou uma matriz com todas as ocorrencias de
+     <code class="parameter">search</code> em <code class="parameter">subject</code>
+     (não diferenciando maiúsculas e minúsculas) substituidas com o valor de <code class="parameter">replace</code>.
+     Se você não necessitar de regras de substituição mais complicadas, você deve geralmente
+     usar esta função ao invés de <span class="function"><strong>eregi_replace()</strong></span> ou
+     <span class="function"><a href="function.preg-replace.html" class="function">preg_replace()</a></span> com o modificador <code class="literal">i</code>.
+    </p>
+    <p class="para">
+     Se <code class="parameter">subject</code> for uma matriz, então a procura e substituição
+     é realizada para cada item de <code class="parameter">subject</code>, 
+     e o valor retornado é uma matriz.
+    </p>
+    <p class="para">
+     Se <code class="parameter">search</code> e
+     <code class="parameter">replace</code> forem matrizes, então
+     <span class="function"><strong>str_ireplace()</strong></span> pega um valor de cada matriz
+     e os usas para localizar e substituir em
+     <code class="parameter">subject</code>. Se
+     <code class="parameter">replace</code> tiver menos valores do que
+     <code class="parameter">search</code>, então uma string vazia é
+     usada para o resto dos valores de substituição.
+     Se <code class="parameter">search</code>
+     é uma matriz e <code class="parameter">replace</code> é uma string; então
+     esta string é usada para cada valor de
+     <code class="parameter">search</code>.
+    </p>
+    <p class="para">
+     <div class="example" id="example-4628">
+      <p><strong>Exemplo #1 Exemplo <span class="function"><strong>str_ireplace()</strong></span></strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$bodytag </span><span style="color: #007700">= </span><span style="color: #0000BB">str_ireplace</span><span style="color: #007700">(</span><span style="color: #DD0000">"%body%"</span><span style="color: #007700">, </span><span style="color: #DD0000">"black"</span><span style="color: #007700">, </span><span style="color: #DD0000">"&lt;body text=%BODY%&gt;"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+    <p class="para">
+     Esta função é segura para binários.
+    </p>
+    <blockquote class="note"><p><strong class="note">Nota</strong>: 
+     <span class="simpara">
+      Apartir do <code class="literal">PHP 5.0.0</code> o número de vezes que
+      <code class="parameter">needles</code> foi encontrado e substituido será retornado em
+      <code class="parameter">count</code> o qual é passado por referencia.
+      Anteriormente a <code class="literal">PHP 5.0.0</code> este parâmetro não esta disponível.
+     </span>
+    </p></blockquote>
+    <p class="para">
+     Veja também:
+     <span class="function"><a href="function.str-replace.html" class="function">str_replace()</a></span>,
+     <span class="function"><strong>ereg_replace()</strong></span>,
+     <span class="function"><a href="function.preg-replace.html" class="function">preg_replace()</a></span> e
+     <span class="function"><a href="function.strtr.html" class="function">strtr()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

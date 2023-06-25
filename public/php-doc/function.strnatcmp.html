@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Compara&ccedil;&atilde;o de strings usando o algoritmo &quot;natural order&quot;</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.strnatcasecmp.html">« strnatcasecmp</a></li>
+      <li style="float: right;"><a href="function.strncasecmp.html">strncasecmp »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.strings.html">Fun&ccedil;&otilde;es de String</a></li>
+    <li>Compara&ccedil;&atilde;o de strings usando o algoritmo &quot;natural order&quot;</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.strnatcmp" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">strnatcmp</h1>
+    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">strnatcmp</span> &mdash; <span class="dc-title">
+     Comparação de strings usando o algoritmo &quot;natural order&quot;
+    </span></p>
+
+   </div>
+   <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.strnatcmp-unknown-unknown-seealsq">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>strnatcmp</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$str1</code></span>, <span class="methodparam"><span class="type">string</span> <code class="parameter">$str2</code></span>): <span class="type">int</span></div>
+
+    <p class="para rdfs-comment">
+     Esta função implementa um algoritmo de comparação de strings alfanumérico
+     do jeito que um ser humano faz, isto é descrito como &quot;ordem natural&quot;. 
+     Um exemplo da diferença entre este algoritmo e os algoritmos regulares de ordenação
+     (usado em <span class="function"><a href="function.strcmp.html" class="function">strcmp()</a></span>) pode ser visto abaixo:
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$arr1 </span><span style="color: #007700">= </span><span style="color: #0000BB">$arr2 </span><span style="color: #007700">= array(</span><span style="color: #DD0000">"img12.png"</span><span style="color: #007700">,</span><span style="color: #DD0000">"img10.png"</span><span style="color: #007700">,</span><span style="color: #DD0000">"img2.png"</span><span style="color: #007700">,</span><span style="color: #DD0000">"img1.png"</span><span style="color: #007700">);<br />echo </span><span style="color: #DD0000">"Comparação de string padrão\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">usort</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr1</span><span style="color: #007700">,</span><span style="color: #DD0000">"strcmp"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr1</span><span style="color: #007700">);<br />echo </span><span style="color: #DD0000">"\nComparação usando ordem natural\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">usort</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr2</span><span style="color: #007700">,</span><span style="color: #DD0000">"strnatcmp"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr2</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+     O código acima irá gerar a seguinte saída:
+     <div class="informalexample">
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+Comparação de string padrão
+Array
+(
+    [0] =&gt; img1.png
+    [1] =&gt; img10.png
+    [2] =&gt; img12.png
+    [3] =&gt; img2.png
+)
+
+Comparação usando ordem natural
+Array
+(
+    [0] =&gt; img1.png
+    [1] =&gt; img2.png
+    [2] =&gt; img10.png
+    [3] =&gt; img12.png
+)
+</pre></div>
+      </div>
+     </div>
+     Para maiores informações veja: Martin Pool&#039;s <a href="https://github.com/sourcefrog/natsort" class="link external">&raquo;&nbsp;Natural Order String Comparison</a>
+    </p>
+    <p class="simpara">
+     Similar a outras funções de comparação de string, esta retorna
+     &lt; 0 se <code class="parameter">str1</code> é menor do que
+     <code class="parameter">str2</code>; &gt; 0 se
+     <code class="parameter">str1</code> é maior do que
+     <code class="parameter">str2</code>, e 0 se forem iguais.
+    </p>
+    <p class="simpara">
+     Note que esta coparação diferencia maiúsculas e minúsculas.
+    </p>
+    <p class="simpara">
+     Veja também <span class="function"><strong>ereg()</strong></span>,
+     <span class="function"><a href="function.strcasecmp.html" class="function">strcasecmp()</a></span>, <span class="function"><a href="function.substr.html" class="function">substr()</a></span>,
+     <span class="function"><a href="function.stristr.html" class="function">stristr()</a></span>, <span class="function"><a href="function.strcmp.html" class="function">strcmp()</a></span>,
+     <span class="function"><a href="function.strncmp.html" class="function">strncmp()</a></span>, <span class="function"><a href="function.strncasecmp.html" class="function">strncasecmp()</a></span>,
+     <span class="function"><a href="function.strnatcasecmp.html" class="function">strnatcasecmp()</a></span>, <span class="function"><a href="function.strstr.html" class="function">strstr()</a></span>,
+     <span class="function"><a href="function.natsort.html" class="function">natsort()</a></span> e <span class="function"><a href="function.natcasesort.html" class="function">natcasesort()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

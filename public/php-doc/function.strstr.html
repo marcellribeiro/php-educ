@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Encontra a primeira ocorrencia de uma string</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.strspn.html">« strspn</a></li>
+      <li style="float: right;"><a href="function.strtok.html">strtok »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.strings.html">Fun&ccedil;&otilde;es de String</a></li>
+    <li>Encontra a primeira ocorrencia de uma string</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.strstr" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">strstr</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">strstr</span> &mdash; <span class="dc-title">Encontra a primeira ocorrencia de uma string</span></p>
+
+ </div>
+
+ <div class="refsect1 description" id="refsect1-function.strstr-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>strstr</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$haystack</code></span>, <span class="methodparam"><span class="type"><a href="language.types.declarations.html#language.types.declarations.mixed" class="type mixed">mixed</a></span> <code class="parameter">$needle</code></span>, <span class="methodparam"><span class="type">bool</span> <code class="parameter">$before_needle</code><span class="initializer"> = ?</span></span>): <span class="type">string</span></div>
+
+  <p class="para rdfs-comment">
+   Retorna parte da string <code class="parameter">haystack</code> a partir da primeira
+   ocorrência de <code class="parameter">needle</code> até o final de
+   <code class="parameter">haystack</code>.
+  </p>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    Esta função diferencia maiúsculas e minúsculas. Para pesquisas que não 
+    diferenciem, use <span class="function"><a href="function.stristr.html" class="function">stristr()</a></span>.
+   </p>
+  </p></blockquote>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    Se você quer somente determinar se um específica <code class="parameter">needle</code>
+    existem em <code class="parameter">haystack</code>, use a função mais rápida e que usa
+    menos memória ao invés, <span class="function"><a href="function.strpos.html" class="function">strpos()</a></span>.
+   </p>
+  </p></blockquote>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.strstr-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">haystack</code></dt>
+
+     <dd>
+
+      <p class="para">
+       A string de entrada.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">needle</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Se <code class="parameter">needle</code> não é uma string, é convertido para
+       um inteiro e aplicado como valor ordinal de um caractere.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">before_needle</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Se <strong><code>true</code></strong> (o padrão é <strong><code>false</code></strong>), <span class="function"><strong>strstr()</strong></span> retorna
+       a parte de <code class="parameter">haystack</code> antes da primeira
+       ocorrência de <code class="parameter">needle</code>.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.strstr-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna a parte da string, ou <strong><code>false</code></strong> se <code class="parameter">needle</code>
+   não é encontrado.
+  </p>
+ </div>
+
+
+ <div class="refsect1 changelog" id="refsect1-function.strstr-changelog">
+  <h3 class="title">Changelog</h3>
+  <p class="para">
+   <table class="doctable informaltable">
+    
+     <thead>
+      <tr>
+       <th>Versão</th>
+       <th>Descrição</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>5.3.0</td>
+       <td>
+        Adicionado o parâmetro opcional <code class="parameter">before_needle</code>.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.strstr-examples">
+  <h3 class="title">Exemplos</h3>
+  <p class="para">
+   <div class="example" id="example-4653">
+    <p><strong>Exemplo #1 Exemplo da <span class="function"><strong>strstr()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$email  </span><span style="color: #007700">= </span><span style="color: #DD0000">'name@example.com'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$domain </span><span style="color: #007700">= </span><span style="color: #0000BB">strstr</span><span style="color: #007700">(</span><span style="color: #0000BB">$email</span><span style="color: #007700">, </span><span style="color: #DD0000">'@'</span><span style="color: #007700">);<br />echo </span><span style="color: #0000BB">$domain</span><span style="color: #007700">; </span><span style="color: #FF8000">// prints @example.com<br /><br /></span><span style="color: #0000BB">$user </span><span style="color: #007700">= </span><span style="color: #0000BB">strstr</span><span style="color: #007700">(</span><span style="color: #0000BB">$email</span><span style="color: #007700">, </span><span style="color: #DD0000">'@'</span><span style="color: #007700">, </span><span style="color: #0000BB">true</span><span style="color: #007700">); </span><span style="color: #FF8000">// A partir do PHP 5.3.0<br /></span><span style="color: #007700">echo </span><span style="color: #0000BB">$user</span><span style="color: #007700">; </span><span style="color: #FF8000">// prints name<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.strstr-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.preg-match.html" class="function" rel="rdfs-seeAlso">preg_match()</a> - Perform a regular expression match</span></li>
+    <li class="member"><span class="function"><a href="function.stristr.html" class="function" rel="rdfs-seeAlso">stristr()</a> - strstr sem diferenciar mai&uacute;sculas e min&uacute;sculas</span></li>
+    <li class="member"><span class="function"><a href="function.strpos.html" class="function" rel="rdfs-seeAlso">strpos()</a> - Encontra a posi&ccedil;&atilde;o da primeira ocorr&ecirc;ncia de uma string</span></li>
+    <li class="member"><span class="function"><a href="function.strrchr.html" class="function" rel="rdfs-seeAlso">strrchr()</a> - Encontra a ultima ocorr&ecirc;ncia de um caractere em uma string</span></li>
+    <li class="member"><span class="function"><a href="function.substr.html" class="function" rel="rdfs-seeAlso">substr()</a> - Retorna uma parte de uma string</span></li>
+   </ul>
+  </p>
+ </div>
+
+   
+</div></div></div></body></html>

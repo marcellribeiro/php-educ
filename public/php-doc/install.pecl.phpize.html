@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Compilando extens&otilde;es compartilhadas PECL com phpize</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="install.pecl.pear.html">« Compilando extens&otilde;es compartilhadas PECL com o comando pecl</a></li>
+      <li style="float: right;"><a href="install.pecl.php-config.html">php-config »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="install.pecl.html">Instala&ccedil;&atilde;o das extens&otilde;es PECL</a></li>
+    <li>Compilando extens&otilde;es compartilhadas PECL com phpize</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="install.pecl.phpize" class="sect1">
+  <h2 class="title">Compilando extensões compartilhadas PECL com phpize</h2>
+  <p class="simpara">
+   Algumas vezes, usar o instalador <code class="literal">pecl</code> não é uma opção.
+   Isso pode acontecer se você estiver atrás de um firewall, ou porque a
+   extensão que você quer instalar não está disponível como um pacote compatível com
+   PECL, por exemplo, extensões ainda sem release no CVS. Se você precisar compilar tal
+   extensão, você pode usar as ferramentas de compilação de baixo nível para realizar
+   a compilação manualmente.
+  </p>
+  <p class="simpara">
+   O comando <code class="literal">phpize</code> é usado para preparar o ambiente de
+   compilação para uma extensão do PHP. No exemplo seguinte, os fontes para
+   uma extensão estão em um diretório com nome <var class="filename">extname</var>:
+  </p>
+  <p class="para">
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+$ cd extname
+$ phpize
+$ ./configure
+$ make
+# make install
+</pre></div>
+   </div>
+  </p>
+  <p class="simpara">
+   Uma instalação bem sucedida criará um arquivo <var class="filename">extname.so</var> e o
+   colocará no <a href="ini.core.html#ini.extension-dir" class="link">diretório de extensões</a> do PHP.
+   Você precisará ajustar o arquivo <var class="filename">php.ini</var>
+   e adicionar uma linha
+   <code class="literal">extension=extname.so</code> antes de usar a extensão.
+  </p>
+  <p class="simpara">
+   Se o sistema não tiver o comando <code class="literal">phpize</code>, e pacotes pré-compilados
+   são usados (como RPM&#039;s), certifique-se de instalar a versão <code class="literal">devel</code>
+   apropriada do pacote do PHP, uma vez que eles freqüentemente contém o
+   comando <code class="literal">phpize</code> assim como os arquivos de cabeçalho para
+   compilar o PHP e suas extensões.
+  </p>
+  <p class="simpara">
+   Execute <code class="literal">phpize --help</code> para mostrar informações de uso adicionais.
+  </p>
+ </div></div></div></body></html>

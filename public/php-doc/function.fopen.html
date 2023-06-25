@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Abre um arquivo ou URL</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.fnmatch.html">« fnmatch</a></li>
+      <li style="float: right;"><a href="function.fpassthru.html">fpassthru »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.filesystem.html">Fun&ccedil;&otilde;es para Sistema de arquivo</a></li>
+    <li>Abre um arquivo ou URL</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.fopen" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">fopen</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">fopen</span> &mdash; <span class="dc-title">Abre um arquivo ou URL</span></p>
+
+ </div>
+ 
+ <div class="refsect1 description" id="refsect1-function.fopen-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>fopen</strong></span>(<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">string</span> <code class="parameter">$mode</code></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">bool</span> <code class="parameter">$use_include_path</code><span class="initializer"> = ?</span></span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="methodparam"><span class="type">resource</span> <code class="parameter">$context</code><span class="initializer"> = ?</span></span><br>): <span class="type">resource</span></div>
+
+  <p class="para rdfs-comment">
+   <span class="function"><strong>fopen()</strong></span> conecta um recurso nomeado, especificado por
+   <code class="parameter">filename</code>, a um stream. 
+  </p>
+ </div>
+
+
+ <div class="refsect1 parameters" id="refsect1-function.fopen-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+      <p class="para">
+       Se <code class="parameter">filename</code> estiver na forma de &quot;scheme://...&quot;, é
+       assumido que seja uma URL, e o PHP buscará por um manipulador de protocolo
+       (também conhecido como wrapper) para aquele scheme. Se nenhum wrapper para
+       aquele protocolo estiver registrado, o PHP emitirá um aviso para ajudá-lo
+       a rastrear potenciais problemas no seu script, e então continuará presumindo
+       que <code class="parameter">filename</code> especifica um nome de arquivo.
+      </p>
+      <p class="para">
+       Se o PHP decidiu que <code class="parameter">filename</code> se refere
+       a um arquivo local, então ele tentará abrir um stream para aquele arquivo.
+       O arquivo precisa ser acessível pelo PHP, então você precisa assegurar
+       que as permissões de acesso do arquivo permitem este acesso.
+       Se você tiver ativado
+       <a href="ini.core.html#ini.open-basedir" class="link">open_basedir</a>, outras
+       restrições podem se aplicar.
+      </p>
+      <p class="para">
+       Se o PHP decidiu que <code class="parameter">filename</code> se refere
+       a um protocolo registrado e esse protocolo estiver registrado como
+       um protocolo de rede, o PHP irá verificar para ter certeza que
+       <a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">allow_url_fopen</a> está
+       ativado. Se estiver desligado, o PHP emitirá um alerta e 
+       a chamada ao fopen irá falhar.
+      </p>
+      <blockquote class="note"><p><strong class="note">Nota</strong>: 
+       <p class="para">
+        A lista de protocolos suportados pode ser encontrada em <a href="wrappers.html" class="xref">Protocolos e Wrappers suportados</a>. Alguns protocolos (também mencionados como
+        <code class="literal">wrappers</code>) suportam <code class="literal">context</code>
+        e/ou opções do <var class="filename">php.ini</var>. Recorra à página específica do
+        protocolo em uso para uma lista das opções que podem ser definidas.
+        (ex.: o valor <var class="filename">php.ini</var> <code class="literal">user_agent</code> utilizado pelo
+        wrapper <code class="literal">http</code>).
+       </p>
+      </p></blockquote>
+      <p class="para">
+       Na plataforma Windows, tenha cuidado de escapar qualquer barra invertida
+       usada no caminho do arquivo, ou use barras normais.
+       <div class="informalexample">
+        <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$handle </span><span style="color: #007700">= </span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"c:\\data\\info.txt"</span><span style="color: #007700">, </span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+        </div>
+
+       </div>
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">mode</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O parâmetro <code class="parameter">mode</code> especifica o tipo de acesso
+       que você precisa ao stream. Pode ser um dos seguintes:
+       <table class="doctable table">
+        <caption><strong>
+         Lista dos possíveis modos de <span class="function"><strong>fopen()</strong></span>
+         utilizando <code class="parameter">mode</code>
+        </strong></caption>
+        
+         <thead>
+          <tr>
+           <th><code class="parameter">mode</code></th>
+           <th>Descrição</th>
+          </tr>
+
+         </thead>
+
+         <tbody class="tbody">
+          <tr>
+           <td><code class="literal">&#039;r&#039;</code></td>
+           <td>
+            Abre somente para leitura; coloca o ponteiro do arquivo no
+            começo do arquivo.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">&#039;r+&#039;</code></td>
+           <td>
+            Abre para leitura e escrita; coloca o ponteiro do arquivo no
+            começo do arquivo.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">&#039;w&#039;</code></td>
+           <td>
+            Abre somente para escrita; coloca o ponteiro do arquivo no
+            começo do arquivo e reduz o comprimento do arquivo para zero.
+            Se o arquivo não existir, tenta criá-lo.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">&#039;w+&#039;</code></td>
+           <td>
+            Abre para leitura e escrita; coloca o ponteiro do arquivo no
+            começo do arquivo e reduz o comprimento do arquivo para zero.
+            Se o arquivo não existir, tenta criá-lo.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">&#039;a&#039;</code></td>
+           <td>
+            Abre somente para escrita; coloca o ponteiro do arquivo no final
+            do arquivo. Se o arquivo não existir, tenta criá-lo.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">&#039;a+&#039;</code></td>
+           <td>
+            Abre para leitura e escrita; coloca o ponteiro do arquivo no final
+            do arquivo. Se o arquivo não existir, tenta criá-lo.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">&#039;x&#039;</code></td>
+           <td>
+            Cria e abre o arquivo somente para escrita; coloca o ponteiro no
+            começo do arquivo. Se o arquivo já existir, a chamada a
+            <span class="function"><strong>fopen()</strong></span> falhará, retornando <strong><code>false</code></strong> e
+            gerando um erro de nível <strong><code>E_WARNING</code></strong>. Se
+            o arquivo não existir, tenta criá-lo. Isto é equivalente
+            a especificar as flags <code class="literal">O_EXCL|O_CREAT</code> para a
+            chamada de sistema <code class="literal">open(2)</code>.
+           </td>
+          </tr>
+
+          <tr>
+           <td><code class="literal">&#039;x+&#039;</code></td>
+           <td>
+            Cria e abre o arquivo para leitura e escrita; coloca o ponteiro no
+            começo do arquivo. Se o arquivo já existir, a chamada a
+            <span class="function"><strong>fopen()</strong></span> falhará, retornando <strong><code>false</code></strong> e
+            gerando um erro de nível <strong><code>E_WARNING</code></strong>. Se
+            o arquivo não existir, tenta criá-lo. Isto é equivalente
+            a especificar as flags <code class="literal">O_EXCL|O_CREAT</code> para a
+            chamada de sistema <code class="literal">open(2)</code>.
+           </td>
+          </tr>
+
+         </tbody>
+        
+       </table>
+
+      </p>
+      <blockquote class="note"><p><strong class="note">Nota</strong>: 
+       <p class="para">
+        Famílias de sistemas operacionais diferentes têm convenções de
+        delimitação de linhas diferentes. Quando você escreve um arquivo texto
+        e quer inserir uma quebra de linha, você precisa utilizar o(s)
+        caractere(s) de fim de linha adequado(s) ao seu sistema operacional.
+        Sistemas baseados no Unix utilizam <code class="literal">\n</code> como caractere
+        de final de linha, sistemas baseados no Windows utilizam
+        <code class="literal">\r\n</code> e sistemas baseados no Macintosh utilizam
+        <code class="literal">\r</code>.
+       </p>
+       <p class="para">
+        Se escrever caracteres de fim de linha inadequados em seus arquivos, eles
+        deverão &quot;parecer engraçados&quot; quando você os abrir em outras
+        aplicações.
+       </p>
+       <p class="para">
+        O Windows oferece uma flag de tradução do modo texto (<code class="literal">&#039;t&#039;</code>)
+        que traduz, transparentemente, <code class="literal">\n</code> para
+        <code class="literal">\r\n</code> quando trabalhando no arquivo. Em contraste, você
+        também pode utilizar <code class="literal">&#039;b&#039;</code> para forçar o modo binário, que não
+        irá traduzir o arquivo. Para usar essas flags, informe ou
+        <code class="literal">&#039;b&#039;</code> ou <code class="literal">&#039;t&#039;</code> como o último caractere
+        no parâmetro <code class="parameter">mode</code>.
+       </p>
+       <p class="para">
+        O modo de tradução padrão depende da SAPI e da versão do PHP que
+        você estiver usando, então você é encorajado a sempre utilizar a flag apropriada
+        por razões de portabilidade. Você deve usar o modo <code class="literal">&#039;t&#039;</code>
+        se estiver trabalhando em arquivos texto simples e utilizar 
+        <code class="literal">\n</code> para delimitar as linhas em seu script, de forma que
+        você pode esperar que eles sejam lidos em outras aplicações como o Notepad. Você
+        deve usar <code class="literal">&#039;b&#039;</code> em todos os outros casos.
+       </p>
+       <p class="para">
+        Se você não especificar a flag &#039;b&#039; quando trabalhar com arquivos binários, você
+        pode passar por problemas estranhos com seus dados, incluindo arquivos de imagens
+        danificados e problemas estranhos com os caracteres <code class="literal">\r\n</code>.
+       </p>
+      </p></blockquote>
+      <blockquote class="note"><p><strong class="note">Nota</strong>: 
+       <p class="para">
+        Para portabilidade, é fortemente recomendado que você sempre
+        utilize a flag &#039;b&#039; quando abrir arquivos com <span class="function"><strong>fopen()</strong></span>.
+       </p>
+      </p></blockquote>
+      <blockquote class="note"><p><strong class="note">Nota</strong>: 
+       <p class="para">
+        Novamente para portabilidade, também é fortemente recomendado que
+        você reescreva códigos que utilizem ou confiem no modo <code class="literal">&#039;t&#039;</code>,
+        de forma que passem a utilizar os fins de linha corretos e
+        o modo <code class="literal">&#039;b&#039;</code>.
+       </p>
+      </p></blockquote>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">use_include_path</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O terceiro parâmetro opcional <code class="parameter">use_include_path</code>
+       pode ser definido para &#039;1&#039; ou <strong><code>true</code></strong> se você quiser buscar o arquivo
+       também no <a href="ini.core.html#ini.include-path" class="link">include_path</a>.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">context</code></dt>
+
+     <dd>
+
+      <p class="para">Um <span class="type">resource</span> de
+<a href="stream.contexts.html" class="link">contexto de stream</a>.</p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+
+ <div class="refsect1 returnvalues" id="refsect1-function.fopen-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna um recurso de ponteiro de arquivo em caso de sucesso,
+   ou <strong><code>false</code></strong> em caso de erro.
+  </p>
+ </div>
+
+
+ <div class="refsect1 errors" id="refsect1-function.fopen-errors">
+  <h3 class="title">Erros</h3>
+  <p class="para">
+   Se a abertura falhar, um erro nível <strong><code>E_WARNING</code></strong>
+   é gerado. Você pode utilizar
+   <a href="language.operators.errorcontrol.html" class="link">@</a> para
+   suprimir esse alerta.
+  </p>
+ </div>
+
+
+ <div class="refsect1 examples" id="refsect1-function.fopen-examples">
+  <h3 class="title">Exemplos</h3>
+  <p class="para">
+   <div class="example" id="example-2126">
+    <p><strong>Exemplo #1 Exemplos de <span class="function"><strong>fopen()</strong></span></strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$handle </span><span style="color: #007700">= </span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/home/rasmus/file.txt"</span><span style="color: #007700">, </span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$handle </span><span style="color: #007700">= </span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"/home/rasmus/file.gif"</span><span style="color: #007700">, </span><span style="color: #DD0000">"wb"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$handle </span><span style="color: #007700">= </span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/"</span><span style="color: #007700">, </span><span style="color: #DD0000">"r"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$handle </span><span style="color: #007700">= </span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #DD0000">"ftp://user:password@example.com/somefile.txt"</span><span style="color: #007700">, </span><span style="color: #DD0000">"w"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+ </div>
+
+
+ <div class="refsect1 notes" id="refsect1-function.fopen-notes">
+  <h3 class="title">Notas</h3>
+  <div class="warning"><strong class="warning">Aviso</strong><p class="para">Ao usar SSL, o Microsoft IIS
+violará o protocolo fechando a conexão sem enviar uma notificação
+<code class="literal">close_notify</code>. O PHP reportará isso como &quot;SSL: Fatal
+Protocol Error&quot; quando chegar ao final dos dados. Para contornar isso, o
+valor de <a href="errorfunc.configuration.html#ini.error-reporting" class="link">error_reporting</a> deve ser
+reduzido a um nível que não inclui avisos.
+O PHP pode detectar servidores IIS defeituosos quando o stream
+é aberto usando o wrapper <code class="literal">https://</code> e suprimirá os avisos.
+Ao usar <span class="function"><a href="function.fsockopen.html" class="function">fsockopen()</a></span> para criar um soquete
+<code class="literal">ssl://</code>, o desenvolvedor é responsável por detectar
+e suprimir este aviso.</p></div>
+  <p class="para">
+   Se você está tendo problemas com a leitura e gravação para
+   arquivos e você está usando a versão de módulo de servidor do PHP, lembre-se
+   de que os arquivos e diretórios que você está usando precisam ser 
+   acessíveis ao processo do servidor HTTP.
+  </p>
+ </div>
+
+
+ <div class="refsect1 seealso" id="refsect1-function.fopen-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><a href="wrappers.html" class="xref">Protocolos e Wrappers suportados</a></li>
+    <li class="member"><span class="function"><a href="function.fclose.html" class="function" rel="rdfs-seeAlso">fclose()</a> - Fecha um ponteiro de arquivo aberto</span></li>
+    <li class="member"><span class="function"><a href="function.fgets.html" class="function" rel="rdfs-seeAlso">fgets()</a> - L&ecirc; uma linha de um ponteiro de arquivo</span></li>
+    <li class="member"><span class="function"><a href="function.fread.html" class="function" rel="rdfs-seeAlso">fread()</a> - Leitura binary-safe de arquivo</span></li>
+    <li class="member"><span class="function"><a href="function.fwrite.html" class="function" rel="rdfs-seeAlso">fwrite()</a> - Escrita binary-safe em arquivos</span></li>
+    <li class="member"><span class="function"><a href="function.fsockopen.html" class="function" rel="rdfs-seeAlso">fsockopen()</a> - Abre um socket de conex&atilde;o Internet ou de dom&iacute;nio Unix</span></li>
+    <li class="member"><span class="function"><a href="function.file.html" class="function" rel="rdfs-seeAlso">file()</a> - L&ecirc; todo o arquivo para um array</span></li>
+    <li class="member"><span class="function"><a href="function.file-exists.html" class="function" rel="rdfs-seeAlso">file_exists()</a> - Verifica se um arquivo ou diret&oacute;rio existe</span></li>
+    <li class="member"><span class="function"><a href="function.is-readable.html" class="function" rel="rdfs-seeAlso">is_readable()</a> - Diz se o arquivo existe e se ele pode ser lido</span></li>
+    <li class="member"><span class="function"><a href="function.stream-set-timeout.html" class="function" rel="rdfs-seeAlso">stream_set_timeout()</a> - Set timeout period on a stream</span></li>
+    <li class="member"><span class="function"><a href="function.popen.html" class="function" rel="rdfs-seeAlso">popen()</a> - Abre um processo como ponteiro de arquivo</span></li>
+    <li class="member"><span class="function"><a href="function.stream-context-create.html" class="function" rel="rdfs-seeAlso">stream_context_create()</a> - Creates a stream context</span></li>
+   </ul>
+  </p>
+ </div>
+
+
+</div></div></div></body></html>

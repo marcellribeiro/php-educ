@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Introdu&ccedil;&atilde;o</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="book.zlib.html">« Zlib</a></li>
+      <li style="float: right;"><a href="zlib.setup.html">Instala&ccedil;&atilde;o/Configura&ccedil;&atilde;o »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="book.zlib.html">Zlib</a></li>
+    <li>Introdu&ccedil;&atilde;o</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="intro.zlib" class="preface">
+  <h1 class="title">Introdução</h1>
+  <p class="para">
+   Este módulo lhe possibilita ler e gerar transparentemente
+   arquivos comprimidos do tipo gzip (.gz), através de muitas das
+   funções <a href="book.filesystem.html" class="link">filesystem</a>
+   nas quais funcionam com arquivos gzip comprimidos (e arquivos não comprimidos
+   também, mas não com sockets).
+  </p>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    A versão 4.0.4 introduziu um fopen-wrapper para arquivos .gz, assim você
+    pode usar uma URL especial <var class="filename">zlib:</var> para acessar
+    arquivos comprimidos transparentemente usando as funções f*() normais
+    de acessos a arquivos se você colocar como prefixo no nome ou caminho
+    <var class="filename">zlib:</var> ao chamar <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span>. Isto
+    requer que você use uma biblioteca C em tempo de execução que
+    tenha a função <code class="literal">fopencookie()</code>. Até agora apenas a GNU libc
+    parace ser a única biblioteca que tenha este recurso.
+   </p>
+   <p class="para">
+    No PHP 4.3.0, <var class="filename">zlib:</var> foi modificado para
+    <var class="filename">compress.zlib://</var> para previnir ambiguidades com
+    nomes de arquivos contendo caracteres &#039;:&#039;. A função
+    <code class="literal">fopencookie()</code> não é mais requerida.
+    Maiores informações estão disponíveis em uma sessão sobre
+    <a href="wrappers.compression.html" class="xref">zlib://</a>.
+   </p>
+  </p></blockquote>
+ </div></div></div></body></html>

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Retorna valores a partir de um recurso (resource) de resultado</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.pg-fetch-object.html">« pg_fetch_object</a></li>
+      <li style="float: right;"><a href="function.pg-fetch-row.html">pg_fetch_row »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.pgsql.html">PostgreSQL Fun&ccedil;&otilde;es</a></li>
+    <li>Retorna valores a partir de um recurso (resource) de resultado</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.pg-fetch-result" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">pg_fetch_result</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.2.0, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">pg_fetch_result</span> &mdash; <span class="dc-title">Retorna valores a partir de um recurso (resource) de resultado</span></p>
+
+   </div>
+   <div class="refsect1 unknown-unknown-unknown-unknown-unknown-seealst" id="refsect1-function.pg-fetch-result-unknown-unknown-unknown-unknown-unknown-seealst">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>pg_fetch_result</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$result</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$row</code></span>, <span class="methodparam"><span class="type"><a href="language.types.declarations.html#language.types.declarations.mixed" class="type mixed">mixed</a></span> <code class="parameter">$field</code></span>): <span class="type"><span class="type misto">misto</span></span></div>
+
+    <p class="para rdfs-comment">
+     <span class="function"><strong>pg_fetch_result()</strong></span> retorna valores a partir de um
+     recurso (resource) de resultado <code class="parameter">result</code> criado por
+     <span class="function"><a href="function.pg-query.html" class="function">pg_query()</a></span>. <code class="parameter">row</code> é um inteiro.
+     <code class="parameter">field</code> é um nome de campo (string) ou um índice de
+     campo (inteiro). <code class="parameter">row</code> e
+     <code class="parameter">field</code> especificam que célula da tabela deve ser
+     recuperada. A numeração de linhas começa de 0. Ao invés de nomear o campo,
+     você pode usar o índice numérico de campo sem aspas. Índices de campo iniciam-se em
+     0.
+    </p>
+    <p class="para">
+     PostgreSQL tem muitos tipos internos mas apenas os tipos básicos são suportados. 
+     Todas as formas de tipo <span class="type">integer</span> são retornadas como valores
+     <span class="type">integer</span>.
+     Todas as formas de tipos reais (ponto flutuante) são retornados como valores
+     <span class="type">float</span>. Boolean é retornado como &quot;t&quot; ou &quot;f&quot;.
+     Todos os outros tipos, incluindo arrays, são
+     retornados como strings formatadas na mesma maneira padrão que o
+     PostgreSQL retornaria com o programa <strong class="command">psql</strong>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

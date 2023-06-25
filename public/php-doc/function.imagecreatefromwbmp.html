@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Cria uma nova imagem a apratir de um arquivo ou URL</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.imagecreatefromtga.html">« imagecreatefromtga</a></li>
+      <li style="float: right;"><a href="function.imagecreatefromwebp.html">imagecreatefromwebp »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.image.html">Fun&ccedil;&otilde;es da GD</a></li>
+    <li>Cria uma nova imagem a apratir de um arquivo ou URL</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.imagecreatefromwbmp" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">imagecreatefromwbmp</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.0.1, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">imagecreatefromwbmp</span> &mdash; <span class="dc-title">Cria uma nova imagem a apratir de um arquivo ou URL</span></p>
+
+   </div>
+ <div class="refsect1 description" id="refsect1-function.imagecreatefromwbmp-description">
+  <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>imagecreatefromwbmp</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>): <span class="type">resource</span></div>
+
+    <p class="para rdfs-comment">
+     <span class="function"><strong>imagecreatefromwbmp()</strong></span> retorna um identificador de imagem
+     representando a imagem obtida através do nome de arquivo dado.
+    </p>
+    <p class="para">
+     <span class="function"><strong>imagecreatefromwbmp()</strong></span>  retorna uma string vazia
+     em caso de falha. Também mostra uma mensagem de erro, a qual infelizmente
+     aparece como um link quebrado no browser. Para facilitar o debug, o
+     exemplo asseguir irá prodizir um <abbr title="Wireless Bitmap">WBMP</abbr> de erro:
+     <div class="example" id="example-2573">
+      <p><strong>Exemplo #1 Exemplo de como manipular um erro durante a criação</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function </span><span style="color: #0000BB">LoadWBMP</span><span style="color: #007700">(</span><span style="color: #0000BB">$imgname</span><span style="color: #007700">) <br />{<br />    </span><span style="color: #0000BB">$im </span><span style="color: #007700">= @</span><span style="color: #0000BB">imagecreatefromwbmp</span><span style="color: #007700">(</span><span style="color: #0000BB">$imgname</span><span style="color: #007700">); </span><span style="color: #FF8000">/* Attempt to open */<br />    </span><span style="color: #007700">if (!</span><span style="color: #0000BB">$im</span><span style="color: #007700">) { </span><span style="color: #FF8000">/* See if it failed */<br />        </span><span style="color: #0000BB">$im  </span><span style="color: #007700">= </span><span style="color: #0000BB">imagecreatetruecolor </span><span style="color: #007700">(</span><span style="color: #0000BB">20</span><span style="color: #007700">, </span><span style="color: #0000BB">20</span><span style="color: #007700">); </span><span style="color: #FF8000">/* Create a blank image */<br />        </span><span style="color: #0000BB">$bgc </span><span style="color: #007700">= </span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">, </span><span style="color: #0000BB">255</span><span style="color: #007700">, </span><span style="color: #0000BB">255</span><span style="color: #007700">, </span><span style="color: #0000BB">255</span><span style="color: #007700">);<br />        </span><span style="color: #0000BB">$tc  </span><span style="color: #007700">= </span><span style="color: #0000BB">imagecolorallocate</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">);<br />        </span><span style="color: #0000BB">imagefilledrectangle</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">0</span><span style="color: #007700">, </span><span style="color: #0000BB">10</span><span style="color: #007700">, </span><span style="color: #0000BB">10</span><span style="color: #007700">, </span><span style="color: #0000BB">$bgc</span><span style="color: #007700">);<br />        </span><span style="color: #FF8000">/* Output an errmsg */<br />        </span><span style="color: #0000BB">imagestring</span><span style="color: #007700">(</span><span style="color: #0000BB">$im</span><span style="color: #007700">, </span><span style="color: #0000BB">1</span><span style="color: #007700">, </span><span style="color: #0000BB">5</span><span style="color: #007700">, </span><span style="color: #0000BB">5</span><span style="color: #007700">, </span><span style="color: #DD0000">"Error loading </span><span style="color: #0000BB">$imgname</span><span style="color: #DD0000">"</span><span style="color: #007700">, </span><span style="color: #0000BB">$tc</span><span style="color: #007700">);<br />    }<br />    return </span><span style="color: #0000BB">$im</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+  <div class="tip"><strong class="tip">Dica</strong><p class="simpara">Uma URL pode ser usada como um
+nome de arquivo com esta função se os <a href="filesystem.configuration.html#ini.allow-url-fopen" class="link">wrappers fopen</a> estiverem habilitados.
+Consulte a função <span class="function"><a href="function.fopen.html" class="function">fopen()</a></span> para mais detalhes sobre como especificar
+o nome do arquivo. Consulte <a href="wrappers.html" class="xref">Protocolos e Wrappers suportados</a> para informações
+sobre as capacidades de cada wrapper, notas de uso
+e informações sobre quaisquer variáveis predefinidas que eles possam
+fornecer.</p></div>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.imagecreatefromwbmp-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">filename</code></dt>
+
+     <dd>
+
+     <p class="para">
+      Caminho para imagem WBMP
+     </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.imagecreatefromwbmp-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna um resource identificador da imagem em sucesso, <strong><code>false</code></strong> em erros.
+  </p>
+ </div>
+
+ <div class="refsect1 notes" id="refsect1-function.imagecreatefromwbmp-notes">
+    <h3 class="title">Notas</h3>
+   </div>
+
+  </div></div></div></body></html>

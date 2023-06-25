@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Obt&eacute;m o tamanho de uma imagem</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.gd-info.html">« gd_info</a></li>
+      <li style="float: right;"><a href="function.getimagesizefromstring.html">getimagesizefromstring »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.image.html">Fun&ccedil;&otilde;es da GD</a></li>
+    <li>Obt&eacute;m o tamanho de uma imagem</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.getimagesize" class="refentry">
+  <div class="refnamediv">
+   <h1 class="refname">getimagesize</h1>
+   <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">getimagesize</span> &mdash; <span class="dc-title">Obtém o tamanho de uma imagem</span></p>
+
+  </div>
+  <div class="refsect1 unknown-seealsp" id="refsect1-function.getimagesize-unknown-seealsp">
+   <h3 class="title">Descrição</h3>
+    <div class="methodsynopsis dc-description">
+     <span class="methodname"><strong>getimagesize</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$filename</code></span>, <span class="methodparam"><span class="type">array</span> <code class="parameter">$&amp;imageinfo</code><span class="initializer"> = ?</span></span>): <span class="type">array</span></div>
+
+   <p class="para rdfs-comment">
+    A função <span class="function"><strong>getimagesize()</strong></span> irá determinar o
+    tamanho de qualquer arquivo de imagem <abbr title="Graphic Interchange Format">GIF</abbr>, <abbr>JPG</abbr>,
+    <abbr title="Portable Network Graphics">PNG</abbr>, <abbr title="Shockwave Flash">SWF</abbr>, 
+    <abbr>SWC</abbr>, <abbr title="Photoshop Document">PSD</abbr>, 
+    <abbr title="Tagged Image File Format">TIFF</abbr>, <abbr title="Bitmap">BMP</abbr>, 
+    <abbr title="Interchange File Format">IFF</abbr>, <abbr title="JPEG-2000">JP2</abbr>,
+    <abbr>JPX</abbr>, <abbr title="Joint Bilevel Image Experts Group">JB2</abbr>,
+    <abbr title="Japan Picture">JPC</abbr>, <abbr title="X Bitmap">XBM</abbr>, ou
+    <abbr title="Wireless Bitmap">WBMP</abbr> e retornar as dimensões juntamente com
+    o tipo de arquivo e a altura/largura para usar dentro de uma tag 
+    <abbr title="Hyper Text Markup Language">HTML</abbr> <code class="literal">IMG</code>.
+   </p>
+    <p class="para">
+    Se for impossível acessar a imagem <code class="parameter">filename</code>,
+    ou se não for uma imagem válida, <span class="function"><strong>getimagesize()</strong></span>
+    irá retornar <strong><code>false</code></strong> e gerar um erro de nível
+    <var class="varname">E_WARNING</var>.
+   </p>
+   <blockquote class="note"><p><strong class="note">Nota</strong>: 
+    <p class="para">
+     Suporte para <abbr title="Japan Picture">JPC</abbr>, <abbr title="JPEG-2000">JP2</abbr>,
+     <abbr>JPX</abbr>, <abbr title="Joint Bilevel Image Experts Group">JB2</abbr>,
+     <abbr title="X Bitmap">XBM</abbr>, e <abbr title="Wireless Bitmap">WBMP</abbr> tornou-se disponível no
+     PHP 4.3.2.  Supporte para <abbr>SWC</abbr> a partir do PHP 4.3.0 e
+     o suporte a <abbr title="Tagged Image File Format">TIFF</abbr> foi adicionado no PHP 4.2.0 
+    </p>
+   </p></blockquote>
+   <blockquote class="note"><p><strong class="note">Nota</strong>: 
+    <span class="simpara">
+     Suporte a JPEG 2000 foi adicionado no PHP 4.3.2. Note que JPC e JP2 são
+     capazes de ter componentes com profundidades diferentes de bit. Neste caso
+     o valor para &#039;bits&#039; é a maior profundidade de bits encontrada. Também, arquivos JP2
+     podem conter múltiplos JPEG 2000 codestreams. Neste caso,
+     <span class="function"><strong>getimagesize()</strong></span> retorna o valor para o primeiro
+     codestream que encontrar na raíz do arquivo.
+    </span>
+   </p></blockquote>
+   <blockquote class="note"><p><strong class="note">Nota</strong>: 
+    <span class="simpara">
+     A função <span class="function"><strong>getimagesize()</strong></span> não requer a
+     biblioteca de imagem GD.
+    </span>
+   </p></blockquote>
+   <p class="para">
+    Retorna uma matriz com 4 elementos. O índice 0 contém a largura da imagem
+    em pixels. O índice 1 contém a altura. O índice 2 é uma 
+    indicação do tipo de imagem: 1 = GIF, 2 = JPG, 3 =
+    PNG, 4 = SWF, 5 = PSD, 6 = BMP, 7 = TIFF(intel byte order),
+    8 = TIFF(motorola byte order), 9 = JPC, 10 = JP2, 11 = JPX, 12 =
+    JB2, 13 = SWC, 14 = IFF, 15 = WBMP, 16 = XBM. Estes valores correspondem as 
+    constantes IMAGETYPE que foram adicionadas no PHP 4.3. O índice 3 é uma
+    string com  o height=&quot;yyy&quot; width=&quot;xxx&quot; correto que pode ser usado
+    diretamente numa tag IMG.
+    <div class="example" id="example-2542">
+     <p><strong>Exemplo #1 getimagesize (file)</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">list(</span><span style="color: #0000BB">$width</span><span style="color: #007700">, </span><span style="color: #0000BB">$height</span><span style="color: #007700">, </span><span style="color: #0000BB">$type</span><span style="color: #007700">, </span><span style="color: #0000BB">$attr</span><span style="color: #007700">) = </span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"img/flag.jpg"</span><span style="color: #007700">);<br />echo </span><span style="color: #DD0000">"&lt;img src=\"img/flag.jpg\" </span><span style="color: #0000BB">$attr</span><span style="color: #DD0000"> alt=\"getimagesize() example\" /&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Suporte para URL foi adicionado PHP 4.0.5
+    <div class="example" id="example-2543">
+     <p><strong>Exemplo #2 getimagesize (URL)</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php <br />$size </span><span style="color: #007700">= </span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/gifs/logo.gif"</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">// se o nome do arquivo tiver um espaço, codifique-o corretamente<br /></span><span style="color: #0000BB">$size </span><span style="color: #007700">= </span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"http://www.example.com/gifs/lo%20go.gif"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Com imagens <abbr>JPG</abbr> dois indices extras são retornados:
+    <code class="literal">channels</code> e <code class="literal">bits</code>.
+    <code class="literal">channels</code> será 3 para imagens RGB e 4 para imagens CMYK.
+    <code class="literal">bits</code> é o número de bits para cada cor.
+   </p>
+   <p class="para">
+    Começando no PHP 4.3.0, <code class="literal">bits</code> e
+    <code class="literal">channels</code> estão presentes para outros tipos de imagens também.
+    Entretanto, a presença desses valores pode ser um pouco confusa. Por exemplo,
+    <abbr title="Graphic Interchange Format">GIF</abbr> sempre usa 3 channels por pixel, mas o
+    número de bits por pixel não pode ser calculado para um
+    <abbr title="Graphic Interchange Format">GIF</abbr> animado com uma tabela de cores global.
+   </p>
+   <p class="para">
+    Alguns formatos podem não conter imagens ou conter múltiplas imagens. Nestes casos,
+    <span class="function"><strong>getimagesize()</strong></span> não será capaz de determinar
+    o tamanho da imagem. <span class="function"><strong>getimagesize()</strong></span> retornará
+    zero para a altura e largura nestes casos.
+   </p>
+   <p class="para">
+    Começando no PHP 4.3.0, <span class="function"><strong>getimagesize()</strong></span> também retorna um 
+    parâmetro adicional, <code class="literal">mime</code>, que corresponde ao tipo
+    MIME da imagem. Esta informação pode ser usada para enviar imagens
+    com o cabeçalho HTTP Content-type correto:
+    <div class="example" id="example-2544">
+     <p><strong>Exemplo #3 getimagesize() e tipos MIME </strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$size </span><span style="color: #007700">= </span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$fp</span><span style="color: #007700">=</span><span style="color: #0000BB">fopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$filename</span><span style="color: #007700">, </span><span style="color: #DD0000">"rb"</span><span style="color: #007700">);<br />if (</span><span style="color: #0000BB">$size </span><span style="color: #007700">&amp;&amp; </span><span style="color: #0000BB">$fp</span><span style="color: #007700">) {<br />  </span><span style="color: #0000BB">header</span><span style="color: #007700">(</span><span style="color: #DD0000">"Content-type: </span><span style="color: #007700">{</span><span style="color: #0000BB">$size</span><span style="color: #007700">[</span><span style="color: #DD0000">'mime'</span><span style="color: #007700">]}</span><span style="color: #DD0000">"</span><span style="color: #007700">);<br />  </span><span style="color: #0000BB">fpassthru</span><span style="color: #007700">(</span><span style="color: #0000BB">$fp</span><span style="color: #007700">);<br />  exit;<br />} else {<br />  </span><span style="color: #FF8000">// error<br /></span><span style="color: #007700">}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    O parâmetro opcional <code class="parameter">imageinfo</code> permite a você extrair
+    alguma informação extendida do arquivo de imagem.
+    Atualmente, irá retornar os diferentes
+    <abbr>JPG</abbr> APP markers como uma matriz associativa. Alguns programas
+    usam estes APP markers para embutir textos com informações na imagem.
+    Um uso muito comum é embutir informação <abbr>IPTC</abbr>
+    <a href="http://www.iptc.org/" class="link external">&raquo;&nbsp;http://www.iptc.org/</a> no
+    APP13 marker. Você poderá usar a função <span class="function"><a href="function.iptcparse.html" class="function">iptcparse()</a></span>
+    para interpretar o binário APP13 marker em algo
+    legível.
+   </p>
+   <p class="para"> 
+    <div class="example" id="example-2545">
+     <p><strong>Exemplo #4 getimagesize() retornando IPTC</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$size </span><span style="color: #007700">= </span><span style="color: #0000BB">getimagesize</span><span style="color: #007700">(</span><span style="color: #DD0000">"testimg.jpg"</span><span style="color: #007700">, </span><span style="color: #0000BB">$info</span><span style="color: #007700">);<br />if (isset(</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">"APP13"</span><span style="color: #007700">])) {<br />    </span><span style="color: #0000BB">$iptc </span><span style="color: #007700">= </span><span style="color: #0000BB">iptcparse</span><span style="color: #007700">(</span><span style="color: #0000BB">$info</span><span style="color: #007700">[</span><span style="color: #DD0000">"APP13"</span><span style="color: #007700">]);<br />    </span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$iptc</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Veja também <span class="function"><a href="function.image-type-to-mime-type.html" class="function">image_type_to_mime_type()</a></span>, 
+    <span class="function"><a href="function.exif-imagetype.html" class="function">exif_imagetype()</a></span>, 
+    <span class="function"><a href="function.exif-read-data.html" class="function">exif_read_data()</a></span> e 
+    <span class="function"><a href="function.exif-thumbnail.html" class="function">exif_thumbnail()</a></span>. 
+   </p> 
+   </div>
+
+ </div></div></div></body></html>

@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>php-config</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="install.pecl.phpize.html">« Compilando extens&otilde;es compartilhadas PECL com phpize</a></li>
+      <li style="float: right;"><a href="install.pecl.static.html">Compilando extens&otilde;es PECL estaticamente no PHP »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="install.pecl.html">Instala&ccedil;&atilde;o das extens&otilde;es PECL</a></li>
+    <li>php-config</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="install.pecl.php-config" class="sect1">
+  <h2 class="title">php-config</h2>
+
+  <p class="para">
+   O php-config é um script shell para obter informações sobre
+   as configurações do PHP instalado.
+  </p>
+
+  <p class="para">
+   Ao compilar extensões, se tiver várias versões do PHP instalado, você pode
+   especifica para qual instalação deseja compilar utilizando a opção
+   <code class="literal">--with-php-config</code> durante a configuração, informando aí
+   o caminho do php-config respectivo.
+  </p>
+
+  <p class="para">
+   A lista de opções fornecida pelo script php-config pode ser obtida
+   rodando o comando com a opção <strong class="option unknown">-h</strong>:
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Usage: /usr/local/bin/php-config [OPTION]
+Options:
+  --prefix            [...]
+  --includes          [...]
+  --ldflags           [...]
+  --libs              [...]
+  --extension-dir     [...]
+  --include-dir       [...]
+  --php-binary        [...]
+  --php-sapis         [...]
+  --configure-options [...]
+  --version           [...]
+  --vernum            [...]
+</pre></div>
+   </div>
+  </p>
+
+  <p class="para">
+   <table class="doctable table">
+    <caption><strong>Opções de linha de comando</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Opção</th>
+       <th>Descrição</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>--prefix</td>
+       <td>Diretório onde o PHP está instalado, por exemplo /usr/local</td>
+      </tr>
+
+      <tr>
+       <td>--includes</td>
+       <td>Lista a opção -I com todos os arquivos incluídos</td>
+      </tr>
+
+      <tr>
+       <td>--ldflags</td>
+       <td>As flags LD com as quais o PHP foi compilado</td>
+      </tr>
+
+      <tr>
+       <td>--libs</td>
+       <td>Bibliotecas extras compiladas junto ao PHP</td>
+      </tr>
+
+      <tr>
+       <td>--extension-dir</td>
+       <td>Diretório de extensões utilizadas no carregamento por padrão</td>
+      </tr>
+
+      <tr>
+       <td>--include-dir</td>
+       <td>Diretório padrão onde arquivos header são instalados por padrão</td>
+      </tr>
+
+      <tr>
+       <td>--php-binary</td>
+       <td>O caminho completo para o binário CLI ou CGI</td>
+      </tr>
+
+      <tr>
+       <td>--php-sapis</td>
+       <td>Mostra todas as SAPIs disponíveis</td>
+      </tr>
+
+      <tr>
+       <td>--configure-options</td>
+       <td>Opções de configuração para recriar a configuração da atual instalação</td>
+      </tr>
+
+      <tr>
+       <td>--version</td>
+       <td>PHP version</td>
+      </tr>
+
+      <tr>
+       <td>--vernum</td>
+       <td>PHP version as integer</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div></div></div></body></html>

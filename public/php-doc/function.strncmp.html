@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Compara&ccedil;&atilde;o de string segura para bin&aacute;rio para os primeiros n caracteres</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.strncasecmp.html">« strncasecmp</a></li>
+      <li style="float: right;"><a href="function.strpbrk.html">strpbrk »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.strings.html">Fun&ccedil;&otilde;es de String</a></li>
+    <li>Compara&ccedil;&atilde;o de string segura para bin&aacute;rio para os primeiros n caracteres</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.strncmp" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">strncmp</h1>
+    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">strncmp</span> &mdash; <span class="dc-title">
+     Comparação de string segura para binário para os primeiros n caracteres
+    </span></p>
+
+   </div>
+   <div class="refsect1 unknown-seealsp" id="refsect1-function.strncmp-unknown-seealsp">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>strncmp</strong></span>(<span class="methodparam"><span class="type">string</span> <code class="parameter">$str1</code></span>, <span class="methodparam"><span class="type">string</span> <code class="parameter">$str2</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$len</code></span>): <span class="type">int</span></div>
+
+    <p class="para rdfs-comment">
+     Esta função é similar a <span class="function"><a href="function.strcmp.html" class="function">strcmp()</a></span>, com a diferença que você pode especificar o
+     limite superior de caracteres (<code class="parameter">len</code>) de cada string para ser usado na comparação. 
+     Se qualquer uma das strings é menor do que
+     <code class="parameter">len</code>, então o tamanho desta string será usado para comparação.
+    </p>
+    <p class="simpara">
+     Retorna &lt; 0 se <code class="parameter">str1</code> é menor do que
+     <code class="parameter">str2</code>; &gt; 0 se <code class="parameter">str1</code>
+     é maior do que <code class="parameter">str2</code>, e 0 se forem iguais.
+    </p>
+    <p class="simpara">
+       Note que esta função diferencia maiúsculas e minúsculas.
+    </p>
+    <p class="simpara">
+     Veja também <span class="function"><strong>ereg()</strong></span>,
+     <span class="function"><a href="function.strncasecmp.html" class="function">strncasecmp()</a></span>,
+     <span class="function"><a href="function.strcasecmp.html" class="function">strcasecmp()</a></span>, <span class="function"><a href="function.substr.html" class="function">substr()</a></span>,
+     <span class="function"><a href="function.stristr.html" class="function">stristr()</a></span>, <span class="function"><a href="function.strcmp.html" class="function">strcmp()</a></span>, e
+     <span class="function"><a href="function.strstr.html" class="function">strstr()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

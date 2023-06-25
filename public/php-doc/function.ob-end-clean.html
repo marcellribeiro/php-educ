@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Limpa (apaga) o buffer de sa&iacute;da e desativa o buffer de sa&iacute;da</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.ob-clean.html">« ob_clean</a></li>
+      <li style="float: right;"><a href="function.ob-end-flush.html">ob_end_flush »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.outcontrol.html">Fun&ccedil;&otilde;es para Control de Sa&iacute;da</a></li>
+    <li>Limpa (apaga) o buffer de sa&iacute;da e desativa o buffer de sa&iacute;da</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.ob-end-clean" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">ob_end_clean</h1> 
+    <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">ob_end_clean</span> &mdash; <span class="dc-title">
+     Limpa (apaga) o buffer de saída e desativa o buffer de saída
+    </span></p>
+
+   </div>
+   <div class="refsect1 unknown-seealsp" id="refsect1-function.ob-end-clean-unknown-seealsp">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>ob_end_clean</strong></span>(): <span class="type">bool</span></div>
+
+    <p class="para rdfs-comment">
+     Esta função descarta o conteúdo do buffer mais em cima e desativa
+     o buffer de saída. Se você quiser processar o conteúdo do buffer, você
+     deve utilizar a função
+     <span class="function"><a href="function.ob-get-contents.html" class="function">ob_get_contents()</a></span> antes de 
+     <span class="function"><strong>ob_end_clean()</strong></span> já que o conteúdo do buffer é descartado
+     quando a função <span class="function"><a href="function.ob-end-flush.html" class="function">ob_end_flush()</a></span> é chamada. A função retorna
+     <strong><code>true</code></strong> quando foi bem sucedida em discartar o buffer, <strong><code>false</code></strong> se não.
+     Razões para falhar é primeiro que você utilizou a função sem um buffer ativo ou
+     por algum motivo o buffer não pode ser excluído (possivelmente por um buffer especial).
+    </p>
+    <p class="para">
+     O exemplo a seguir mostra como eliminar todos os buffers de saída:
+    </p>
+    <p class="para">
+     <div class="example" id="example-529">
+      <p><strong>Exemplo #1 Exemplo <span class="function"><strong>ob_end_clean()</strong></span></strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />ob_start</span><span style="color: #007700">();<br />echo </span><span style="color: #DD0000">'Texto que não será exibido.'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">ob_end_clean</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+    <blockquote class="note"><p><strong class="note">Nota</strong>: 
+     <span class="simpara">
+      Se a função falhar gera um E_NOTICE.
+     </span>
+     <span class="simpara">
+      O valor booleano de rtorno foi adicionado no PHP 4.2.0.
+     </span>
+    </p></blockquote>
+    <p class="para">
+     Veja também <span class="function"><a href="function.ob-start.html" class="function">ob_start()</a></span>,
+     <span class="function"><a href="function.ob-get-contents.html" class="function">ob_get_contents()</a></span> e
+     <span class="function"><a href="function.ob-flush.html" class="function">ob_flush()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>

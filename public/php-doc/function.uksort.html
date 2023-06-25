@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Ordena um array pelas chaves utilizando uma fun&ccedil;&atilde;o de compara&ccedil;&atilde;o
+   definida pelo usu&aacute;rio.</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.uasort.html">« uasort</a></li>
+      <li style="float: right;"><a href="function.usort.html">usort »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.array.html">Fun&ccedil;&otilde;es para Array</a></li>
+    <li>Ordena um array pelas chaves utilizando uma fun&ccedil;&atilde;o de compara&ccedil;&atilde;o
+   definida pelo usu&aacute;rio.</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.uksort" class="refentry">
+ <div class="refnamediv">
+  <h1 class="refname">uksort</h1>
+  <p class="verinfo">(PHP 4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">uksort</span> &mdash; <span class="dc-title">Ordena um array pelas chaves utilizando uma função de comparação
+   definida pelo usuário.
+  </span></p>
+
+ </div>
+ <div class="refsect1 description" id="refsect1-function.uksort-description">
+  <h3 class="title">Descrição</h3>
+  <div class="methodsynopsis dc-description">
+   <span class="methodname"><strong>uksort</strong></span>(<span class="methodparam"><span class="type">array</span> <code class="parameter reference">&$array</code></span>, <span class="methodparam"><span class="type"><span class="type function">function</span></span> <code class="parameter">$cmp_function</code></span>): <span class="type">bool</span></div>
+
+  <p class="para rdfs-comment">
+   <span class="function"><strong>uksort()</strong></span> irá ordenar as chaves de um array usando uma função de
+   comparação definida pelo usuário. Se o array 
+   precisa ser classificado utilizando um critério não trivial, você deve
+   usar essa função.
+  </p>
+ </div>
+
+ <div class="refsect1 parameters" id="refsect1-function.uksort-parameters">
+  <h3 class="title">Parâmetros</h3>
+  <p class="para">
+   <dl>
+    
+     <dt>
+<code class="parameter">array</code></dt>
+
+     <dd>
+
+      <p class="para">
+       O array de entrada.
+      </p>
+     </dd>
+
+    
+    
+     <dt>
+<code class="parameter">cmp_function</code></dt>
+
+     <dd>
+
+      <p class="para">
+       A função callback de comparação.
+      </p>
+      <p class="para">
+       Função <code class="parameter">cmp_function</code> deve aceitar dois
+       parâmetros que irão ser preenchidos pelo par de chaves do <code class="parameter">array</code>.
+       A função de comparação precisa retornar um inteiro menor que, igual
+       a, ou maior que zero se o primeiro argumento é considerado para
+       respectivamente menor que, igual a, ou maior que o
+       segundo.
+      </p>
+     </dd>
+
+    
+   </dl>
+
+  </p>
+ </div>
+
+ <div class="refsect1 returnvalues" id="refsect1-function.uksort-returnvalues">
+  <h3 class="title">Valor Retornado</h3>
+  <p class="para">
+   Retorna <strong><code>true</code></strong> em caso de sucesso ou <strong><code>false</code></strong> em caso de falha.
+  </p>
+ </div>
+
+ <div class="refsect1 examples" id="refsect1-function.uksort-examples">
+  <h3 class="title">Exemplos</h3>
+  <p class="para">
+   <div class="example" id="example-4794">
+    <p><strong>Exemplo #1 Exemplo de <span class="function"><strong>uksort()</strong></span></strong></p> 
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+function cmp($a, $b)<br />{   <br />    $a = ereg_replace('^(a|an|the) ', '', $a);<br />    $b = ereg_replace('^(a|an|the) ', '', $b);<br />    return strcasecmp($a, $b);<br />}<br /><br />$a = array("John" =&gt; 1, "the Earth" =&gt; 2, "an apple" =&gt; 3, "a banana" =&gt; 4);<br /><br />uksort($a, "cmp");<br /><br />foreach ($a as $key =&gt; $value) {<br />    echo "$chave: $valor\n";<br />}<br />?&gt;</span>
+</code></div>
+      </div>
+
+      <div class="example-contents"><p>O exemplo acima produzirá:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+an apple: 3
+a banana: 4
+the Earth: 2
+John: 1
+</pre></div>
+    </div>  
+   </div>  
+  </p>
+ </div>
+
+ <div class="refsect1 seealso" id="refsect1-function.uksort-seealso">
+  <h3 class="title">Veja Também</h3>
+  <p class="para">
+   <ul class="simplelist">
+    <li class="member"><span class="function"><a href="function.usort.html" class="function" rel="rdfs-seeAlso">usort()</a> - Ordena um array pelos valores utilizando uma fun&ccedil;&atilde;o de compara&ccedil;&atilde;o
+   definida pelo usu&aacute;rio</span></li>
+    <li class="member"><span class="function"><a href="function.uasort.html" class="function" rel="rdfs-seeAlso">uasort()</a> - Ordena um array utilizando uma fun&ccedil;&atilde;o de compara&ccedil;&atilde;o definida pelo usu&aacute;rio e mantendo as associa&ccedil;&otilde;es entre chaves e valores</span></li>
+    <li class="member"><span class="function"><a href="function.sort.html" class="function" rel="rdfs-seeAlso">sort()</a> - Ordena um array em ordem ascendente</span></li>
+    <li class="member"><span class="function"><a href="function.asort.html" class="function" rel="rdfs-seeAlso">asort()</a> - Ordena um array mantendo a associa&ccedil;&atilde;o entre &iacute;ndices e valores</span></li>
+    <li class="member"><span class="function"><a href="function.arsort.html" class="function" rel="rdfs-seeAlso">arsort()</a> - Ordena um array em ordem descrescente mantendo a associa&ccedil;&atilde;o entre &iacute;ndices e valores</span></li>
+    <li class="member"><span class="function"><a href="function.ksort.html" class="function" rel="rdfs-seeAlso">ksort()</a> - Ordena um array pelas chaves</span></li>
+    <li class="member"><span class="function"><a href="function.natsort.html" class="function" rel="rdfs-seeAlso">natsort()</a> - Ordena um array utilizando o algoritmo da &quot;ordem natural&quot;</span></li>
+    <li class="member"><span class="function"><a href="function.rsort.html" class="function" rel="rdfs-seeAlso">rsort()</a> - Ordena um array em ordem descrescente</span></li>
+   </ul>
+  </p>
+ </div>
+
+</div></div></div></body></html>

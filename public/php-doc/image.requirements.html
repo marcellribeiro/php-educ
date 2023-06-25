@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Depend&ecirc;ncias</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="image.setup.html">« Instala&ccedil;&atilde;o/Configura&ccedil;&atilde;o</a></li>
+      <li style="float: right;"><a href="image.installation.html">Instala&ccedil;&atilde;o »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="image.setup.html">Instala&ccedil;&atilde;o/Configura&ccedil;&atilde;o</a></li>
+    <li>Depend&ecirc;ncias</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="image.requirements" class="section">
+  <h2 class="title">Dependências</h2>
+  <p class="para">
+   Se você tiver a biblioteca <abbr title="Graphics Draw">GD</abbr> (disponível em <a href="http://www.libgd.org/" class="link external">&raquo;&nbsp;http://www.libgd.org/</a>) você poderá também criar
+   e manipular imagens.
+  </p>
+  <p class="para">
+   O formato das imagens que você pode manipilar dependem da versão da
+   <abbr title="Graphics Draw">GD</abbr> que você instalou, e de quaisquer outras bibliotecas que o
+   <abbr title="Graphics Draw">GD</abbr> possa precisar para acessar estes formatos de imagens.
+   Versões do <abbr title="Graphics Draw">GD</abbr> anteriores a gd-1.6
+   suportam imagens GIF, e não suportam PNG, enquanto versões
+   posteriores a gd-1.6 e menor que gd-2.0.28 suportam PNG, não GIF. Suporte
+   a GIF foi reabilitado na gd-2.0.28.
+   <blockquote class="note"><p><strong class="note">Nota</strong>: 
+    <span class="simpara">
+     Apartir do PHP 4.3 existe uma versão empacotada da biblioteca GD.
+     Esta versão empacotada tem algumas melhorias como alpha blending,
+     e deve ser usada em preferência da biblioteca externa, já
+     que seu código-fonte é melhor mantido e mais estável.
+    </span>
+   </p></blockquote>
+  </p>
+  <blockquote class="note"><p><strong class="note">Nota</strong>: 
+   <p class="para">
+    Support for GD 1.x has been removed as of PHP 6.0.0, which requires GD
+    2.0.33 or later.
+   </p>
+  </p></blockquote>
+  <p class="para">
+   You may wish to enhance GD to handle more image formats.
+   <table class="doctable table">
+   <caption><strong>Supported image formats</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Formato de imagem</th>
+       <th>Bibliotece para download</th>
+       <th>Notas</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><code class="literal">gif</code></td>
+       <td class="empty">&nbsp;</td>
+       <td>
+        Suportado apenas em versões do GD anteriores a gd-1.6. Suporte
+        <em class="emphasis">Apenas para leitura</em> esta disponível com o PHP 4.3.0
+        e a biblioteca GD empacotada. Suporte para <em class="emphasis">Escrita</em>
+        esta disponível desde o PHP 4.3.9 e PHP 5.0.1.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">jpeg-6b</code></td>
+       <td><a href="http://www.ijg.org/" class="link external">&raquo;&nbsp;http://www.ijg.org/</a></td>
+       <td>
+        Quando compilando a biblioteca jpeg-v6b (antes de compilar o PHP) você
+        precisa usar a opção <strong class="option configure">--enable-shared</strong>
+        no passo de configuração. Se você não fizer, irá receber
+        um erro dizendo <code class="literal">libjpeg.(a|so) not found</code>
+        quando você estiver no passo de configuração para compilar o PHP.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">png</code></td>
+       <td><a href="http://www.libpng.org/pub/png/libpng.html" class="link external">&raquo;&nbsp;http://www.libpng.org/pub/png/libpng.html</a></td>
+       <td>
+        Apenas suportados em versões do GD maiores do que gd-1.6.
+       </td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">xpm</code></td>
+       <td><a href="http://www.ibiblio.org/pub/Linux/libs/X/!INDEX.html" class="link external">&raquo;&nbsp;http://www.ibiblio.org/pub/Linux/libs/X/!INDEX.html</a></td>
+       <td>
+        É provavel que você já tenha esta biblioteca disponível, se o seu sistema
+        tiver um ambiênte X instalado.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+
+  <p class="para">
+   Voce pode querer melhorar o GD para lidar com fontes diferentes. As seguintes
+   bibliotecas de fontes são suportadas:
+   <table class="doctable table">
+   <caption><strong>Bibliotes de fontes suportadas</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Biblioteca de fonte</th>
+       <th>Download</th>
+       <th>Notas</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td><code class="literal">FreeType 1.x</code></td>
+       <td><a href="http://www.freetype.org/" class="link external">&raquo;&nbsp;http://www.freetype.org/</a></td>
+       <td>Suporte removido no PHP 6.0.0</td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">FreeType 2</code></td>
+       <td><a href="http://www.freetype.org/" class="link external">&raquo;&nbsp;http://www.freetype.org/</a></td>
+       <td class="empty">&nbsp;</td>
+      </tr>
+
+      <tr>
+       <td><code class="literal">T1lib</code></td>
+       <td><a href="http://www.ibiblio.org/pub/Linux/libs/graphics/" class="link external">&raquo;&nbsp;http://www.ibiblio.org/pub/Linux/libs/graphics/</a>)</td>
+       <td>
+        Suporte para fontes Postscript Type 1.
+       </td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+  </p>
+ </div></div></div></body></html>

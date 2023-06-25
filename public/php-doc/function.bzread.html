@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Leitura binary-safe de um arquivo bzip2</title>
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-base.css" />
+<link media="all" rel="stylesheet" type="text/css" href="styles/03e73060321a0a848018724a6c83de7f-theme-medium.css" />
+
+ </head>
+ <body class="docs"><div class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <ul class="nav" style="width: 100%">
+      <li style="float: left;"><a href="function.bzopen.html">« bzopen</a></li>
+      <li style="float: right;"><a href="function.bzwrite.html">bzwrite »</a></li>
+    </ul>
+  </div>
+</div>
+<div id="breadcrumbs" class="clearfix">
+  <ul class="breadcrumbs-container">
+    <li><a href="/">PHP-HELP</a></li><li><a href="/php-doc/">Manual</a></li>
+    <li><a href="ref.bzip2.html">Bzip2 Fun&ccedil;&otilde;es</a></li>
+    <li>Leitura binary-safe de um arquivo bzip2</li>
+  </ul>
+</div>
+<div id="layout">
+  <div id="layout-content"><div id="function.bzread" class="refentry">
+   <div class="refnamediv">
+    <h1 class="refname">bzread</h1>
+    <p class="verinfo">(PHP 4 &gt;= 4.0.4, PHP 5, PHP 7, PHP 8)</p><p class="refpurpose"><span class="refname">bzread</span> &mdash; <span class="dc-title">Leitura binary-safe de um arquivo bzip2</span></p>
+
+   </div>
+   <div class="refsect1 unknown-unknown-seealsq" id="refsect1-function.bzread-unknown-unknown-seealsq">
+    <h3 class="title">Descrição</h3>
+     <div class="methodsynopsis dc-description">
+      <span class="methodname"><strong>bzread</strong></span>(<span class="methodparam"><span class="type">resource</span> <code class="parameter">$bz</code></span>, <span class="methodparam"><span class="type">int</span> <code class="parameter">$length</code><span class="initializer"> = ?</span></span>): <span class="type">string</span></div>
+
+    <p class="para rdfs-comment">
+     <span class="function"><strong>bzread()</strong></span> lê o número de bytes equivalente a
+     <code class="parameter">length</code> do ponteiro de arquivo bzip2 referenciado
+     por <code class="parameter">bz</code>.  A leitura pára quando a a quantidade de
+     bytes referenciados por <code class="parameter">length</code> (descomprimidos)
+     foram lidos ou EOF foi alcançado, o que acontecer primeiro. Se o
+     parâmetro opcional <code class="parameter">length</code> não for especificado,
+     <span class="function"><strong>bzread()</strong></span> irá ler 1024 bytes (descomprimidos)
+     de cada vez.
+    </p>
+    <p class="para">
+     <div class="example" id="example-694">
+      <p><strong>Exemplo #1 Exemplo de <span class="function"><strong>bzread()</strong></span></strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$file </span><span style="color: #007700">= </span><span style="color: #DD0000">"/tmp/foo.bz2"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$bz </span><span style="color: #007700">= </span><span style="color: #0000BB">bzopen</span><span style="color: #007700">(</span><span style="color: #0000BB">$file</span><span style="color: #DD0000">", "</span><span style="color: #0000BB">r</span><span style="color: #DD0000">") or die("</span><span style="color: #0000BB">Couldn</span><span style="color: #DD0000">'t open $file");<br /><br />$decompressed_file = '';<br />while (!feof($bz)) {<br />    $decompressed_file .= bzread($bz, 4096);<br />}<br />bzclose($bz);<br /><br />echo "The contents of /tmp/foo.bz2 are: &lt;br /&gt;\n";<br />echo $decompressed_file;<br />?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+    <p class="para">
+     Veja também <span class="function"><a href="function.bzwrite.html" class="function">bzwrite()</a></span>,
+     <span class="function"><a href="function.feof.html" class="function">feof()</a></span> e <span class="function"><a href="function.bzopen.html" class="function">bzopen()</a></span>.
+    </p>
+   </div>
+
+  </div></div></div></body></html>
