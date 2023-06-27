@@ -1,4 +1,4 @@
-# PHP HELP
+# PHP EDUC
 Este software tem o objetivo de ajudar crianças e adolescentes a aprenderem PHP de uma maneira fácil, divertida e objetiva. Foi desenvolvido por MARCELL COUTINHO RIBEIRO como TCC do curso de Engenharia de Software pela UNICESUMAR. A documentação oficial do PHP8 foi usada, juntamente com o plugin Codemirror (https://codemirror.net).
 
 ## Instalando
