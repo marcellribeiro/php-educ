@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>PHP-HELP</title>
+    <title>PHP-EDUC</title>
     <link media="all" rel="stylesheet" type="text/css" href="{{asset('php-doc/styles/03e73060321a0a848018724a6c83de7f-theme-base.css')}}" />
     <link media="all" rel="stylesheet" type="text/css" href="{{asset('php-doc/styles/03e73060321a0a848018724a6c83de7f-theme-medium.css')}}" />
     
@@ -11,20 +11,20 @@
 <body class="docs"><div class="navbar navbar-fixed-top">
     <div class="navbar-inner clearfix">
         <ul class="nav" style="width: 100%">
-            <li style="float: left;"><a href="{{url('/')}}">PHP-HELP</a></li>      
+            <li style="float: left;"><a href="{{url('/')}}">PHP-EDUC</a></li>      
             <li style="float: right;"></li>
         </ul>
     </div>
 </div>
 <div id="breadcrumbs" class="clearfix">
     <ul class="breadcrumbs-container">
-        <li><a href="{{url('/')}}">PHP-HELP</a></li>
+        <li><a href="{{url('/')}}">PHP-EDUC</a></li>
     </ul>
 </div>
 <div id="layout">
     <div id="layout-content">
         <div id="index" class="set">
-            <h1 class="title">PHP-HELP</h1>
+            <h1 class="title">PHP-EDUC</h1>
         </div>
         <div class="info">
             Este software tem o objetivo de ajudar crianças e adolescentes a aprenderem PHP de uma maneira fácil, divertida e objetiva. Foi desenvolvido por MARCELL COUTINHO RIBEIRO como TCC do curso de Engenharia de Software pela UNICESUMAR. A documentação oficial do PHP8 foi usada, juntamente com o plugin Codemirror (https://codemirror.net).

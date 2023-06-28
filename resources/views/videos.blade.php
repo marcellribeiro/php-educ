@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>PHP-HELP</title>
+    <title>PHP-EDUC</title>
     <link media="all" rel="stylesheet" type="text/css" href="{{asset('php-doc/styles/03e73060321a0a848018724a6c83de7f-theme-base.css')}}" />
     <link media="all" rel="stylesheet" type="text/css" href="{{asset('php-doc/styles/03e73060321a0a848018724a6c83de7f-theme-medium.css')}}" />
 </head>
@@ -12,14 +12,14 @@
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner clearfix">
             <ul class="nav" style="width: 100%">
-                <li style="float: left;"><a href="{{url('/')}}">PHP-HELP</a></li>
+                <li style="float: left;"><a href="{{url('/')}}">PHP-EDUC</a></li>
                 <li style="float: right;"></li>
             </ul>
         </div>
     </div>
     <div id="breadcrumbs" class="clearfix">
         <ul class="breadcrumbs-container">
-            <li><a href="{{url('/')}}">PHP-HELP</a></li>
+            <li><a href="{{url('/')}}">PHP-EDUC</a></li>
             <li><a href="{{url('/videos')}}">Videos</a></li>
         </ul>
     </div>
